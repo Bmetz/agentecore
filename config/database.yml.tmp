@@ -12,3 +12,10 @@ test:
   username: root
   password:
   encoding: utf8
+  
+production:
+  adapter: mysql
+  database: lovdbyless_production
+  username: root
+  password:
+  encoding: utf8
