@@ -1,5 +1,5 @@
 
 
-<%= @inviter.f%> is now following you on <%= SITE_NAME %> (http://<%= SITE %>)
+<%= @inviter.f%> <%=t(:inviter_following)%> <%= SITE_NAME %> (http://<%= SITE %>)
     
-You can go view their profile here: <%= profile_url @inviter, :host=>SITE %>
+<%=t(:their_profile)%>: <%= profile_url @inviter, :host=>SITE %>

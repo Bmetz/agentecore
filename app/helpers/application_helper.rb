@@ -38,8 +38,8 @@ module ApplicationHelper
 
   def activerecord_error_list(errors)
     error_list = '<ul class="error_list">'
-    error_list << errors.collect do |e, m|
-      "<li>#{e.humanize unless e == "base"} #{m}</li>"
+    error_list << errors.full_messages.collect do | m|
+      "<li>#{m}</li>"
     end.to_s << '</ul>'
     error_list
   end

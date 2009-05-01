@@ -34,10 +34,8 @@ Rails::Initializer.run do |config|
   config.gem 'mocha', :version=> '0.9.3'
   config.gem 'redgreen', :version=> '1.2.2' unless ENV['TM_MODE']
   config.gem 'gcnovus-avatar', :version=> '0.0.7', :lib => 'avatar'
-  
-  
-  
-  
 end
+
+I18n.default_locale = "pt-BR" 
 
 Less::JsRoutes.generate!

@@ -1,0 +1,191 @@
+pt-BR:
+  # formatos de data e hora
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %B"
+      long: "%d de %B de %Y"
+      only_day: "%d"
+
+    day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+    order: [:day,:month,:year]
+
+  time:
+    formats:
+      default: "%A, %d de %B de %Y, %H:%M hs"
+      time: "%H:%M hs"
+      short: "%d/%m, %H:%M hs"
+      long: "%A, %d de %B de %Y, %H:%M hs"
+      only_second: "%S"
+      datetime:
+        formats:
+          default: "%Y-%m-%dT%H:%M:%S%Z"
+    am: ""
+    pm: ""
+
+  # date helper distanci em palavras
+  datetime:
+    distance_in_words:
+      half_a_minute: 'meio minuto'
+      less_than_x_seconds:
+        one: 'menos de 1 segundo'
+        other: 'menos de {{count}} segundos'
+
+      x_seconds:
+        one: '1 segundo'
+        other: '{{count}} segundos'
+
+      less_than_x_minutes:
+        one: 'menos de um minuto'
+        other: 'menos de {{count}} minutos'
+
+      x_minutes:
+        one: '1 minuto'
+        other: '{{count}} minutos'
+
+      about_x_hours:
+        one: 'aproximadamente 1 hora'
+        other: 'aproximadamente {{count}} horas'
+
+      x_days:
+        one: '1 dia'
+        other: '{{count}} dias'
+
+      about_x_months:
+        one: 'aproximadamente 1 mês'
+        other: 'aproximadamente {{count}} meses'
+
+      x_months:
+        one: '1 mês'
+        other: '{{count}} meses'
+
+      about_x_years:
+        one: 'aproximadamente 1 ano'
+        other: 'aproximadamente {{count}} anos'
+
+      over_x_years:
+        one: 'mais de 1 ano'
+        other: 'mais de {{count}} anos'
+                                                                                                                                                                                                                                         
+  # numeros
+  number:
+    format:
+      precision: 3
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: 'R$'
+        precision: 2
+        format: '%u %n'
+        separator: ','
+        delimiter: '.'
+    percentage:
+      format:
+        delimiter: '.'
+    precision:
+      format:
+        delimiter: '.'
+    human:
+      format:
+        precision: 1
+        delimiter: '.'
+  support:
+    array:
+      sentence_connector: "e"
+      skip_last_comma: true
+
+  # Active Record
+  activerecord:
+    attributes:
+      forum:
+        name: "Nome"
+        description: "Descricao"
+      user:
+        login: "Usuario"
+        password: "Senha"
+        password_confirmation: "Confirme a senha"
+    errors:
+      template:
+        header:
+          one: "{{model}} não pôde ser salvo: 1 erro"
+          other: "{{model}} não pôde ser salvo: {{count}} erros."
+        body: "Por favor, cheque os seguintes campos:"
+      messages:
+        inclusion: "não está incluso na lista"
+        exclusion: "não está disponível"
+        invalid: "não é válido"
+        confirmation: "não bate com a confirmação"
+        accepted: "precisa ser aceito"
+        empty: "não pode ser vazio"
+        blank: "não pode ser vazio"
+        too_long: "é muito longo (não mais do que {{count}} caracteres)"
+        too_short: "é muito curto (não menos do que {{count}} caracteres)"
+        wrong_length: "não é do tamanho correto (precisa ter {{count}} caracteres)"
+        taken: "não está disponível"
+        not_a_number: "não é um número"
+        greater_than: "precisa ser maior do que {{count}}"
+        greater_than_or_equal_to: "precisa ser maior ou igual a {{count}}"
+        equal_to: "precisa ser igual a {{count}}"
+        less_than: "precisa ser menor do que {{count}}"
+        less_than_or_equal_to: "precisa ser menor ou igual a {{count}}"
+        odd: "precisa ser ímpar"
+        even: "precisa ser par"
+
+# app/views/layouts/application.html.erb
+  home: Início
+  forums: Fóruns
+  dashboard: Meu Painel
+  admin: Admin
+  you_must: Você deve
+  login: Entrar
+  or: ou
+  sign_up: Increver-se
+  to_participate: para participar
+  hi: Olá
+  logout: sair
+  
+  #app/views/account_mailer/follow.html.erb
+  inviter_following: agora está o seguindo no
+  their_profile: Você pode visualizar o perfil dele aqui
+  
+  #app/views/account_mailer/forgot_password.html.erb
+  user_name: Seu nome de usuário é
+  new_password: Sua nova senha é
+  can_login: Você pode entrar em
+  
+  #app/views/account_mailer/signup.html.erb
+  thanks: Obrigado
+  thanks_signup: Obrigado por inscrever-se no
+  password_signup: Sua senha é a mesma que você usou para criar sua conta
+
+  #app/views/accounts/login.html.erb
+  login_your_account: Entre com seus dados
+  need_an_account: Opa, Eu preciso de uma conta!
+  login_now: Entrar agora
+  i: Eu
+  forgot: esqueci
+  my: minha
+  password: senha
+  retrieve_my_password: Receber minha senha
+  email_address_sent: Entre com seu email e nós enviaremos sua senha
+  enter_email_address: Endereço de email
+  retrieve_password: Receber senha
+  remember: lembrei
+  remember_me: Lembrar de mim?
+
+  #app/views/accounts/signup.html.erb
+  tos_label: Termos de uso
+  tos_accept: Aceitar
+  signup_now: Inscreva-se agora
+  signup_welcome_begin: Bem vindo ao
+  signup_welcome_end: nós estamos atualmente em fase 'beta'
+  already_have_account: Ah sim, Eu já tenho uma conta, hummm.
+
+  #app/views/admin/users/index.html.erb
+  search_results: Resultados da pesquisa
+  deactivate: desativar
+  activate: ativar

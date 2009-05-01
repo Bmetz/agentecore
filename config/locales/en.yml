@@ -1,0 +1,81 @@
+en:
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%e %b"
+      long: "%B %e, %Y"
+      only_day: "%e"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    order: [ :year, :month, :day ]
+  
+  time:
+    formats:
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      time: "%H:%M"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+      only_second: "%S"
+      
+      datetime:
+        formats:
+          default: "%Y-%m-%dT%H:%M:%S%Z"
+          
+      am: 'am'
+      pm: 'pm'
+  # app/views/layouts/application.html.erb
+  home: Home
+  forums: Forums
+  dashboard: Dashboard
+  admin: Admin
+  you_must: You must
+  login: Login
+  or: or
+  sign_up: Sign-up
+  to_participate: to participate
+  hi: Hi
+  logout: logout
+
+  #app/views/account_mailer/follow.html.erb
+  inviter_following: is now following you on
+  their_profile: You can go view their profile here
+  
+  #app/views/account_mailer/forgot_password.html.erb
+  user_name: Your user name is
+  new_password: Your new password is
+  can_login: You can log in at
+  
+  #app/views/account_mailer/signup.html.erb
+  thanks: Thanks
+  thanks_signup: Thanks for signing up with
+  password_signup: Your password is the same as what you used to create your user account
+
+  #app/views/accounts/login.html.erb
+  login_your_account: Log-in your Account
+  need_an_account: Oops, I need an account!
+  login_now: Log-in Now
+  i: I
+  forgot: forgot
+  my: my
+  password: password
+  retrieve_my_password: Retrieve My Password
+  email_address_sent: Enter email address and your password will be sent to you
+  enter_email_address: Enter Email Address
+  retrieve_password: Retrieve Password
+  remember: remember
+
+  #app/views/accounts/signup.html.erb
+  tos_label: Terms of Service
+  tos_accept: Accept
+  signup_now: Sign-up Now
+  signup_welcome_begin: Welcome to
+  signup_welcome_end: we are currently in private beta
+  already_have_account: Oh yeah, I already have an account, duh.
+
+  #app/views/admin/users/index.html.erb
+  search_results: Search Results
+  deactivate: deactivate
+  activate: activate

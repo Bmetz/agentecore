@@ -23,10 +23,10 @@
       <div id="top" >
         <%= link_to(image_tag('logo.png', :class=>'png left'), home_path) %>
         <div class="right text_r">
-          <%= link_to 'Newest Stuff', home_path %>
-          <%= link_to 'Forums', forums_path %>
-          <%= link_to('Dashboard', @p) if @p %>
-          <%= link_to('Admin', admin_users_path) if @p && @p.user.is_admin %>
+          <%= link_to(t(:home), home_path) %>
+          <%= link_to(t(:forums), forums_path) %>
+          <%= link_to(t(:dashboard), @p) if @p %>
+          <%= link_to(t(:admin), admin_users_path) if @p && @p.user.is_admin %>
         </div>
         <div class="clear"></div>
       </div>
@@ -41,9 +41,9 @@
             </div>
             <div id="welcome" class="right">
               <% if @u.nil? or @u.new_record? %>
-              <strong>You must <%= link_to 'Login', login_path %> or <%= link_to 'Sign-up', signup_path %> to participate</strong>
+                <strong><%=t(:you_must)%> <%= link_to t(:login), login_path %> <%=t(:or)%> <%= link_to t(:sign_up), signup_path %> <%=t(:to_participate)%></strong>
               <% else %>	
-              <%= icon(@p, :small) unless @p.blank? %> <strong>Hi, <%= @u.f %></strong> <%= link_to '(logout)', logout_path %> 
+                <%= icon(@p, :small) unless @p.blank? %> <strong><%=t(:hi)%>, <%= @u.f %></strong> (<%= link_to t(:logout), logout_path %>) 
               <% end %>
             </div>  
             <div class="clear"></div>   
