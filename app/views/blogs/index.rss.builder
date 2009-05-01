@@ -2,9 +2,9 @@
 xml.instruct! :xml, :version=>"1.0"
 xml.rss(:version=>"2.0") do
   xml.channel do
-    xml.title "#{@profile.f}'s Blog"
+    xml.title t(:blog_title, :nome => @profile.f)
     xml.link SITE
-    xml.description "#{@profile.f}'s Blog at #{SITE_NAME}"
+    xml.description t(:blog_title, :nome => @profile.f, :app => SITE_NAME)
     xml.language 'en-us'
     @blogs.each do |blog|
       xml.item do

@@ -11,9 +11,9 @@ blog ||= @blog
     <%= f.text_field :title %>
     <%= f.text_area :body %>
     
-		To include a youtube video use: [youtube: address_of_video]
+    <%= t(:youtube_label) %>
 	  <div class="row button">
-    	<%= f.submit 'Save', :class=>'button' %>
+    	<%= f.submit t(:option_save), :class=>'button' %>
   	</div>
   <% end %>
 </div>

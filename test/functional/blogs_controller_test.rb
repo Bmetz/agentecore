@@ -7,7 +7,7 @@ class BlogsControllerTest < ActionController::TestCase
     :body => 'This is a valid blog post.'
   }
   
-  OWNER_LINKS = ['(edit)', '(delete)', 'Write a new post', "&larr; Back to Dashboard"]
+  OWNER_LINKS = ['(Edit)', '(Delete)', 'Write a new post', "&larr; Back to Dashboard"]
   
   def setup
     @controller = BlogsController.new

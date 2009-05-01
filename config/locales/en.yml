@@ -26,6 +26,17 @@ en:
           
       am: 'am'
       pm: 'pm'
+
+  #general options
+  option_edit: Edit
+  option_delete: Delete
+  option_add: Add
+  option_save: Save
+  youtube_label: "To include a youtube video use: [youtube: address_of_video]"
+  back_to_dashboard: "&larr; Back to Dashboard"
+  back_to_blogs: "&larr; Back to Blogs"
+  back_to_profile: "&larr; Back to {{nome}}'s Profile"
+
   # app/views/layouts/application.html.erb
   home: Home
   forums: Forums
@@ -45,7 +56,9 @@ en:
   
   #app/views/account_mailer/forgot_password.html.erb
   user_name: Your user name is
+  verify_password: Actual Password
   new_password: Your new password is
+  confirm_password: Confirm your password
   can_login: You can log in at
   
   #app/views/account_mailer/signup.html.erb
@@ -66,6 +79,7 @@ en:
   enter_email_address: Enter Email Address
   retrieve_password: Retrieve Password
   remember: remember
+  remember_me: remember me
 
   #app/views/accounts/signup.html.erb
   tos_label: Terms of Service
@@ -79,3 +93,32 @@ en:
   search_results: Search Results
   deactivate: deactivate
   activate: activate
+
+  #app/views/blogs/_blog.html.erb
+  blog_posted_label: Posted 
+  blog_comments_label: Comments 
+  blog_add_comment_label: Add a Comment
+  blog_add_comment_title: Leaving A Comment On
+  comment_label: Comment
+
+  #app/views/blogs/_history.html.erb
+  blog_post_history: Blog Post History 
+
+  #app/views/blogs/_list.html.erb
+  most_recent_blog_post: Most Recent Blog Posts 
+  latest_amount: Latest
+  of: of
+
+  #app/views/blogs/edit.html.erb
+  edit_blog_post_label: Edit Post
+
+  #app/views/blogs/index.html.erb
+  blog_title: "{{nome}}'s Blogs"
+  write_new_post: Write a new post
+  has_no_blog_posts: has no blog posts
+
+  #app/views/blogs/index.rss.builder
+  blog_title_app: "{{nome}}'s Blogs at {{app}}"
+
+  #app/views/blogs/new.html.erb
+  new_post_label: Write a new post

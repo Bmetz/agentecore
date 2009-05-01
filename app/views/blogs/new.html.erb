@@ -1,8 +1,8 @@
 
-  <h1>New Post</h1>
+<h1><%= t(:new_post_label) %></h1>
   <div id="sub_nav">
-    	<%= link_to('&larr; Back to Dashboard', @p) if @p %>  
-      <%= link_to '&larr; Back to Blogs', profile_blogs_path(@p) unless @p.blogs.empty? %>
+    	<%= link_to(t(:back_to_dashboard), @p) if @p %>  
+      <%= link_to t(:back_to_blogs), profile_blogs_path(@p) unless @p.blogs.empty? %>
   </div>  
 <%= render :partial => 'form' %>
 
