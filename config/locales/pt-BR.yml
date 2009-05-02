@@ -166,97 +166,142 @@ pt-BR:
         even: "precisa ser par"
 
   #general options
-  option_edit: Alterar
-  option_delete: Apagar
-  option_add: Adicionar
-  option_save: Salvar
+  option_edit: "Alterar"
+  option_delete: "Apagar"
+  option_add: "Adicionar"
+  option_save: "Salvar"
   youtube_label: "Para incluir um vídeo do youtube use: [youtube: endereço_do_video]"
   back_to_dashboard: "&larr; Voltar para Meu Painel"
   back_to_blogs: "&larr; Voltar para Blogs"
   back_to_profile: "&larr; Voltar para o perfil de {{nome}}"
+  our_wall_to_wall: "Nossa conversa"
 
   #app/views/layouts/application.html.erb
-  home: Início
-  forums: Fóruns
-  dashboard: Meu Painel
-  admin: Admin
-  you_must: Você deve
-  login: Entrar
-  or: ou
-  sign_up: Increver-se
-  to_participate: para participar
-  hi: Olá
-  logout: sair
+  home: "Início"
+  forums: "Fóruns"
+  dashboard: "Meu Painel"
+  admin: "Admin"
+  you_must: "Você deve"
+  login: "Entrar"
+  or: "ou"
+  sign_up: "Increver-se"
+  to_participate: "para participar"
+  hi: "Olá"
+  logout: "sair"
   
   #app/views/account_mailer/follow.html.erb
-  inviter_following: agora está o seguindo no
-  their_profile: Você pode visualizar o perfil dele aqui
+  inviter_following: "agora está o seguindo no"
+  their_profile: "Você pode visualizar o perfil dele aqui"
   
   #app/views/account_mailer/forgot_password.html.erb
-  user_name: Seu nome de usuário é
-  verify_password: Senha atual
-  new_password: Sua nova senha é
-  confirm_password: Confirme a nova senha
-  can_login: Você pode entrar em
+  user_name: "Seu nome de usuário é"
+  verify_password: "Senha atual"
+  new_password: "Sua nova senha é"
+  confirm_password: "Confirme a nova senha"
+  can_login: "Você pode entrar em"
   
   #app/views/account_mailer/signup.html.erb
-  thanks: Obrigado
-  thanks_signup: Obrigado por inscrever-se no
-  password_signup: Sua senha é a mesma que você usou para criar sua conta
+  thanks: "Obrigado"
+  thanks_signup: "Obrigado por inscrever-se no"
+  password_signup: "Sua senha é a mesma que você usou para criar sua conta"
 
   #app/views/accounts/login.html.erb
-  login_your_account: Entre com seus dados
-  need_an_account: Opa, Eu preciso de uma conta!
-  login_now: Entrar agora
-  i: Eu
-  forgot: esqueci
-  my: minha
-  password: senha
-  retrieve_my_password: Receber minha senha
-  email_address_sent: Entre com seu email e nós enviaremos sua senha
-  enter_email_address: Endereço de email
-  retrieve_password: Receber senha
-  remember: lembrei
-  remember_me: Lembrar de mim?
+  login_your_account: "Entre com seus dados"
+  need_an_account: "Opa, Eu preciso de uma conta!"
+  login_now: "Entrar agora"
+  i: "Eu"
+  forgot: "esqueci"
+  my: "minha"
+  password: "senha"
+  retrieve_my_password: "Receber minha senha"
+  email_address_sent: "Entre com seu email e nós enviaremos sua senha"
+  enter_email_address: "Endereço de email"
+  retrieve_password: "Receber senha"
+  remember: "lembrei"
+  remember_me: "Lembrar de mim?"
 
   #app/views/accounts/signup.html.erb
-  tos_label: Termos de uso
-  tos_accept: Aceitar
-  signup_now: Inscreva-se agora
-  signup_welcome_begin: Bem vindo ao
-  signup_welcome_end: nós estamos atualmente em fase 'beta'
-  already_have_account: Ah sim, Eu já tenho uma conta, hummm.
+  tos_label: "Termos de uso"
+  tos_accept: "Aceitar"
+  signup_now: "Inscreva-se agora"
+  signup_welcome_begin: "Bem vindo ao"
+  signup_welcome_end: "nós estamos atualmente em fase 'beta'"
+  already_have_account: "Ah sim, Eu já tenho uma conta, hummm."
 
   #app/views/admin/users/index.html.erb
-  search_results: Resultados da pesquisa
-  deactivate: desativar
-  activate: ativar
+  search_results: "Resultados da pesquisa"
+  deactivate: "desativar"
+  activate: "ativar"
 
   #app/views/blogs/_blog.html.erb
-  blog_posted_label: Postado
-  blog_comments_label: Comentários 
-  blog_add_comment_label: Adicionar um comentário
-  blog_add_comment_title: Deixar um comentário em
-  comment_label: Comentário
+  blog_posted_label: "Postado"
+  blog_comments_label: "Comentários"
+  blog_add_comment_label: "Adicionar um comentário"
+  blog_add_comment_title: "Deixar um comentário em"
+  comment_label: "Comentário"
 
   #app/views/blogs/_history.html.erb
-  blog_post_history: Histórico de postagens
+  blog_post_history: "Histórico de postagens"
 
   #app/views/blogs/_list.html.erb
-  most_recent_blog_post: Postagens mais recentes no Blog 
-  latest_amount: Últimas
-  of: de
+  most_recent_blog_post: "Postagens mais recentes no Blog"
+  latest_amount: "Últimas"
+  of: "de"
 
   #app/views/blogs/edit.html.erb
-  edit_blog_post_label: Editar Post
+  edit_blog_post_label: "Editar Post"
 
   #app/views/blogs/index.html.erb
-  blog_title: Blog de {{nome}}
-  write_new_post: Escrever novo post
-  has_no_blog_posts: nunca usou o Blog
+  blog_title: "Blog de {{nome}}"
+  write_new_post: "Escrever novo post"
+  has_no_blog_posts: "nunca usou o Blog"
 
   #app/views/blogs/index.rss.builder
   blog_title_app: "Blog de {{nome}} em {{app}}"
 
   #app/views/blogs/new.html.erb
-  new_post_label: Novo Post
+  new_post_label: "Novo Post"
+
+  #app/views/comments/_comment.html.erb
+  ago: "atrás"
+  wrote: "escreveu"
+
+  #app/views/comments/_list.html.erb
+  comments_label: "Comentários"
+  leave_a_comment: "Deixe um comentário"
+  leave_a_comment_title: "Deixando um comentário para {{nome}}"
+
+  #app/views/comments/index.html.erb
+  wall_to_wall: "Nossa conversa"
+  add_a_comment_title: "Adicionando um comentário"
+
+  #app/views/comments/index.rss.builder
+  wall_to_wall_with: "Conversa com {{nome}}"
+  wall_to_wall_with_app: "Conversa com {{nome}} em {{app}}"
+
+  #app/views/feed_items/_blog.html.erb
+  user_photo_icon: "Ícone do usuário da foto"
+  blogged: "blogou"
+
+  #app/views/feed_items/_comment.html.erb
+  user_comment_icon: "Ícone do usuário do comentário"
+
+  #app/views/feed_items/_forum_topic.html.erb
+  user_forum_icon: "Ícone do usuário do Fórum"
+  user_forum_posted: "postou"
+  in: "em"
+
+  #app/views/feed_items/_friend.html.erb
+  friends_icon: "Ícone de amigos"
+  is_now_a: "agora é um"
+  network_updated: "A rede de amigos de {{nome}} foi atualizada no {{app}}"
+
+  #app/views/feed_items/_photo.html.erb
+  uploaded_a: "carregou uma"
+  new_photo_uploaded: "nova foto"
+  uploaded_a_photo: "carregou uma foto"
+  no_caption_provided: "Nenhuma legenda disponível"
+
+  #app/views/forum_mailer/new_post.html.erb
+  new_post_added: "Um novo post foi adiconado no tópico '{{topic}}' no fórum '{{forum}}' no"
+  posted_by_on: "Postado por '{{nome}}' em"

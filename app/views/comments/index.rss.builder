@@ -8,9 +8,9 @@ profile ||= @profile
 xml.instruct! :xml, :version=>"1.0"
 xml.rss(:version=>"2.0"){
   xml.channel do
-    xml.title "Wall to wall with #{profile.f}"
+    xml.title t(:wall_to_wall_with, :nome => profile.f)
     xml.link SITE
-    xml.description "Wall to wall with #{profile.f} on #{SITE_NAME}"
+    xml.description t(:wall_to_wall_with, :nome => profile.f, :app => SITE_NAME)
     xml.language 'en-us'
     comments.each do |c|
       xml.item do

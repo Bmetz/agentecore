@@ -17,7 +17,7 @@ class CommentsControllerTest < ActionController::TestCase
       assert !assigns(:comments).empty?
       assert_response :success
       assert_template 'index'
-      assert_tag :tag => 'a', :content => '&larr; Back to Profile', :attributes => {:href => profile_path(p)}
+      assert_tag :tag => 'a', :content => I18n.t(:back_to_profile, :nome => p.f), :attributes => {:href => profile_path(p)}
     end
     
     should "redirect to home_path when not logged" do

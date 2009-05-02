@@ -28,97 +28,142 @@ en:
       pm: 'pm'
 
   #general options
-  option_edit: Edit
-  option_delete: Delete
-  option_add: Add
-  option_save: Save
+  option_edit: "Edit"
+  option_delete: "Delete"
+  option_add: "Add"
+  option_save: "Save"
   youtube_label: "To include a youtube video use: [youtube: address_of_video]"
   back_to_dashboard: "&larr; Back to Dashboard"
   back_to_blogs: "&larr; Back to Blogs"
   back_to_profile: "&larr; Back to {{nome}}'s Profile"
+  our_wall_to_wall: "Our Wall-to-Wall"
 
   # app/views/layouts/application.html.erb
-  home: Home
-  forums: Forums
-  dashboard: Dashboard
-  admin: Admin
-  you_must: You must
-  login: Login
-  or: or
-  sign_up: Sign-up
-  to_participate: to participate
-  hi: Hi
-  logout: logout
+  home: "Home"
+  forums: "Forums"
+  dashboard: "Dashboard"
+  admin: "Admin"
+  you_must: "You must"
+  login: "Login"
+  or: "or"
+  sign_up: "Sign-up"
+  to_participate: "to participate"
+  hi: "Hi"
+  logout: "logout"
 
   #app/views/account_mailer/follow.html.erb
-  inviter_following: is now following you on
-  their_profile: You can go view their profile here
+  inviter_following: "is now following you on"
+  their_profile: "You can go view their profile here"
   
   #app/views/account_mailer/forgot_password.html.erb
-  user_name: Your user name is
-  verify_password: Actual Password
-  new_password: Your new password is
-  confirm_password: Confirm your password
-  can_login: You can log in at
+  user_name: "Your user name is"
+  verify_password: "Actual Password"
+  new_password: "Your new password is"
+  confirm_password: "Confirm your password"
+  can_login: "You can log in at"
   
   #app/views/account_mailer/signup.html.erb
-  thanks: Thanks
-  thanks_signup: Thanks for signing up with
-  password_signup: Your password is the same as what you used to create your user account
+  thanks: "Thanks"
+  thanks_signup: "Thanks for signing up with"
+  password_signup: "Your password is the same as what you used to create your user account"
 
   #app/views/accounts/login.html.erb
-  login_your_account: Log-in your Account
-  need_an_account: Oops, I need an account!
-  login_now: Log-in Now
-  i: I
-  forgot: forgot
-  my: my
-  password: password
-  retrieve_my_password: Retrieve My Password
-  email_address_sent: Enter email address and your password will be sent to you
-  enter_email_address: Enter Email Address
-  retrieve_password: Retrieve Password
-  remember: remember
-  remember_me: remember me
+  login_your_account: "Log-in your Account"
+  need_an_account: "Oops, I need an account!"
+  login_now: "Log-in Now"
+  i: "I"
+  forgot: "forgot"
+  my: "my"
+  password: "password"
+  retrieve_my_password: "Retrieve My Password"
+  email_address_sent: "Enter email address and your password will be sent to you"
+  enter_email_address: "Enter Email Address"
+  retrieve_password: "Retrieve Password"
+  remember: "remember"
+  remember_me: "remember me"
 
   #app/views/accounts/signup.html.erb
-  tos_label: Terms of Service
-  tos_accept: Accept
-  signup_now: Sign-up Now
-  signup_welcome_begin: Welcome to
-  signup_welcome_end: we are currently in private beta
-  already_have_account: Oh yeah, I already have an account, duh.
+  tos_label: "Terms of Service"
+  tos_accept: "Accept"
+  signup_now: "Sign-up Now"
+  signup_welcome_begin: "Welcome to"
+  signup_welcome_end: "we are currently in private beta"
+  already_have_account: "Oh yeah, I already have an account, duh."
 
   #app/views/admin/users/index.html.erb
-  search_results: Search Results
-  deactivate: deactivate
-  activate: activate
+  search_results: "Search Results"
+  deactivate: "deactivate"
+  activate: "activate"
 
   #app/views/blogs/_blog.html.erb
-  blog_posted_label: Posted 
-  blog_comments_label: Comments 
-  blog_add_comment_label: Add a Comment
-  blog_add_comment_title: Leaving A Comment On
-  comment_label: Comment
+  blog_posted_label: "Posted" 
+  blog_comments_label: "Comments" 
+  blog_add_comment_label: "Add a Comment"
+  blog_add_comment_title: "Leaving A Comment On"
+  comment_label: "Comment"
 
   #app/views/blogs/_history.html.erb
-  blog_post_history: Blog Post History 
+  blog_post_history: "Blog Post History"
 
   #app/views/blogs/_list.html.erb
-  most_recent_blog_post: Most Recent Blog Posts 
-  latest_amount: Latest
-  of: of
+  most_recent_blog_post: "Most Recent Blog Posts"
+  latest_amount: "Latest"
+  of: "of"
 
   #app/views/blogs/edit.html.erb
-  edit_blog_post_label: Edit Post
+  edit_blog_post_label: "Edit Post"
 
   #app/views/blogs/index.html.erb
   blog_title: "{{nome}}'s Blogs"
-  write_new_post: Write a new post
-  has_no_blog_posts: has no blog posts
+  write_new_post: "Write a new post"
+  has_no_blog_posts: "has no blog posts"
 
   #app/views/blogs/index.rss.builder
   blog_title_app: "{{nome}}'s Blogs at {{app}}"
 
   #app/views/blogs/new.html.erb
-  new_post_label: Write a new post
+  new_post_label: "Write a new post"
+
+  #app/views/comments/_comment.html.erb
+  ago: "ago"
+  wrote: "wrote"
+
+  #app/views/comments/_list.html.erb
+  comments_label: "Comments"
+  leave_a_comment: "Leave a Comment"
+  leave_a_comment_title: "Leaving A Comment On {{nome}}'s Wall"
+
+  #app/views/comments/index.html.erb
+  wall_to_wall: "Wall-to-Wall"
+  add_a_comment_title: "Adding A Comment"
+
+  #app/views/comments/index.rss.builder
+  wall_to_wall_with: "Wall to wall with {{nome}}"
+  wall_to_wall_with_app: "Wall to wall with {{nome}} on {{app}}"
+
+  #app/views/feed_items/_blog.html.erb
+  user_photo_icon: "User Photo Icon"
+  blogged: "blogged"
+
+  #app/views/feed_items/_comment.html.erb
+  user_comment_icon: "User Comment Icon"
+
+  #app/views/feed_items/_forum_topic.html.erb
+  user_forum_icon: "User Forum Icon"
+  user_forum_posted: "posted"
+  in: "in"
+
+  #app/views/feed_items/_friend.html.erb
+  friends_icon: "Friends Icon"
+  is_now_a: "is now a"
+  network_updated: "{{nome}}'s network in {{app}} has been updated"
+
+  #app/views/feed_items/_photo.html.erb
+  uploaded_a: "uploaded a"
+  new_photo_uploaded: "new photo"
+  uploaded_a_photo: "uploaded a photo"
+  no_caption_provided: "No caption provided"
+
+  #app/views/forum_mailer/new_post.html.erb
+  new_post_added: "A new post was added to the {{topic}} topic on the {{forum}} forum at"
+  posted_by_on: "Posted by {{nome}} on"

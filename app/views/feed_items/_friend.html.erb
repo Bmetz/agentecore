@@ -12,8 +12,8 @@ invited = friendship.invited
 <%- unless inviter == @profile -%>
 	<div class="feed_item friend_feed" id="<%= feed_item.dom_id %>">
 	<div class="left">
-	  <img src="/images/blurp_friends.png" class="png icon_small" title="Friends Icon" alt="Friends Icon" /> 
-      <%= link_to h(inviter.f), inviter %> is now a <%= friendship.description inviter %> of <%= link_to h(invited.f), invited %>. 
+    <img src="/images/blurp_friends.png" class="png icon_small" title="<%=t(:friends_icon)%>" alt="<%=t(:friends_icon)%>" /> 
+    <%= link_to h(inviter.f), inviter %> <%=t(:is_now_a)%> <%= friendship.description inviter %> <%=t(:of)%> <%= link_to h(invited.f), invited %>. 
 	</div>
 	<div class="right">
 	  <%= x_feed_link(feed_item) if me %>
