@@ -1,7 +1,7 @@
-<h1>Editing forum</h1>
+<h1><%=t(:editing_forum)%></h1>
 
 <div id="sub_nav">
-  <%= link_to "&larr; Back to Forums", forums_path %>
+  <%= link_to t(:back_to_forums), forums_path %>
 </div>
 
 <%= error_messages_for :forum %>
@@ -13,7 +13,7 @@
     <%= f.text_area :description %>
 
     <div class="row button">
-      <%= f.submit "Update", :class => 'button' %>
+      <%= f.submit t(:option_update), :class => 'button' %>
     </div>
 
 <% end %>

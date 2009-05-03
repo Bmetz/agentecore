@@ -10,9 +10,9 @@
     <%=sanitize textilize(forum.description) %><br/>
 
     <%- if_admin do %>
-      <%= inline_tb_link('Edit', "#{forum.dom_id}_edit", {:title => "Editing forum #{forum.name}",
+      <%= inline_tb_link(t(:option_edit), "#{forum.dom_id}_edit", {:title => t(:editing_forum_label, :nome => forum.name),
                                                            :id => "#{forum.dom_id}_edit_link"}) %> : 
-      <%= link_to_remote 'Destroy', :url => forum, :confirm => 'Are you sure?', :method => :delete, :class=> "destroy" %>
+      <%= link_to_remote t(:option_destroy), :url => forum, :confirm => t(:are_you_sure), :method => :delete, :class=> "destroy" %>
     <% end %>
   </div>
   

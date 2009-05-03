@@ -1,6 +1,6 @@
-<h1>New forum</h1>
+<h1><%=t(:new_forum_label)%></h1>
 <div id="sub_nav">
-  <%= link_to "&larr; Back to Forums", forums_path %>
+  <%= link_to t(:back_to_forums), forums_path %>
 </div>
 <%= error_messages_for :forum %>
 

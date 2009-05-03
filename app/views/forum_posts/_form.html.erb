@@ -11,7 +11,7 @@ url = post.new_record? ? forum_topic_posts_url(post.topic.forum, post.topic) : f
 
     <%= f.text_area :body, :class=>css_class, :for=>:followup_post_body %>
     <div class="row button">
-      <%= f.submit "Save", :class=> "button" %>
+      <%= f.submit t(:option_save), :class=> "button" %>
     </div>
 
 <% end %>

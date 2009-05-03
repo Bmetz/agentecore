@@ -1,4 +1,4 @@
-<h1>Editing post in <%=h @post.topic.title%></h1>
+<h1><%= t(:editing_post_in_label) %> <%=h @post.topic.title%></h1>
 
 <%= error_messages_for :forum_post %>
 
@@ -7,7 +7,7 @@
 
     <%= f.text_area :body %>
 
-    <%= f.submit "Update", :class=> "button" %>
+    <%= f.submit t(:option_update), :class=> "button" %>
 <% end %>
 
-<%= link_to 'Back', forum_topic_path(@forum, @topic) %>
+<%= link_to t(:back), forum_topic_path(@forum, @topic) %>

@@ -10,8 +10,8 @@ total = profile.forum_posts.count
 
 <% unless posts.empty? %>
 <div class="activity_box">
-	<h2>Most Recent Forum Posts
-	  <span>(latest <%= posts.size %> of <%=total%>)</span>
+  <h2><%= t(:most_recent_forum_post) %>
+    <span>(<%= t(:latest_amount) %> <%= posts.size %> <%= t(:of) %> <%=total%>)</span>
 	</h2>
 	<div class="inside_box">
 	<ul>       

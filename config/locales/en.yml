@@ -27,16 +27,25 @@ en:
       am: 'am'
       pm: 'pm'
 
+  #general texts
+  body: "Body"
+
   #general options
   option_edit: "Edit"
+  option_update: "Update"
   option_delete: "Delete"
+  option_destroy: "Destroy"
   option_add: "Add"
+  option_create: "Create"
   option_save: "Save"
   youtube_label: "To include a youtube video use: [youtube: address_of_video]"
+  back: "Back"
+  back_to: "&larr; Back to {{nome}}"
   back_to_dashboard: "&larr; Back to Dashboard"
   back_to_blogs: "&larr; Back to Blogs"
   back_to_profile: "&larr; Back to {{nome}}'s Profile"
   our_wall_to_wall: "Our Wall-to-Wall"
+  are_you_sure: "Are you sure?"
 
   # app/views/layouts/application.html.erb
   home: "Home"
@@ -167,3 +176,49 @@ en:
   #app/views/forum_mailer/new_post.html.erb
   new_post_added: "A new post was added to the {{topic}} topic on the {{forum}} forum at"
   posted_by_on: "Posted by {{nome}} on"
+  
+  #app/views/forum_posts/_list.html.erb
+  most_recent_forum_post: "Most Recent Forum Posts"
+
+  #app/views/forum_posts/_post.html.erb
+  forum_posted_label: "Posted by"
+  editing_post_in_title: "Editing post in {{titulo}}"
+
+  #app/views/forum_posts/edit.html.erb
+  editing_post_in_label: "Editing post in"
+
+  #app/views/forum_topics/_topic.html.erb
+  editing_topic_title: "Editing topic {{topic}}"
+
+  #app/views/forum_topics/edit.html.erb
+  editing_forum_topic_label: "Editing forum_topic"
+
+  #app/views/forum_topics/new.html.erb
+  new_topic_in_label: "New topic in {{nome}}"
+
+  #app/views/forum_topics/show.html.erb
+  post_a_follow_up_label: "Post a follow up"
+
+  #app/views/forums/_forum.html.erb
+  editing_forum_label: "Editing forum {{nome}}"
+
+  #app/views/forums/edit.html.erb
+  editing_forum: "Editing forum"
+  back_to_forums: "&larr; Back to Forums"
+
+  #app/views/forums/index.html.erb
+  create_a_new_forum_label: "Create a new forum"
+  last_post_label: "Last Post"
+  forum_label: "Forum"
+  no_forums_message: "No forums exist at this time."
+  drag_to_reorder: "Drag forum rows to reorder."
+
+  #app/views/forums/new.html.erb
+  new_forum_label: "New forum"
+
+  #app/views/forums/show.html.erb
+  start_a_new_topic_label: "Start a new topic"
+  start_a_new_topic_title: "Starting a new topic in {{nome}}"
+  topic_label: "Topic"
+  posts_label: "Posts"
+  no_topics_message: "There are no topics in this forum yet."

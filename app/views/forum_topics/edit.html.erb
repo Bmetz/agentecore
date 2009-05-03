@@ -1,7 +1,7 @@
-<h1>Editing forum_topic</h1>
+<h1><%=t(:editing_forum_topic_label)%></h1>
 
 <div id="sub_nav">
-  <%= link_to "&larr; Back to #{@forum.name}", forum_path(@forum) %>
+  <%= link_to t(:back_to, :nome => @forum.name), forum_path(@forum) %>
 </div>
 
 

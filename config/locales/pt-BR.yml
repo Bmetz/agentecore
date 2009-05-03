@@ -113,7 +113,7 @@ pt-BR:
         body: "Conteúdo"
       forum:
         name: "Nome"
-        description: "Descricao"
+        description: "Descrição"
       forum_topic:
         title: "Título"
       message:
@@ -165,16 +165,25 @@ pt-BR:
         odd: "precisa ser ímpar"
         even: "precisa ser par"
 
+  #general texts
+  body: "Conteúdo"
+
   #general options
   option_edit: "Alterar"
+  option_update: "Alterar"
   option_delete: "Apagar"
+  option_destroy: "Apagar"
   option_add: "Adicionar"
+  option_create: "Criar"
   option_save: "Salvar"
   youtube_label: "Para incluir um vídeo do youtube use: [youtube: endereço_do_video]"
+  back: "Voltar"
+  back_to: "&larr; Voltar para {{nome}}"
   back_to_dashboard: "&larr; Voltar para Meu Painel"
   back_to_blogs: "&larr; Voltar para Blogs"
   back_to_profile: "&larr; Voltar para o perfil de {{nome}}"
   our_wall_to_wall: "Nossa conversa"
+  are_you_sure: "Você tem certeza?"
 
   #app/views/layouts/application.html.erb
   home: "Início"
@@ -305,3 +314,49 @@ pt-BR:
   #app/views/forum_mailer/new_post.html.erb
   new_post_added: "Um novo post foi adiconado no tópico '{{topic}}' no fórum '{{forum}}' no"
   posted_by_on: "Postado por '{{nome}}' em"
+
+  #app/views/forum_posts/_list.html.erb
+  most_recent_forum_post: "Postagens mais recentes no Fórum"
+
+  #app/views/forum_posts/_post.html.erb
+  forum_posted_label: "Postado por"
+  editing_post_in_title: "Alterando uma postagem em {{titulo}}"
+
+  #app/views/forum_posts/edit.html.erb
+  editing_post_in_label: "Alterando uma postagem em"
+
+  #app/views/forum_topics/_topic.html.erb
+  editing_topic_title: "Alterando o tópico {{topic}}"
+
+  #app/views/forum_topics/edit.html.erb
+  editing_forum_topic_label: "Alterando tópico do fórum"
+
+  #app/views/forum_topics/new.html.erb
+  new_topic_in_label: "Novo tópico em {{nome}}"
+
+  #app/views/forum_topics/show.html.erb
+  post_a_follow_up_label: "Adicione uma resposta"
+
+  #app/views/forums/_forum.html.erb
+  editing_forum_label: "Alterando o Fórum {{nome}}"
+
+  #app/views/forums/edit.html.erb
+  editing_forum: "Alterando o Fórum"
+  back_to_forums: "&larr; Voltar para Fóruns"
+
+  #app/views/forums/index.html.erb
+  create_a_new_forum_label: "Criar novo Fórum"
+  last_post_label: "Última postagem"
+  forum_label: "Fórum"
+  no_forums_message: "Nenhum fórum criado até agora."
+  drag_to_reorder: "Arraste as linhas do Fórum para reordená-lo."
+
+  #app/views/forums/new.html.erb
+  new_forum_label: "Novo Fórum"
+
+  #app/views/forums/show.html.erb
+  start_a_new_topic_label: "Iniciar Novo Tópico"
+  start_a_new_topic_title: "Iniciando Novo Tópico em {{nome}}"
+  topic_label: "Tópico"
+  posts_label: "Postagens"
+  no_topics_message: "Ainda não existe nenhum tópico neste fórum."

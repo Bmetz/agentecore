@@ -27,7 +27,8 @@ class LessFormBuilder < ActionView::Helpers::FormBuilder
     text = nil
       #text = I18n.t(method.to_s, :default => (I18n.t(options.delete(:label), :default => options.delete(:label)) ||  "#{method.to_s.titleize}: "))
     if options[:for]
-      text = I18n.t(method.to_s, :default => (I18n.t(options.delete(:label), :default => options.delete(:label)) ||  "#{method.to_s.titleize}: "))
+      label = options.delete(:label)
+      text = I18n.t(method.to_s, :default => I18n.t(label, :default => "#{method.to_s.titleize}: "))
       "<label for='#{options.delete(:for)}'>#{text}</label>"
     else
       text = I18n.t(options[:label], :default => nil) unless options[:label].blank?

@@ -10,7 +10,7 @@ url = topic.new_record? ? forum_topics_path(@forum) : forum_topic_path(topic.for
   <%= f.text_field :title %>
 
   <div class="row button">
-    <%= f.submit "Save", :class => 'button' %>
+    <%= f.submit t(:option_save), :class => 'button' %>
   </div>
 
 <% end %>

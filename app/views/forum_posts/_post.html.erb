@@ -3,12 +3,12 @@
   
   <div class="info">
   <%= icon post.owner %><br/>
-  Posted by <%=link_to h(post.owner.f), profile_path(post.owner) %><br/>
-  Posted <%= time_ago_in_words post.created_at %> ago<br/>
+  <%= t(:forum_posted_label) %> <%=link_to h(post.owner.f), profile_path(post.owner) %><br/>
+  <%= time_ago_in_words post.created_at %> <%= t(:ago) %><br/>
   <%- if_admin do %>
-     <%= inline_tb_link('Edit', "#{post.dom_id}_edit", {:title => "Editing post in #{post.topic.title}",
+    <%= inline_tb_link(t(:option_edit), "#{post.dom_id}_edit", {:title => t(:editing_post_in_title, :titulo => post.topic.title),
                                                            :id => "#{post.dom_id}_edit_link"}, {:height => 290}) %> : 
-    <%= link_to_remote 'Destroy', {:url => forum_topic_post_path(@forum, @topic, post), :confirm => 'Are you sure?', :method => :delete}, {:class=> "destroy", :id => "#{post.dom_id}_destroy_link"} %>
+    <%= link_to_remote t(:option_destroy), {:url => forum_topic_post_path(@forum, @topic, post), :confirm => t(:are_you_sure), :method => :delete}, {:class=> "destroy", :id => "#{post.dom_id}_destroy_link"} %>
   <%- end %>
   </div>
   
