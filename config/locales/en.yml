@@ -46,6 +46,7 @@ en:
   back_to_profile: "&larr; Back to {{nome}}'s Profile"
   our_wall_to_wall: "Our Wall-to-Wall"
   are_you_sure: "Are you sure?"
+  see_all_label: "see all"
 
   # app/views/layouts/application.html.erb
   home: "Home"
@@ -222,3 +223,9 @@ en:
   topic_label: "Topic"
   posts_label: "Posts"
   no_topics_message: "There are no topics in this forum yet."
+
+  #app/views/friends/index.html.erb
+  my_network: "{{nome}}'s Network"
+  friends: "Friends"
+  followers: "Followers"
+  followings: "Following"

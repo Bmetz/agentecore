@@ -184,6 +184,7 @@ pt-BR:
   back_to_profile: "&larr; Voltar para o perfil de {{nome}}"
   our_wall_to_wall: "Nossa conversa"
   are_you_sure: "Você tem certeza?"
+  see_all_label: "ver todos"
 
   #app/views/layouts/application.html.erb
   home: "Início"
@@ -360,3 +361,9 @@ pt-BR:
   topic_label: "Tópico"
   posts_label: "Postagens"
   no_topics_message: "Ainda não existe nenhum tópico neste fórum."
+
+  #app/views/friends/index.html.erb
+  my_network: "Rede de {{nome}}"
+  friends: "Meus Amigos"
+  followers: "Meus Seguidores"
+  followings: "Quem Estou Seguindo"
