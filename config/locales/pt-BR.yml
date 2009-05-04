@@ -367,3 +367,27 @@ pt-BR:
   friends: "Meus Amigos"
   followers: "Meus Seguidores"
   followings: "Quem Estou Seguindo"
+
+  #app/views/home/contact.html.erb
+  contact_us_contact: "Deixe sua mensagem/pergunta"
+  your_name_contact: "Seu nome"
+  your_phone_number_contact: "Seu telefone"
+  your_email_contact: "Seu email"
+  your_message_question_contact: "Sua mensagem/pergunta"
+  option_send: "Enviar"
+
+  #app/views/home/index.html.erb
+  latest_comments_label: "Últimos comentários"
+  newest_members_label: "Novos membros"
+  newest_forum_topics_label: "Novos tópicos do fórum"
+  newest_pictures_label: "Novas fotos"
+
+  #app/views/home/latest_comments.rss.builder
+  latest_comments_feed_label: "Resumo com os últimos comentários"
+  all_the_action_for: "Todas as ações no"
+
+  #app/views/home/newest_members.rss.builder
+  newest_member_feed_label: "Resumo de novos memnbros"
+  show_who_has_recently_signed_up_for_label: "Este resumo mostra rapidamente quem entrou recentemente no"
+  new_member_of_label: "Novo membro de"
+  see_more_at_label: "Veja mais em:"

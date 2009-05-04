@@ -229,3 +229,27 @@ en:
   friends: "Friends"
   followers: "Followers"
   followings: "Following"
+
+  #app/views/home/contact.html.erb
+  contact_us_contact: "Contact Us"
+  your_name_contact: "Your name"
+  your_phone_number_contact: "Your phone number"
+  your_email_contact: "Your email"
+  your_message_question_contact: "Your message/question"
+  option_send: "Send"
+
+  #app/views/home/index.html.erb
+  latest_comments_label: "Latest Comments"
+  newest_members_label: "Newest Members"
+  newest_forum_topics_label: "Newest Forum Topics"
+  newest_pictures_label: "Newest Pictures"
+
+  #app/views/home/latest_comments.rss.builder
+  latest_comments_feed_label: "Latest Comments Feed"
+  all_the_action_for: "All the action for"
+
+  #app/views/home/newest_members.rss.builder
+  newest_member_feed_label: "Newest Member Feed"
+  show_who_has_recently_signed_up_for_label: "This feed will quickly show who has recently signed up for"
+  new_member_of_label: "New member of"
+  see_more_at_label: "See more at:"

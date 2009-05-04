@@ -1,28 +1,28 @@
 <div class="box">
 <form action="/contact/" method="post">
-  <h1>Contact Us</h1>
+  <h1><%=t(:contact_us_contact)%></h1>
 
   <div class="row clear">
-    <label for="form_name">Your name:</label>
+    <label for="form_name"><%=t(:your_name_contact)%>:</label>
     <input type="text" id="form_name" name="name" />
   </div>
 
   <div class="row clear">
-    <label for="form_phone">Your phone number:</label>
+    <label for="form_phone"><%=t(:your_phone_number_contact)%>:</label>
     <input type="text" id="form_phone" name="phone" />
   </div>
 
   <div class="row clear">
-    <label for="form_email">Your email:</label>
+    <label for="form_email"><%=t(:your_email_contact)%>:</label>
     <input type="text" id="form_email" name="email" />
   </div>
 
   <div class="row clear">
-    <label for="form_message">Your message/question:</label>
+    <label for="form_message"><%=t(:your_message_question_contact)%>:</label>
     <textarea id="form_message" name="message"></textarea>
   </div>
 
-  <input type="submit" value="Send" class="button"/>
+  <input type="submit" value="<%=t(:option_send)%>" class="button"/>
   
   <div class="clear"></div>
 

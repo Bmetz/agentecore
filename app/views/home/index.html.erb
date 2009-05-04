@@ -1,8 +1,8 @@
 
 
 <% content_for :head do%>
-<%= auto_discovery_link_tag(:rss, "http://#{SITE}/latest_comments.rss", :title=>"Latest Comments") %>
-<%= auto_discovery_link_tag(:rss, "http://#{SITE}/newest_members.rss", :title=>"Newest Members") %>
+<%= auto_discovery_link_tag(:rss, "http://#{SITE}/latest_comments.rss", :title=>t(:latest_comments_label)) %>
+<%= auto_discovery_link_tag(:rss, "http://#{SITE}/newest_members.rss", :title=>t(:newest_members_label)) %>
 <% end%>
 
 <div>
@@ -14,20 +14,20 @@
 
   <div>
     <div id="front_left_column" class="left"> 
-      <h2>Latest Comments</h2>
+      <h2><%=t(:latest_comments_label)%></h2>
       <%= render :partial => 'comments/comment', :collection => recent_comments %>
       
-       <h2>Newest Forum Topics</h2>
+      <h2><%=t(:newest_forum_topics_label)%></h2>
       <%= render :partial => 'forum_topics/new_topic', :collection => recent_forum_posts %>
     </div>
 
     <div id="front_middle_column" class="left"> 
-      <h2>Newest Members</h2>
+      <h2><%=t(:newest_members_label)%></h2>
       <%= render :partial => 'profiles/newest_member', :collection => new_members %>
     </div>
 
     <div class="front_right_column right">
-      <h2>Newest Pictures</h2>
+      <h2><%=t(:newest_pictures_label)%></h2>
       <% newest_pictures.each do |picture|%>
       <div class="image left small_down_image">
         <div>
