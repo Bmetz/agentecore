@@ -253,3 +253,14 @@ en:
   show_who_has_recently_signed_up_for_label: "This feed will quickly show who has recently signed up for"
   new_member_of_label: "New member of"
   see_more_at_label: "See more at:"
+
+  #app/views/messages/_form.html.erb
+  compose_new_message_label: "Compose New Message"
+  inbox_label: "Inbox"
+  sent_label: "Sent"
+  option_send_message: "Send Message"
+
+  #app/views/messages/_list.html.erb
+  message_center_label: "Message Center"
+  inbox_messages_label: "Inbox Messages"
+  new_message_label: "New Message"

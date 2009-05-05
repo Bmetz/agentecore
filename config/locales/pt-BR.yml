@@ -391,3 +391,14 @@ pt-BR:
   show_who_has_recently_signed_up_for_label: "Este resumo mostra rapidamente quem entrou recentemente no"
   new_member_of_label: "Novo membro de"
   see_more_at_label: "Veja mais em:"
+
+  #app/views/messages/_form.html.erb
+  compose_new_message_label: "Escrevendo mensagem"
+  inbox_label: "Caixa de entrada"
+  sent_label: "Enviados"
+  option_send_message: "Enviar mensagem"
+
+  #app/views/messages/_list.html.erb
+  message_center_label: "Centro de Mensagens"
+  inbox_messages_label: "Caixa de entrada"
+  new_message_label: "Nova Mensagem"
