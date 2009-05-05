@@ -2,16 +2,16 @@
 #locals
 list ||= @list
 sub ||= 'inbox'
-label ||= 'Inbox Messages'
+label ||= t(:inbox_messages_label)
 sent = params[:action]=='sent'
 -%>
 
-<h1>Message Center</h1>	
+<h1><%=t(:message_center_label)%></h1>	
 <div id="sub_nav">
-	<%= link_to '&larr; Back to Dashboard', @p %>  
-	<%= link_to "Inbox", messages_path if sent %>
-	<%= link_to "Sent", sent_messages_path, :class=>"selected"  unless sent || @p.sent_messages.empty? %>
-	<%= inline_tb_link 'New Message', "new_direct_message", {:title => "New Message"}, {:height => 380} %>
+	<%= link_to t(:back_to_dashboard), @p %>  
+	<%= link_to t(:inbox_label), messages_path if sent %>
+	<%= link_to t(:sent_label), sent_messages_path, :class=>"selected"  unless sent || @p.sent_messages.empty? %>
+	<%= inline_tb_link t(:new_message_label), "new_direct_message", {:title => t(:new_message_label)}, {:height => 380} %>
 </div>
 
 <div class="activity_box" id="comment">
@@ -19,13 +19,13 @@ sent = params[:action]=='sent'
 </div>
  
 <%- if list.empty? -%>
-<p>No Messages</p>
+<p><%=t(:no_message_label)%></p>
 <%- else -%>
 <table id="messages" border="0" cellspacing="0" cellpadding="0">
  	<tr>
-   		<th><%= sent ? "To" : "From" %></th>
-    	<th><%= "When" %></th>
-    	<th><%= "Subject" %></th>
+   		<th><%= sent ? t(:to) : t(:from) %></th>
+      <th><%= t(:when) %></th>
+    	<th><%= t(:subject) %></th>
 	</tr>
 	<% list.each do |m|
 		mail_user = (@p == m.sender ? m.receiver : m.sender)%>

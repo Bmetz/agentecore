@@ -11,7 +11,7 @@ if mini
 
   <%- unless photos.empty? -%>
   <div class="activity_box" id="photo">
-    <h2>Photos</h2>
+    <h2><%=t(:photos_label)%></h2>
     <div id="photos" class="inside_box">
       <% photos.each do |picture|%>
       <div class="image left">
@@ -27,11 +27,11 @@ if mini
   <%- else -%>
 
   <div class="left" id="column_l">	
-    <h1><%= icon profile %> <%= "#{profile.f}'s Photos" %></h1>
+    <h1><%= icon profile %> <%= t(:photos_profile_label, :nome => profile.f) %></h1>
 
     <div id="sub_nav">
-      <%= link_to '&larr; Back to Dashboard', profile_path(profile) if me %>
-      <%= link_to "&larr; Back to #{h profile.f}'s profile", profile_path(profile) unless me %> 
+      <%= link_to t(:back_to_dashboard), profile_path(profile) if me %>
+      <%= link_to t(:back_to_profile, :nome => h(profile.f)), profile_path(profile) unless me %> 
     </div>	
     <div id="photo_wall">
       <%= render :partial => 'photo', :collection => @photos %>

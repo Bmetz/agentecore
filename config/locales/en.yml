@@ -29,6 +29,10 @@ en:
 
   #general texts
   body: "Body"
+  to: "To"
+  from: "From"
+  when: "When"
+  subject: "Subject"
 
   #general options
   option_edit: "Edit"
@@ -37,6 +41,7 @@ en:
   option_destroy: "Destroy"
   option_add: "Add"
   option_create: "Create"
+  option_reply: "Reply"
   option_save: "Save"
   youtube_label: "To include a youtube video use: [youtube: address_of_video]"
   back: "Back"
@@ -264,3 +269,19 @@ en:
   message_center_label: "Message Center"
   inbox_messages_label: "Inbox Messages"
   new_message_label: "New Message"
+  no_message_label: "No messages"
+
+  #app/views/messages/sent.html.erb
+  sent_messages_label: "Sent Messages"
+
+  #app/views/messages/show.html.erb
+  reading_message_label: "Reading a Message"
+
+  #app/views/photos/_form.html.erb
+  upload_a_photo: "Upload A Photo"
+  photo_label: "Photo"
+  option_upload_photo: "Upload Photo"
+
+  #app/views/photos/_gallery.html.erb
+  photos_label: "Photos"
+  photos_profile_label: "{{nome}}'s Photos"

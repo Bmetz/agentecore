@@ -167,6 +167,10 @@ pt-BR:
 
   #general texts
   body: "Conteúdo"
+  to: "Para"
+  from: "De"
+  when: "Quando"
+  subject: "Assunto"
 
   #general options
   option_edit: "Alterar"
@@ -175,6 +179,7 @@ pt-BR:
   option_destroy: "Apagar"
   option_add: "Adicionar"
   option_create: "Criar"
+  option_reply: "Responder"
   option_save: "Salvar"
   youtube_label: "Para incluir um vídeo do youtube use: [youtube: endereço_do_video]"
   back: "Voltar"
@@ -395,10 +400,26 @@ pt-BR:
   #app/views/messages/_form.html.erb
   compose_new_message_label: "Escrevendo mensagem"
   inbox_label: "Caixa de entrada"
-  sent_label: "Enviados"
+  sent_label: "Enviadas"
   option_send_message: "Enviar mensagem"
 
   #app/views/messages/_list.html.erb
   message_center_label: "Centro de Mensagens"
   inbox_messages_label: "Caixa de entrada"
   new_message_label: "Nova Mensagem"
+  no_message_label: "Nenhuma mensagem encontrada"
+
+  #app/views/messages/sent.html.erb
+  sent_messages_label: "Mensagens Enviadas"
+
+  #app/views/messages/show.html.erb
+  reading_message_label: "Lendo a mensagem"
+
+  #app/views/photos/_form.html.erb
+  upload_a_photo: "Carregar Foto"
+  photo_label: "Foto"
+  option_upload_photo: "Carregar"
+
+  #app/views/photos/_gallery.html.erb
+  photos_label: "Fotos"
+  photos_profile_label: "Fotos de {{nome}}"
