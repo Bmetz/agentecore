@@ -8,35 +8,35 @@ return unless photos_empty && friends_empty && messages_empty && profile_empty &
 %>
 
 <div>
-	<h2 class="getting_started">How to Get Started</h2>
+  <h2 class="getting_started"><%=t(:how_to_get_started)%></h2>
 
 	<div class="half left">
 		<%- if profile_empty -%>  
 		<div class="blurp">
-			<img src="/images/blurp_profile.png" class="left png" title="Profile Icon" alt="Profile Icon" />
-			<strong>Set up your profile</strong>
-			Your public profile is the way your friends will learn about you and keep up-to-date on your life. Upload a profile photo, add an "about me" connect with new and old friends.  
-			<%= link_to 'Setup my profile', edit_profile_path %>
+      <img src="/images/blurp_profile.png" class="left png" title="<%=t(:gstarted_profile_icon)%>" alt="<%=t(:gstarted_profile_icon)%>" />
+      <strong><%=t(:setup_your_profile)%></strong>
+      <%=t(:setup_your_profile_text)%>
+			<%= link_to t(:setup_my_profile_label), edit_profile_path %>
 			
 			<div class="clear"></div>
 		</div>
 		<%- end -%>
 		
 		<div class="blurp">
-			<img src="/images/blurp_forum.png" class="left png" title="Forum Icon" alt="Forum Icon" />
-			<strong>Chat in the forums!</strong>
-			The forums are a great place to meet new friends and have stimulating conversations!
-			<%= link_to 'Go to the forums', forums_path %>
+      <img src="/images/blurp_forum.png" class="left png" title="<%=t(:gstarted_forum_icon)%>" alt="<%=t(:gstarted_forum_icon)%>" />
+      <strong><%=t(:chat_in_forums)%></strong>
+      <%=t(:chat_in_forums_text)%>
+			<%= link_to t(:goto_forums_label), forums_path %>
 			
 			<div class="clear"></div>
 		</div>
 	
 		<%- if photos_empty -%>
 		<div class="blurp">
-			<img src="/images/blurp_photos.png" class="png left" title="Share Icon"  alt="Share Icon" />
-			<strong>Share Photos</strong>
-			<%= SITE_NAME %> allows users to upload images with captions on to their profile.  We love someone to build albums, tagging and commenting on photos for this open source project!
-			<%= link_to 'Start Uploading Pictures', profile_photos_path(@p) %>
+      <img src="/images/blurp_photos.png" class="png left" title="<%=t(:gstarted_share_icon)%>"  alt="<%=t(:gstarted_share_icon)%>" />
+      <strong><%=t(:share_photos)%></strong>
+      <%=t(:share_photos_text, :app => SITE_NAME)%>
+			<%= link_to t(:start_uploading_pictures), profile_photos_path(@p) %>
 			
 			<div class="clear"></div>
 		</div>
@@ -51,19 +51,18 @@ return unless photos_empty && friends_empty && messages_empty && profile_empty &
 	<div class="half right">
 		<%- if friends_empty -%>
 		<div class="blurp">
-			<img src="/images/blurp_friends.png" class="png left" title="Friend Icon" alt="Friend Icon" />
-			<strong>Find Friends</strong>
-			Donec consectetuer egestas libero. Ut placerat ullamcorper libero. Suspendisse potenti. Nullam porttitor aliquet risus. Donec at eros. Maecenas sed lorem ut quam convallis consectetuer. In hac habitasse platea dictumst. Donec enim augue,
+      <img src="/images/blurp_friends.png" class="png left" title="<%=t(:gstarted_friend_icon)%>" alt="<%=t(:gstarted_friend_icon)%>" />
+      <strong><%=t(:find_friends)%></strong>
+      <%=t(:find_friends_text)%>
 			<div class="clear"></div>
 		</div>
 		<%- end -%>
 	
 		<%- if messages_empty -%>
 		<div class="blurp">
-			<img src="/images/blurp_message.png" class="png left" title="Message Icon" alt="Message Icon" />
-			<strong>Message Friends</strong>
-			<%= SITE_NAME %> allows users to upload images with captions on to their profile.  We love someone to build albums, tagging and commenting on photos!
-			
+      <img src="/images/blurp_message.png" class="png left" title="<%=t(:gstarted_message_icon)%>" alt="<%=t(:gstarted_message_icon)%>" />
+      <strong><%=t(:message_friends)%></strong>
+      <%=t(:message_friends_text, :app => SITE_NAME)%>
 			<div class="clear"></div>
 		</div>
 		<%- end -%>

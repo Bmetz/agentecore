@@ -211,7 +211,8 @@ pt-BR:
   #app/views/account_mailer/forgot_password.html.erb
   user_name: "Seu nome de usuário é"
   verify_password: "Senha atual"
-  new_password: "Sua nova senha é"
+  current_password: "Senha Atual"
+  new_password: "Nova Senha"
   confirm_password: "Confirme a nova senha"
   can_login: "Você pode entrar em"
   
@@ -423,3 +424,29 @@ pt-BR:
   #app/views/photos/_gallery.html.erb
   photos_label: "Fotos"
   photos_profile_label: "Fotos de {{nome}}"
+
+  #app/views/profiles/_bio.html.erb
+  last_seen_label: "Última visualização:"
+  about_label: "Quem sou eu"
+  website_label: "Página Web"
+  blog_label: "Blog"
+  flickr_label: "Flickr"
+  AIM_label: "Msn"
+  GTalk_label: "GTalk"
+  iChat_label: "iChat"
+
+  #app/views/profiles/_featured.html.erb
+  featured_member_label: "Membro em Destaque"
+
+  #app/views/profiles/_form.html.erb
+  edit_profile_label: "Editar Perfil"
+  skip_this_step_label: "Pular este passo"
+  thanks_for_signing_up: "Obrigado por inscrever-se!"
+  view_public_profile_label: "Ver Perfil Público"
+  general_info_label: "Informações Gerais"
+  upload_icon_label: "Carregar Ícone"
+  upload_your_icon_label: "Escolha seu ícone"
+  option_delete_icon: "apagar"
+  change_password_label: "Mudar Senha"
+  delete_your_account: "Apagar sua Conta"
+  delete_account_link_label: "Apagar minha contas e todos os meus dados."

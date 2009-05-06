@@ -73,6 +73,7 @@ en:
   #app/views/account_mailer/forgot_password.html.erb
   user_name: "Your user name is"
   verify_password: "Actual Password"
+  current_password: "Current Password"
   new_password: "Your new password is"
   confirm_password: "Confirm your password"
   can_login: "You can log in at"
@@ -285,3 +286,50 @@ en:
   #app/views/photos/_gallery.html.erb
   photos_label: "Photos"
   photos_profile_label: "{{nome}}'s Photos"
+
+  #app/views/profiles/_bio.html.erb
+  last_seen_label: "Last seen"
+  about_label: "About"
+  website_label: "Website"
+  blog_label: "Blog"
+  flickr_label: "Flickr"
+  AIM_label: "AIM"
+  GTalk_label: "GTalk"
+  iChat_label: "iChat"
+
+  #app/views/profiles/_featured.html.erb
+  featured_member_label: "Featured Member"
+
+  #app/views/profiles/_form.html.erb
+  edit_profile_label: "Edit Profile"
+  skip_this_step_label: "Skip This Step"
+  thanks_for_signing_up: "Thanks for signing up!"
+  view_public_profile_label: "View Public Profile"
+  general_info_label: "General info"
+  upload_icon_label: "Upload Icon"
+  upload_your_icon_label: "Upload your Icon"
+  option_delete_icon: "delete icon"
+  change_password_label: "Change Password"
+  delete_your_account: "Delete Your Account"
+  delete_account_link_label: "Delete my user account and all my data."
+
+  #app/views/profiles/_getting_started.html.erb
+  how_to_get_started: "How to Get Started"
+  gstarted_profile_icon: "Profile Icon"
+  setup_your_profile: "Set up your profile"
+  setup_your_profile_text: "Your public profile is the way your friends will learn about you and keep up-to-date on your life. Upload a profile photo, add an 'about me' connect with new and old friends."
+  setup_my_profile_label: "Setup my profile"
+  gstarted_forum_icon: "Forum Icon"
+  chat_in_forums: "Chat in the forums!"
+  chat_in_forums_text: " The forums are a great place to meet new friends and have stimulating conversations!"
+  goto_forums_label: "Go to the forums"
+  gstarted_share_icon: "Share Icon"
+  share_photos: "Share Photos"
+  share_photos_text: "{{app}} allows users to upload images with captions on to their profile.  We love someone to build albums, tagging and commenting on photos for this open source project!"
+  start_uploading_pictures: "Start Uploading Pictures"
+  gstarted_friend_icon: "Friend Icon"
+  find_friends: "Find Friends"
+  find_friends_text: "Donec consectetuer egestas libero. Ut placerat ullamcorper libero. Suspendisse potenti. Nullam porttitor aliquet risus. Donec at eros. Maecenas sed lorem ut quam convallis consectetuer. In hac habitasse platea dictumst. Donec enim augue,"
+  gstarted_message_icon: "Message Icon"
+  message_friends: "Message Friends"
+  message_friends_text: "{{app}} allows users to upload images with captions on to their profile.  We love someone to build albums, tagging and commenting on photos!"
