@@ -333,3 +333,14 @@ en:
   gstarted_message_icon: "Message Icon"
   message_friends: "Message Friends"
   message_friends_text: "{{app}} allows users to upload images with captions on to their profile.  We love someone to build albums, tagging and commenting on photos!"
+  gstarted_comment_icon: "Comment Icon"
+  start_blogging: "Start Blogging!"
+  start_blogging_text: "Your public profile is the way your friends will learn about you and keep up-to-date  on your life. Upload a profile photo, add an 'about me' connect with new and old friends."
+  get_started_blogging: "Get Started Blogging"
+
+  #app/views/profiles/_private.html.erb
+  your_dashboard: "Your Dashboard"
+  manage_photos_label: "Manage Photos"
+  my_network_label: "My Network"
+  the_blog: "The Blog"
+  account_settings: "Account Settings"
