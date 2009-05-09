@@ -486,6 +486,16 @@ pt-BR:
   #app/views/profiles/_public.html.erb
   edit_this_page: "Editar essa página"
   latest_youTube_video: "Últimos vídeos do YouTube"
-  latest_flickr_pictures: "ùltimas imagens do Flickr"
+  latest_flickr_pictures: "Últimas imagens do Flickr"
   direct_message_label: "Enviar Mensagem"
   new_message_to: "Nova mensagem para"
+
+  #app/views/profiles/_recent_activity.html.erb
+  recent_activity_label: "Atividades Recentes"
+
+  #app/views/s/show.html.erb
+  recent_activity_of: "Atividades Recentes de {{nome}}"
+
+  #app/views/profiles/show.rss.builder
+  activity_feed_label: "Resumo de atividades do {{app}}"
+  quickly_feed_label: "Este resumo mostrará rapidamente o que aconteceu no {{app}} sem ter que entrar."
