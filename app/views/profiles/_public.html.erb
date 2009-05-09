@@ -2,7 +2,7 @@
 can_send = !@p.blank?
 %>
 <div id="sub_nav">
-<%= link_to( 'Edit this page', edit_profile_path(@p)) if me %>
+<%= link_to( t(:edit_this_page), edit_profile_path(@p)) if me %>
 </div>
 <div class="left" id="column_l">
   
@@ -17,14 +17,14 @@ can_send = !@p.blank?
   
   <%- if @video -%>
   <div class="activity_box">
-    <h2>Latest YouTube Video</h2>
+    <h2><%=t(:latest_youTube_video)%></h2>
     <%= @video.embed_html %>
   </div>
   <%- end -%>
 
   <% if @flickr %>  
   <div class="activity_box">
-    <h2>Latest Flickr Pictures</h2>
+    <h2><%=t(:latest_flickr_pictures)%></h2>
     <% @flickr.each do |flickr|%>
     <div class="flickr left">
       <div>
@@ -53,11 +53,11 @@ can_send = !@p.blank?
     <%- unless me -%>
 	    <li><%= get_friend_link @p, @profile %></li>
 	    <%- if can_send -%>
-	    <li><%= inline_tb_link 'Direct Message', "new_direct_message", {:title => "New Message To #{h @profile.f}"}, {:height => 380} %></li>
-	    <li><%= inline_tb_link 'Leave a Comment', "new_comment", {:title => "Leaving A Comment On #{h @profile.f}'s Wall"}, {:height => 330, :width => 430} if @p %></li>
+      <li><%= inline_tb_link t(:direct_message_label), "new_direct_message", {:title => "#{t(:new_message_to)} #{h @profile.f}"}, {:height => 380} %></li>
+      <li><%= inline_tb_link t(:leave_a_comment), "new_comment", {:title => t(:leave_a_comment_title, :nome => h(@profile.f))}, {:height => 330, :width => 430} if @p %></li>
 	    <%- end -%>
 	    <%- if can_send && !me && @p.has_wall_with(@profile) -%>
-	    <li><%= link_to 'Our Wall-to-Wall', profile_comments_path(@profile) %></li>
+	    <li><%= link_to t(:our_wall_to_wall), profile_comments_path(@profile) %></li>
 	    <%- end -%>
 	<%- end -%>
   </ul>

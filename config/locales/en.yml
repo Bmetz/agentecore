@@ -344,3 +344,10 @@ en:
   my_network_label: "My Network"
   the_blog: "The Blog"
   account_settings: "Account Settings"
+
+  #app/views/profiles/_public.html.erb
+  edit_this_page: "Edit this page"
+  latest_youTube_video: "Latest YouTube Video"
+  latest_flickr_pictures: "Latest Flickr Pictures"
+  direct_message_label: "Direct Message"
+  new_message_to: "New Message To"
