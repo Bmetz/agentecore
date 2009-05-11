@@ -8,9 +8,9 @@ module FeedItemsHelper
     parent = comment.commentable
     case parent.class.name
     when 'Profile'
-      "#{link_to_if in_html, comment.profile.f, comment.profile} wrote a comment on #{link_to_if in_html, parent.f+'\'s', profile_path(parent)} wall"
+      "#{link_to_if in_html, comment.profile.f, comment.profile} #{t(:wrote_a_comment_on)} #{link_to_if in_html, parent.f, profile_path(parent)}#{t(:s_wall)}"
     when 'Blog'
-      "#{link_to_if in_html, comment.profile.f, comment.profile} commented on #{link_to_if in_html, h(parent.title), profile_blog_path(parent.profile, parent)}"
+      "#{link_to_if in_html, comment.profile.f, comment.profile} #{t(:commented_on)} #{link_to_if in_html, h(parent.title), profile_blog_path(parent.profile, parent)}"
     end
   end
 end

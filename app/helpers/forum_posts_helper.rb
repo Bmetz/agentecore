@@ -4,7 +4,7 @@ module ForumPostsHelper
     html = ''
     posts.each do |post|
       if post.topic and post.topic.forum
-        html += "<li>In #{link_to sanitize(post.topic.title), forum_topic_path(post.topic.forum, post.topic), :href => forum_topic_path(post.topic.forum, post.topic)+'#'+dom_id(post)  } #{time_ago_in_words post.created_at} ago</li>"
+        html += "<li>#{t(:in)} #{link_to sanitize(post.topic.title), forum_topic_path(post.topic.forum, post.topic), :href => forum_topic_path(post.topic.forum, post.topic)+'#'+dom_id(post)  } #{time_ago_in_words post.created_at} #{t(:ago)}</li>"
       end
     end
     html

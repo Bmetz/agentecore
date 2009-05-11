@@ -36,9 +36,9 @@ class Friend < ActiveRecord::Base
   end
   
   def description user, target = nil
-    return 'friend' if status == ACCEPTED
-    return 'follower' if user == inviter
-    'fan'
+    return I18n.t(:friendship_friend) if status == ACCEPTED
+    return I18n.t(:friendship_follower) if user == inviter
+    I18n.t(:friendship_fan)
   end
   
   def after_create

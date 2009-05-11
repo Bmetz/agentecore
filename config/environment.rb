@@ -36,6 +36,6 @@ Rails::Initializer.run do |config|
   config.gem 'gcnovus-avatar', :version=> '0.0.7', :lib => 'avatar'
 end
 
-I18n.default_locale = "pt-BR" 
+I18n.default_locale = "pt-BR" if RAILS_ENV != 'test'
 
 Less::JsRoutes.generate!

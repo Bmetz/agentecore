@@ -17,7 +17,7 @@ module ApplicationHelper
   
   
 
-  def display_standard_flashes(message = 'There were some problems with your submission:')
+  def display_standard_flashes(message = t(:problems_with_submission))
     if flash[:notice]
       flash_to_display, level = flash[:notice], 'notice'
     elsif flash[:warning]
@@ -64,7 +64,7 @@ module ApplicationHelper
     youtube_unique_id = youtube_unique_path.split(/\/|\?v\=/).last.split(/\&/).first
     p youtube_unique_id
     client = YouTubeG::Client.new
-    video = client.video_by YOUTUBE_BASE_URL+youtube_unique_id rescue return "(video not found)"
+    video = client.video_by YOUTUBE_BASE_URL+youtube_unique_id rescue return "(#{t(:video_not_found)})"
     id = Digest::SHA1.hexdigest("--#{Time.now}--#{video.title}--")
     inline_tb_link(video.title, h(id), {}, {:height => 355, :width => 430}) + %(<div id="#{h id}" style="display:none;">#{video.embed_html}</div>)
   end

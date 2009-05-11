@@ -165,6 +165,8 @@ pt-BR:
         odd: "precisa ser ímpar"
         even: "precisa ser par"
 
+  #########################Views##############################
+  
   #general texts
   body: "Conteúdo"
   to: "Para"
@@ -370,9 +372,9 @@ pt-BR:
 
   #app/views/friends/index.html.erb
   my_network: "Rede de {{nome}}"
-  friends: "Meus Amigos"
-  followers: "Meus Seguidores"
-  followings: "Quem Estou Seguindo"
+  friends: "Amigos"
+  followers: "Seguidores"
+  followings: "Seguindo"
 
   #app/views/home/contact.html.erb
   contact_us_contact: "Deixe sua mensagem/pergunta"
@@ -499,3 +501,57 @@ pt-BR:
   #app/views/profiles/show.rss.builder
   activity_feed_label: "Resumo de atividades do {{app}}"
   quickly_feed_label: "Este resumo mostrará rapidamente o que aconteceu no {{app}} sem ter que entrar."
+
+  #app/views/shared/_admin_search.html.erb
+  search_for_friends_label: "Busca por amigos"
+
+  #app/views/shared/_footer.html.erb
+  lovdbyLess_is_a: "LovdbyLess é uma "
+  lovdbyless_definition: "Plataforma de Rede social OpenSource"
+  download_free: "Baixar"
+  demo_lovd: "Demonstração"
+  technical_notes: "Notas técnicas"
+  contact_us: "Entre em Contato"
+  by: "desenvolvida pela"
+
+  #########################Helpers##############################
+
+  #app/helpers/application_helper.rb
+  problems_with_submission: "Problema no envio dos dados:"
+  video_not_found: "vídeo não encontrado"
+
+  #app/helpers/blogs_helper.rb
+  written: "escrito"
+
+  #app/helpers/feed_items_helper.rb
+  wrote_a_comment_on: "escreveu um comentário para"
+  s_wall: ""
+  commented_on: "comentou em"
+
+  #app/helpers/forum_topics_helper.rb
+  ago_by: "atrás por"
+  no_posts: "Nenhum postagem"
+  post_label: "postagem"
+  posts_label: "postagens"
+
+  #app/helpers/forums_helper.rb
+  topic_helper_label: "tópico"
+  topics_helper_label: "tópicos"
+  ago_br_by: "atrás<br/> por"
+
+  #app/helpers/friends_helper.rb
+  signup_to_follow: "Inscreva-se para seguir"
+  stop_being_friends: "Deixar de Ser Amigo"
+  stop_following: "Parar de Seguir"
+  be_friends: "Ser Amigo"
+  start_following: "Começar a Seguir"
+
+  #########################Models##############################
+
+  #app/models/profile.rb
+  nowhere: ""
+
+  #app/models/friend.rb
+  friendship_friend: "amigo"
+  friendship_follower: "seguidor"
+  friendship_fan: "fã"

@@ -27,6 +27,8 @@ en:
       am: 'am'
       pm: 'pm'
 
+  #########################Views##############################
+  
   #general texts
   body: "Body"
   to: "To"
@@ -361,3 +363,57 @@ en:
   #app/views/profiles/show.rss.builder
   activity_feed_label: "{{app}} Activity Feed"
   quickly_feed_label: "This feed will quickly show you what has recently happened on {{app}} without having to login."
+
+  #app/views/shared/_admin_search.html.erb
+  search_for_friends_label: "Search for Friends"
+
+  #app/views/shared/_footer.html.erb
+  lovdbyLess_is_a: "LovdbyLess is a"
+  lovdbyless_definition: "Free Open Source Social Network Platform"
+  download_free: "Download Free"
+  demo_lovd: "Demo Lovd"
+  technical_notes: "Technical Notes"
+  contact_us: "Contact Us"
+  by: "by"
+
+  #########################Helpers##############################
+
+  #app/helpers/application_helper.rb
+  problems_with_submission: "There were some problems with your submission:"
+  video_not_found: "video not found"
+
+  #app/helpers/blogs_helper.rb
+  written: "written"
+
+  #app/helpers/feed_items_helper.rb
+  wrote_a_comment_on: "wrote a comment on"
+  s_wall: "'s wall"
+  commented_on: "commented on"
+
+  #app/helpers/forum_topics_helper.rb
+  ago_by: "ago by"
+  no_posts: "No posts"
+  post_label: "post"
+  posts_label: "posts"
+
+  #app/helpers/forums_helper.rb
+  topic_helper_label: "topic"
+  topics_helper_label: "topics"
+  ago_br_by: "ago<br/> by"
+
+  #app/helpers/friends_helper.rb
+  signup_to_follow: "Sign-up to Follow"
+  stop_being_friends: "Stop Being Friends"
+  stop_following: "Stop Following"
+  be_friends: "Be Friends"
+  start_following: "Start Following"
+
+  #########################Models##############################
+
+  #app/models/profile.rb
+  nowhere: "Nowhere"
+
+  #app/models/friend.rb
+  friendship_friend: "friend"
+  friendship_follower: "follower"
+  friendship_fan: "fan"
