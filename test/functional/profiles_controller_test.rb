@@ -131,14 +131,14 @@ class ProfilesControllerTest < ActionController::TestCase
       p =  profiles(:user2)
       assert_nil p.icon
       get :show, {:id => p.id}, {:user => p.id, :public_view => true}
-      assert_tag :img, :attributes => {:src => /www\.gravatar\.com/}
+      assert_tag :img, :attributes => {:src => /images\/avatar_default_small\.png/}
     end
     
     should 'send the app\'s internal default as the default to gravatar' do
       p =  profiles(:user2)
       assert_nil p.icon
       get :show, {:id => p.id}, {:user => p.id, :public_view => true}
-      assert_tag :img, :attributes => { :src => /http...www.gravatar.com\/avatar\/[0-9a-f]+\?size\=50&amp;default\=http...test\.host\/images\/avatar_default_small\.png/ }
+      assert_tag :img, :attributes => { :src => /images\/avatar_default_small\.png/ }
     end
   end
 
