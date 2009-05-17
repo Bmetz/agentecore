@@ -417,3 +417,11 @@ en:
   friendship_friend: "friend"
   friendship_follower: "follower"
   friendship_fan: "fan"
+
+  ##################################CONTROLLERS################################################
+
+  #app/controllers/admin/users_controller.rb
+  cannot_deactivate_yourself: "You cannot deactivate yourself"
+  marked_as: "User has been marked as"
+  active: "active"
+  inactive: "inactive"  

@@ -13,10 +13,10 @@ class Admin::UsersController < ApplicationController
       wants.js do
         render :update do |page|
           if @p == @profile
-            page << "message('You cannot deactivate yourself!');"
+            page << "message('#{t(:cannot_deactivate_yourself)}!');"
           else
             @profile.toggle! :is_active
-            page << "message('User has been marked as #{@profile.is_active ? 'active' : 'inactive'}');"
+            page << "message('#{t(:marked_as)} #{@profile.is_active ? t(:active) : t(:inactive)}');"
             page.replace_html @profile.dom_id('link'), (@profile.is_active ? 'deactivate' : 'activate')
           end
         end

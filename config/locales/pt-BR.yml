@@ -555,3 +555,11 @@ pt-BR:
   friendship_friend: "amigo"
   friendship_follower: "seguidor"
   friendship_fan: "fã"
+
+  ##################################CONTROLLERS################################################
+
+  #app/controllers/admin/users_controller.rb
+  cannot_deactivate_yourself: "Você não pode se desativar"
+  marked_as: "Usuário marcado como"
+  active: "ativo"
+  inactive: "inativo"  
