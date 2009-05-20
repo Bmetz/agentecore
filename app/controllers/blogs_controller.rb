@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   
   def index
     if @p && @p == @profile && @p.blogs.empty?
-      flash[:notice] = 'You have not create any blog posts.  Try creating one now.'
+      flash[:notice] = t(:any_blog_post)
       redirect_to new_profile_blog_path(@p) and return
     end
     respond_to do |wants|
@@ -23,12 +23,12 @@ class BlogsController < ApplicationController
     respond_to do |wants|
       if @blog.save
         wants.html do
-          flash[:notice] = 'New blog post created.'
+          flash[:notice] = t(:new_blog_post_created)
           redirect_to profile_blogs_path(@p)
         end
       else
         wants.html do
-          flash.now[:error] = 'Failed to create a new blog post.'
+          flash.now[:error] = t(:failed_create_new_post)
           render :action => :new
         end
       end
@@ -47,12 +47,12 @@ class BlogsController < ApplicationController
     respond_to do |wants|
       if @blog.update_attributes(params[:blog])
         wants.html do
-          flash[:notice]='Blog post updated.'
+          flash[:notice] = t(:blog_post_updated)
           redirect_to profile_blogs_path(@p)
         end
       else
         wants.html do
-          flash.now[:error]='Failed to update the blog post.'
+          flash.now[:error] = t(:failed_update_blog_post)
           render :action => :edit
         end
       end
@@ -63,7 +63,7 @@ class BlogsController < ApplicationController
     @blog.destroy
     respond_to do |wants|
       wants.html do
-        flash[:notice]='Blog post deleted.'
+        flash[:notice] = t(:blog_post_deleted)
         redirect_to profile_blogs_path(@p)
       end
     end

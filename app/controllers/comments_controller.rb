@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
       else
         wants.js do
           render :update do |page|
-            page << "message('Oops... I could not create that comment');"
+            page << "message('#{t(:i_could_not_create_comment)}');"
           end
         end
       end

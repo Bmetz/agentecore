@@ -573,6 +573,8 @@ pt-BR:
   thanks_signing_up: "Obrigado por inscrever-se!"
   new_registration: "Novo registro no {{app}}"
   username_label: "usuário"
+  
+  #app/controllers/application.rb
   check_permission_development: "Parece que você não tem permissão para acessar essa página."
   check_permission_production: "Parece que você não tem permissão para acessar esta página."
   field_permission: "Permissões"
@@ -580,3 +582,14 @@ pt-BR:
   field_action: "Ação"
   field_params: "Parâmetros"
   field_session: "Sessão"
+
+  #app/controllers/blogs_controller.rb
+  any_blog_post: "Você não tem nenhuma postagem no Blog. Tente criar uma agora."
+  new_blog_post_created: "Novo Post Criado."
+  failed_create_new_post: "Falha ao criar o novo post."
+  blog_post_updated: "Postagem alterada."
+  failed_update_blog_post: "Falha ao alterar a postagem."
+  blog_post_deleted: "Postagem apagada."
+
+  #app/controllers/comments_controller.rb
+  i_could_not_create_comment: "Oops... Eu não posso criar o comentário"

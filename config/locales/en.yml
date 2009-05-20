@@ -435,6 +435,8 @@ en:
   thanks_signing_up: "Thanks for signing up!"
   new_registration: "new {{app}} registration"
   username_label: "username"
+  
+  #app/controllers/application.rb
   check_permission_development: "It looks like you don't have permission to view that page."
   check_permission_production: "It looks like you don't have permission to view this page."
   field_permission: "Permissions"
@@ -442,3 +444,14 @@ en:
   field_action: "Action"
   field_params: "Params"
   field_session: "Session"
+
+  #app/controllers/blogs_controller.rb
+  any_blog_post: "You have not create any blog posts.  Try creating one now."
+  new_blog_post_created: "New blog post created"
+  failed_create_new_post: "Failed to create a new blog post."
+  blog_post_updated: "Blog post updated."
+  failed_update_blog_post: "Failed to update the blog post."
+  blog_post_deleted: "Blog post deleted."
+
+  #app/controllers/comments_controller.rb
+  i_could_not_create_comment: "Oops... I could not create that comment"

@@ -16,7 +16,7 @@ module ProfilesHelper
 
   def icon_path person = nil, size = :small, img_opts = {}
     default = "/images/avatar_default_" + size.to_s + ".png"
-    debugger;
+    #debugger;
     return default if person.blank?
     return default if person.icon.blank?
     x = url_for_image_column(person, :icon, size) rescue default
