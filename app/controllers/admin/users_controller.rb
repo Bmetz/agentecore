@@ -17,7 +17,7 @@ class Admin::UsersController < ApplicationController
           else
             @profile.toggle! :is_active
             page << "message('#{t(:marked_as)} #{@profile.is_active ? t(:active) : t(:inactive)}');"
-            page.replace_html @profile.dom_id('link'), (@profile.is_active ? 'deactivate' : 'activate')
+            page.replace_html @profile.dom_id('link'), (@profile.is_active ? t(:deactivate) : t(:activate))
           end
         end
       end

@@ -86,17 +86,17 @@ class ApplicationController < ActionController::Base
   
   def failed_check_permissions
     if RAILS_ENV != 'development'
-      flash[:error] = 'It looks like you don\'t have permission to view that page.'
+      flash[:error] = t(:check_permission_development)
       redirect_back_or_default home_path and return true
     else
       render :text=><<-EOS
-      <h1>It looks like you don't have permission to view this page.</h1>
+      <h1>#{t(:check_permission_production)}</h1>
       <div>
-        Permissions: #{@level.inspect}<br />
-        Controller: #{controller_name}<br />
-        Action: #{action_name}<br />
-        Params: #{params.inspect}<br />
-        Session: #{session.instance_variable_get("@data").inspect}<br/>
+        #{t(:field_permission)}: #{@level.inspect}<br />
+        #{t(:field_controller)}: #{controller_name}<br />
+        #{t(:field_action)}: #{action_name}<br />
+        #{t(:field_params)}: #{params.inspect}<br />
+        #{t(:field_session)}: #{session.instance_variable_get("@data").inspect}<br/>
       </div>
       EOS
     end
