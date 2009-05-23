@@ -57,7 +57,7 @@ private
     respond_to do |format|
       if saved
         format.html do 
-          flash[:notice] = 'ForumTopic was successfully saved.'
+          flash[:notice] = t(:forum_topic_was_saved)
           redirect_to(action_name == 'create' ? forum_topic_url(@forum, @topic) : (forum_path(@topic.forum))) 
         end
         

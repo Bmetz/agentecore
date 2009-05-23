@@ -7,7 +7,7 @@ class FeedItemsController < ApplicationController
     
     respond_to do |wants|
       wants.html do
-        flash[:notice] = 'Item successfully removed from the recent activities list.'
+        flash[:notice] = t(:item_removed_from_recent_activities)
         redirect_back_or_default @profile
       end
       wants.js { render(:update){|page| page.visual_effect :puff, "feed_item_#{params[:id]}".to_sym}}
@@ -26,10 +26,10 @@ class FeedItemsController < ApplicationController
     if @p != @profile
       respond_to do |wants|
         wants.html do
-          flash[:notice] = "Sorry, you can't do that."
+          flash[:notice] = t(:sorry_you_cant_do_that)
           redirect_back_or_default @profile
         end
-        wants.js { render(:update){|page| page.alert "Sorry, you can't do that."}}
+        wants.js { render(:update){|page| page.alert t(:sorry_you_cant_do_that)}}
       end
     end
   end

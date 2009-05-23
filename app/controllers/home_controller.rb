@@ -5,8 +5,8 @@ class HomeController < ApplicationController
     return unless request.post?
     body = []
     params.each_pair { |k,v| body << "#{k}: #{v}"  }
-    HomeMailer.deliver_mail(:subject=>"from #{SITE_NAME} contact page", :body=>body.join("\n"))
-    flash[:notice] = "Thank you for your message.  A member of our team will respond to you shortly."
+    HomeMailer.deliver_mail(:subject=> t(:from_contact_page, :app => SITE_NAME), :body=>body.join("\n"))
+    flash[:notice] = t(:thank_you_for_message)
     redirect_to contact_url    
   end
 

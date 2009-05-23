@@ -76,7 +76,7 @@ private
     respond_to do |format|
       if saved
         format.html do 
-          flash[:notice] = 'Forum was successfully saved.'
+          flash[:notice] = t(:forum_was_saved)
           redirect_to(forums_path) 
         end
         

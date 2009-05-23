@@ -593,3 +593,60 @@ pt-BR:
 
   #app/controllers/comments_controller.rb
   i_could_not_create_comment: "Oops... Eu não posso criar o comentário"
+
+  #app/controllers/feed_items_controller.rb
+  item_removed_from_recent_activities: "Ítem removido com sucesso da lista de ativaidades recentes."
+  sorry_you_cant_do_that: "Desculpe, você não pode fazer isso."
+
+  #app/controllers/forum_posts_controller.rb
+  forum_post_was_saved: "Postagem salva com sucesso."
+
+  #app/controllers/forum_topics_controller.rb
+  forum_topic_was_saved: "Tópico salvo com sucesso."
+
+  #app/controllers/forums_controller.rb
+  forum_was_saved: "Fórum salvo com sucesso."
+
+  #app/controllers/friends_controller.r
+  that_didnt_work_try_again: "Ops... Isso não funcionou. Tente novamente!"
+
+  #app/controllers/home_controller.rb
+  from_contact_page: "Contato de {{app}}"
+  thank_you_for_message: "Obrigado pela sua mensagem. Em breve você receberá uma resposta."
+
+  #app/controllers/messages_controller.rb
+  no_mail_in_inbox: "Você não tem nenhuma mensagem. Tente enviar uma mensagem para alguém."
+  message_sent_label: "Mensagem enviada."
+  sorry_you_cant_send_messages: "Desculpe, você não pode enviar mensagens."
+
+  #app/controllers/photos_controller.rb
+  photo_successfully_uploaded: "A Foto foi carregada com sucesso."
+  photo_could_not_be_uploaded: "A Foto não pode ser carregada."
+  photo_was_deleted: "A Foto foi apagada."
+
+  #app/controllers/profiles_controller.rb
+  password_has_been_changed: "Senha alterada."
+  your_user_account_have_been_deleted: "Sua conta e todos os seus dados foram apagados."
+
+  ##################################MODELS################################################
+
+  #app/models/account_mailer.rb
+  signup_subject: "Informações sobre a inscrição no {{app}}"
+  forgot_password_subject: "Nova senha no {{app}}"
+  follow_subject: "Siga notícias do {{app}}"
+
+  #app/models/forum_mailer.rb
+  new_post_on_topic_from_app: "Novo post em {{topic}} no {{app}}"
+
+  #app/models/friend.rb
+  inviter_and_invited_can_not_be_the_same: "Quem convida não pode ser o próprio convidado"
+
+  #app/models/profile.rb
+  invalid_email_format: "não se parece com um endereço de email válido."
+
+  #app/models/user.rb
+  invalid_email_address_label: "Endereço de email inválido."
+  email_already_been_taken: "endereço de email já em uso."
+  password_supplied_incorrect: "A senha informada não confere."
+  new_password_does_not_match: "A nova senha não corresponde à confirmação de senha."
+  new_password_may_not_be_blank: "A nova senha não pode ser vazia."

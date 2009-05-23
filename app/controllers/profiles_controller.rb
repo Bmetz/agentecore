@@ -60,7 +60,7 @@ class ProfilesController < ApplicationController
       end
     when 'password'
       if @user.change_password(params[:verify_password], params[:new_password], params[:confirm_password])
-        flash[:notice] = "Password has been changed."
+        flash[:notice] = t(:password_has_been_changed)
         redirect_to edit_profile_url(@profile)
       else
         flash.now[:error] = @user.errors
@@ -88,7 +88,7 @@ class ProfilesController < ApplicationController
       session[:user] = nil
       wants.js do
         render :update do |page| 
-          page.alert('Your user account, and all data, have been deleted.')
+          page.alert(t(:your_user_account_have_been_deleted))
           page << 'location.href = "/";'
         end
       end

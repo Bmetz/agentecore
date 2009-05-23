@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @to_list = @p.friends
     
     if @p.received_messages.empty? && @p.has_network?
-      flash[:notice] = 'You have no mail in your inbox.  Try sending a message to someone.'
+      flash[:notice] = t(:no_mail_in_inbox)
       @to_list = (@p.followers + @p.friends + @p.followings)
       redirect_to new_profile_message_path(@p) and return
     end
@@ -26,7 +26,7 @@ class MessagesController < ApplicationController
       else
         wants.js do
           render :update do |page|
-            page.alert "Message sent."
+            page.alert t(:message_sent_label)
             page << "jq('#message_subject, #message_body').val('');"
             page << "tb_remove()"
           end
@@ -66,7 +66,7 @@ class MessagesController < ApplicationController
   
   def can_send
     render :update do |page|
-      page.alert "Sorry, you can't send messages. (Cuz you sux.)"
+      page.alert t(:sorry_you_cant_send_messages)
     end unless @p.can_send_messages
   end
 end

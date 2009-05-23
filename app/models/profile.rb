@@ -36,7 +36,7 @@ class Profile < ActiveRecord::Base
   attr_protected :is_active
   attr_immutable :id
   
-  validates_format_of :email, :with => /^([^@\s]{1}+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message=>'does not look like an email address.'
+  validates_format_of :email, :with => /^([^@\s]{1}+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message=> I18n.t(:invalid_email_format)
   validates_length_of :email, :within => 3..100
   validates_uniqueness_of :email, :case_sensitive => false
   

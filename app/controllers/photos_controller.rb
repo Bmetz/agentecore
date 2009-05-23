@@ -23,12 +23,12 @@ class PhotosController < ApplicationController
     respond_to do |wants|
       if @photo.save
         wants.html do
-          flash[:notice] = 'Photo successfully uploaded.'
+          flash[:notice] = t(:photo_successfully_uploaded)
           redirect_to profile_photos_path(@p)
         end
       else
         wants.html do
-          flash.now[:error] = 'Photo could not be uploaded.'
+          flash.now[:error] = t(:photo_could_not_be_uploaded)
           render :action => :index
         end
       end
@@ -40,7 +40,7 @@ class PhotosController < ApplicationController
     Photo[params[:id]].destroy
     respond_to do |wants|
       wants.html do
-        flash[:notice] = 'Photo was deleted.'
+        flash[:notice] = t(:photo_was_deleted)
         redirect_to profile_photos_path(@p)
       end
     end

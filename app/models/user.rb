@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   validates_length_of :password, :within => 4..40, :if => :password_required?
   validates_length_of :login, :within => 3..40
   validates_uniqueness_of :login, :case_sensitive => false
-  validates_format_of :email, :with => /^([^@\s]{1}+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :on => :create, :message=>"Invalid email address."
+  validates_format_of :email, :with => /^([^@\s]{1}+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :on => :create, :message=> I18n.t(:invalid_email_address_label)
 
   before_save :encrypt_password
   validates_less_reverse_captcha
@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
   def before_create
     p = Profile.find_by_email @email
     return true if p.blank?
-    errors.add(:email, 'address has already been taken.') and return false unless p.user.blank?
+    errors.add(:email, I18n.t(:email_already_been_taken)) and return false unless p.user.blank?
   end
 
   
@@ -120,11 +120,11 @@ class User < ActiveRecord::Base
   
   def change_password(current_password, new_password, confirm_password)
     sp = User.encrypt(current_password, self.salt)
-    errors.add( :password, "The password you supplied is not the correct password.") and
+    errors.add( :password, I18n.t(:password_supplied_incorrect)) and
       return false unless sp == self.crypted_password
-    errors.add( :password, "The new password does not match the confirmation password.") and
+    errors.add( :password, I18n.t(:new_password_does_not_match)) and
       return false unless new_password == confirm_password
-    errors.add( :password, "The new password may not be blank.") and
+    errors.add( :password, I18n.t(:new_password_may_not_be_blank)) and
       return false if new_password.blank?
     
     self.password = new_password

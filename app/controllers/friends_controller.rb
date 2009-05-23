@@ -10,7 +10,7 @@ class FriendsController < ApplicationController
         friend = @p.reload.friend_of? @profile
         wants.js {render( :update ){|page| page.replace @p.dom_id(@profile.dom_id + '_friendship_'), get_friend_link( @p, @profile)}}
       else
-        message = "Oops... That didn't work. Try again!"
+        message = t(:that_didnt_work_try_again)
         wants.js {render( :update ){|page| page.alert message}}
       end
     end

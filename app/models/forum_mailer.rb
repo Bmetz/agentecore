@@ -1,7 +1,7 @@
 class ForumMailer < ActionMailer::Base
   
   def new_post(user,post)
-    @subject        = "New post on #{post.topic.title} from #{SITE_NAME}"
+    @subject        = I18n.t(:new_post_on_topic_from_app, :topic => post.topic.title, :app => SITE_NAME)
     @recipients     = user.profile.email
     @body['user']   = user
     @body['post']   = post

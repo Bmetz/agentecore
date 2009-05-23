@@ -32,7 +32,7 @@ class Friend < ActiveRecord::Base
   end
     
   def validate
-    errors.add('inviter', 'inviter and invited can not be the same user') if invited == inviter
+    errors.add('inviter', I18n.t(:inviter_and_invited_can_not_be_the_same)) if invited == inviter
   end
   
   def description user, target = nil

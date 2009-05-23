@@ -52,7 +52,7 @@ private
     respond_to do |format|
       if saved
         format.html do
-          flash[:notice] = 'ForumPost was successfully saved.' 
+          flash[:notice] = t(:forum_post_was_saved) 
           redirect_to(forum_topic_url(@forum, @topic)+"\##{@post.dom_id}") 
         end
         format.xml  { render :xml => @post }

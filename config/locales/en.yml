@@ -455,3 +455,60 @@ en:
 
   #app/controllers/comments_controller.rb
   i_could_not_create_comment: "Oops... I could not create that comment"
+
+  #app/controllers/feed_items_controller.rb
+  item_removed_from_recent_activities: "Item successfully removed from the recent activities list."
+  sorry_you_cant_do_that: "Sorry, you can't do that."
+
+  #app/controllers/forum_posts_controller.rb
+  forum_post_was_saved: "ForumPost was successfully saved."
+
+  #app/controllers/forum_topics_controller.rb
+  forum_topic_was_saved: "ForumTopic was successfully saved."
+
+  #app/controllers/forums_controller.rb
+  forum_was_saved: "Forum was successfully saved."
+
+  #app/controllers/friends_controller.r
+  that_didnt_work_try_again: "Oops... That didn't work. Try again!"
+
+  #app/controllers/home_controller.rb
+  from_contact_page: "from {{app}} contact page"
+  thank_you_for_message: "Thank you for your message.  A member of our team will respond to you shortly."
+
+  #app/controllers/messages_controller.rb
+  no_mail_in_inbox: "You have no mail in your inbox.  Try sending a message to someone."
+  message_sent_label: "Message sent."
+  sorry_you_cant_send_messages: "Sorry, you can't send messages. (Cuz you sux.)"
+
+  #app/controllers/photos_controller.rb
+  photo_successfully_uploaded: "Photo successfully uploaded."
+  photo_could_not_be_uploaded: "Photo could not be uploaded."
+  photo_was_deleted: "Photo was deleted."
+
+  #app/controllers/profiles_controller.rb
+  password_has_been_changed: "Password has been changed."
+  your_user_account_have_been_deleted: "Your user account, and all data, have been deleted."
+
+  ##################################MODELS################################################
+
+  #app/models/account_mailer.rb
+  signup_subject: "Signup info from {{app}}"
+  forgot_password_subject: "Password reset from {{app}}"
+  follow_subject: "Follow notice from {{app}}"
+
+  #app/models/forum_mailer.rb
+  new_post_on_topic_from_app: "New post on {{topic}} from {{app}}"
+
+  #app/models/friend.rb
+  inviter_and_invited_can_not_be_the_same: "inviter and invited can not be the same user"
+
+  #app/models/profile.rb
+  invalid_email_format: "does not look like an email address."
+
+  #app/models/user.rb
+  invalid_email_address_label: "Invalid email address."
+  email_already_been_taken: "address has already been taken."
+  password_supplied_incorrect: "The password you supplied is not the correct password."
+  new_password_does_not_match: "The new password does not match the confirmation password."
+  new_password_may_not_be_blank: "The new password may not be blank."
