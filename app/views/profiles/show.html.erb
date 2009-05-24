@@ -1,8 +1,8 @@
 
 <% content_for :head do  -%>
-<%= auto_discovery_link_tag :rss, formatted_profile_url(@profile, :rss), :title=>t(:recent_activity_of, :nome => @profile.f) %>
-<%= auto_discovery_link_tag :rss, formatted_profile_blogs_url(@profile, :rss), :title=>t(:blog_title, :nome => @profile.f) %>
-<%= auto_discovery_link_tag :rss, formatted_profile_photos_url(@profile, :rss), :title=>t(:photos_profile_label, :nome => @profile.f) %>
+<%= auto_discovery_link_tag :rss, profile_url(@profile, :rss), :title=>t(:recent_activity_of, :nome => @profile.f) %>
+<%= auto_discovery_link_tag :rss, profile_blogs_url(@profile, :rss), :title=>t(:blog_title, :nome => @profile.f) %>
+<%= auto_discovery_link_tag :rss, profile_photos_url(@profile, :rss), :title=>t(:photos_profile_label, :nome => @profile.f) %>
 <% end -%>
 
 <% if params[:public_view].blank? && @p && @p == @profile %>

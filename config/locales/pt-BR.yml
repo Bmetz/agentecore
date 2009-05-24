@@ -530,7 +530,7 @@ pt-BR:
 
   #app/helpers/forum_topics_helper.rb
   ago_by: "atrás por"
-  no_posts: "Nenhum postagem"
+  no_posts: "Nenhuma postagem"
   post_label: "postagem"
   posts_label: "postagens"
 
