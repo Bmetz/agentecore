@@ -33,4 +33,7 @@ ActionController::Routing::Routes.draw do |map|
     home.contact '/contact', :action => 'contact'
   end
 
+  map.resources :wiki_pages do |wiki|
+    wiki.resources :wiki_revisions, :collection => { :preview => :post}
+  end
 end

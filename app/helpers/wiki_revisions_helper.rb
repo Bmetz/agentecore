@@ -1,0 +1,2 @@
+module WikiRevisionsHelper
+end

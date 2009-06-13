@@ -25,6 +25,7 @@
         <div class="right text_r">
           <%= link_to(t(:home), home_path) %>
           <%= link_to(t(:forums), forums_path) %>
+          <%= link_to(t(:wiki), wiki_pages_path) %>
           <%= link_to(t(:dashboard), @p) if @p %>
           <%= link_to(t(:admin), admin_users_path) if @p && @p.user.is_admin %>
         </div>

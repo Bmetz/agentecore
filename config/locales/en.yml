@@ -58,6 +58,7 @@ en:
   # app/views/layouts/application.html.erb
   home: "Home"
   forums: "Forums"
+  wiki: "Wiki"
   dashboard: "Dashboard"
   admin: "Admin"
   you_must: "You must"
