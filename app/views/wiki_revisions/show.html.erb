@@ -1,8 +1,12 @@
+<div id="sub_nav">
+  <%= link_to "&larr; Voltar para o Histórico", wiki_page_wiki_revisions_path(@wiki_page) %>
+</div>
+
 <% @title = "Revisão de #{@wiki_page.title}" %>
 
 <div id="wiki_revision">
   
-  <div class="wiki_revision_content">
+  <div class="wiki_content">
     <%= to_html @wiki_revision.text %>
   </div>
 
@@ -11,9 +15,5 @@
     <strong><%= @wiki_revision.created_at.strftime('%d/%m/%y às %H:%M:%S') %></strong> por
     <%= link_to @wiki_revision.profile.f, profile_path(@wiki_revision.profile) %>
   </p>
-
-  <div id="sub_nav">
-    <%= link_to "&larr; Voltar para o Histórico", wiki_page_wiki_revisions_path(@wiki_page) %>
-  </div>
 
 </div>
