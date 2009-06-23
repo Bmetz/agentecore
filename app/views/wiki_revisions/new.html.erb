@@ -1,0 +1,28 @@
+<% @title = "Editando Página: #{@wiki_revision.page.title} - Wiki" %>
+
+<div id="wiki_page">
+  <h1 class="page_title">Editando a Página: <%=h @wiki_revision.page.title %></h1>
+
+  <% if @preview %>
+    <div id="preview">
+      <span class='wiki_preview_message'>Lembre-se: isso é só uma pré-visualização, ainda não está salvo!</span>
+      <%= to_html @preview %>
+    </div>
+  <% end %>
+
+  <% form_for [@wiki_revision.page, @wiki_revision], :html => {:id => 'wiki_revision_form'} do |p| %>
+
+    <%= textile_editor 'wiki_revision', 'text' -%>
+    <%= p.hidden_field 'page_title' %>
+    <%= textile_editor_initialize -%>
+
+    <div class="clear"></div>
+
+    <div class="row button">
+      <%= submit_tag 'Salvar', :class => 'button' %>
+      <%= link_to_function 'Pre-Visualizar', "$('wiki_revision_form').action = '#{url_for(:action => 'preview')}'; $('wiki_revision_form').submit()" %>
+      <%= link_to 'Cancelar', :back, :class => 'button' %>
+    </div>
+
+  <% end %>
+</div>

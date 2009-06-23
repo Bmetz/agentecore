@@ -1,0 +1,21 @@
+<% content_for :breadcrumbs do %>
+  <%= link_to 'Home', home_path %>
+  >
+  Wiki
+<% end %>
+
+<% @title = "#{@wiki_page.title} - Wiki" %>
+
+<div id="wiki_page">
+  <div class="wiki_content">
+    <%= to_html @wiki_page.text %>
+  </div>
+
+  <div class="wiki_metadata">
+    Última edição no dia
+    <strong><%= @wiki_page.last_revision.created_at.strftime('%d/%m/%y às %H:%M:%S') %></strong> por
+    <%= link_to @wiki_page.last_revision.profile.f, profile_path(@wiki_page.last_revision.profile) %> |
+     <%= link_to "Ver Histórico",  wiki_page_wiki_revisions_path(@wiki_page) %> |
+    <%= link_to "Editar Texto",   new_wiki_page_wiki_revision_path(@wiki_page) %>
+  </div>
+</div>

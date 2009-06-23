@@ -196,6 +196,7 @@ pt-BR:
   #app/views/layouts/application.html.erb
   home: "Início"
   forums: "Fóruns"
+  wiki: "Wiki"
   dashboard: "Meu Painel"
   admin: "Admin"
   you_must: "Você deve"
