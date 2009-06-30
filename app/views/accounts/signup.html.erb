@@ -5,26 +5,24 @@
 <div id="login_form">
   <% less_form_for @user, :url => signup_path, :method => :post do |f| 	%>
     <h1><%= t(:signup_now) %></h1>
-	
+
     <div class="instruction"><%= t(:signup_welcome_begin) + " "+ SITE_NAME + ", " + t(:signup_welcome_end)%></div>
-    
-    <div class="instruction"><%= link_to t(:already_have_account), login_url %></div>
 
     <%= f.text_field :login %>
     <%= f.text_field :email %>
     <%= f.password_field :password %>
     <%= f.password_field :password_confirmation %>
-    <% f.wrap nil, :label=>"" do  %> 
+    <% f.wrap nil, :label=>"" do  %>
       <%= less_reverse_captcha_field(@user)%>
-    <% end %>  
-    
+    <% end %>
+
 	<%= f.front :terms_of_service, :label => terms_of_service_label %>
       <%= check_box_tag :user_terms_of_service, 1, params[:terms_of_service], :class => 'checkbox', :name => 'user[terms_of_service]' %>
     </div>
-    
-    <%= f.wrap(:remember_me, :for => :remember_me){ check_box_tag :remember_me, 1, params[:remember_me], :class=>"checkbox"} %>
+
 	  <div class="button">
 	  <%= f.submit t(:signup_now), :class => 'button' %>
 	  </div>
 	<% end %>
 </div>
+

@@ -69,7 +69,7 @@ pt-BR:
       over_x_years:
         one: 'mais de 1 ano'
         other: 'mais de {{count}} anos'
-                                                                                                                                                                                                                                         
+
   # numeros
   number:
     format:
@@ -126,14 +126,14 @@ pt-BR:
         last_name: "Sobrenome"
         website: "Página Web"
         about_me: "Quem sou eu"
-        aim_name: "Msn"   
-        gtalk_name: "GTalk"   
-        ichat_name: "iChat"   
-        icon: "Ícone"   
-        location: "Cidade/UF"   
-        youtube_username: "Usuário no Youtube"   
-        flickr_username: "Usuário no Flickr"   
-        last_activity_at: "ùltima atividade em"      
+        aim_name: "Msn"
+        gtalk_name: "GTalk"
+        ichat_name: "iChat"
+        icon: "Ícone"
+        location: "Cidade/UF"
+        youtube_username: "Usuário no Youtube"
+        flickr_username: "Usuário no Flickr"
+        last_activity_at: "ùltima atividade em"
       user:
         login: "Usuario"
         password: "Senha"
@@ -166,7 +166,7 @@ pt-BR:
         even: "precisa ser par"
 
   #########################Views##############################
-  
+
   #general texts
   body: "Conteúdo"
   to: "Para"
@@ -206,11 +206,11 @@ pt-BR:
   to_participate: "para participar"
   hi: "Olá"
   logout: "sair"
-  
+
   #app/views/account_mailer/follow.html.erb
   inviter_following: "agora está o seguindo no"
   their_profile: "Você pode visualizar o perfil dele aqui"
-  
+
   #app/views/account_mailer/forgot_password.html.erb
   user_name: "Seu nome de usuário é"
   verify_password: "Senha atual"
@@ -218,7 +218,7 @@ pt-BR:
   new_password: "Nova Senha"
   confirm_password: "Confirme a nova senha"
   can_login: "Você pode entrar em"
-  
+
   #app/views/account_mailer/signup.html.erb
   thanks: "Obrigado"
   thanks_signup: "Obrigado por inscrever-se no"
@@ -242,7 +242,7 @@ pt-BR:
   #app/views/accounts/signup.html.erb
   tos_label: "Termos de uso"
   tos_accept: "Aceitar"
-  signup_now: "Inscreva-se agora"
+  signup_now: "Novo Usuário"
   signup_welcome_begin: "Bem vindo ao"
   signup_welcome_end: "nós estamos atualmente em fase 'beta'"
   already_have_account: "Ah sim, Eu já tenho uma conta, hummm."
@@ -563,7 +563,7 @@ pt-BR:
   cannot_deactivate_yourself: "Você não pode se desativar"
   marked_as: "Usuário marcado como"
   active: "ativo"
-  inactive: "inativo"  
+  inactive: "inativo"
 
   #app/controllers/accounts_controller.rb
   could_not_find_email: "Endereço de email não encontrado. Tente novamente."
@@ -574,7 +574,7 @@ pt-BR:
   thanks_signing_up: "Obrigado por inscrever-se!"
   new_registration: "Novo registro no {{app}}"
   username_label: "usuário"
-  
+
   #app/controllers/application.rb
   check_permission_development: "Parece que você não tem permissão para acessar essa página."
   check_permission_production: "Parece que você não tem permissão para acessar esta página."
@@ -651,3 +651,4 @@ pt-BR:
   password_supplied_incorrect: "A senha informada não confere."
   new_password_does_not_match: "A nova senha não corresponde à confirmação de senha."
   new_password_may_not_be_blank: "A nova senha não pode ser vazia."
+

@@ -32,7 +32,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content">  
+      <div id="content">
         <div id="just_for_hearts">
 
 
@@ -42,13 +42,13 @@
             </div>
             <div id="welcome" class="right">
               <% if @u.nil? or @u.new_record? %>
-                <strong><%=t(:you_must)%> <%= link_to t(:login), login_path %> <%=t(:or)%> <%= link_to t(:sign_up), signup_path %> <%=t(:to_participate)%></strong>
-              <% else %>	
-                <%= icon(@p, :small) unless @p.blank? %> <strong><%=t(:hi)%>, <%= @u.f %></strong> (<%= link_to t(:logout), logout_path %>) 
+                <strong><%=t(:you_must)%> <%= link_to t(:login), login_path %> <%=t(:to_participate)%></strong>
+              <% else %>
+                <%= icon(@p, :small) unless @p.blank? %> <strong><%=t(:hi)%>, <%= @u.f %></strong> (<%= link_to t(:logout), logout_path %>)
               <% end %>
-            </div>  
-            <div class="clear"></div>   
-          </div>   
+            </div>
+            <div class="clear"></div>
+          </div>
 
 
           <div id="main">
@@ -57,9 +57,9 @@
             <div class="clear"></div>
           </div>
 
-          <div class="clear"></div>	    
-        </div>	
-      </div>    
+          <div class="clear"></div>
+        </div>
+      </div>
 
     </div>
 
@@ -69,3 +69,4 @@
 
   </body>
   </html>
+
