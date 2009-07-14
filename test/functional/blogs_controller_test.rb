@@ -6,9 +6,9 @@ class BlogsControllerTest < ActionController::TestCase
     :title => 'Valid Blog Post',
     :body => 'This is a valid blog post.'
   }
-  
+
   OWNER_LINKS = ['(Edit)', '(Delete)', 'Write a new post', "&larr; Back to Dashboard"]
-  
+
   def setup
     @controller = BlogsController.new
     @request    = ActionController::TestRequest.new
@@ -21,40 +21,40 @@ class BlogsControllerTest < ActionController::TestCase
       OWNER_LINKS.each {|l| assert_tag(:tag => 'a', :content => l)}
       assert_tag :tag => 'a', :content => 'Add a Comment'
     end
-    
+
     should "render action when logged in as :user" do
       do_show_assertions users(:user2).id
       OWNER_LINKS.each {|l| assert_no_tag(:tag => 'a', :content => l)}
       assert_tag :tag => 'a', :content => 'Add a Comment'
     end
-    
+
     should "render action when not logged in" do
       do_show_assertions
       OWNER_LINKS.each {|l| assert_no_tag(:tag => 'a', :content => l)}
       assert_no_tag :tag => 'a', :content => 'Add a Comment'
     end
   end
-  
+
   context 'on GET to :index' do
     should "render action when logged in as :owner" do
       do_index_assertions users(:user).id, {:page => 7}
       OWNER_LINKS[2..-1].each {|l| assert_tag(:tag => 'a', :content => l)}
       assert_tag :tag => 'a', :content => 'Add a Comment'
     end
-    
+
     should "render action when logged in as :user" do
       do_index_assertions users(:user2).id, {:page => 14}
       OWNER_LINKS[2..-1].each {|l| assert_no_tag(:tag => 'a', :content => l)}
       assert_tag :tag => 'a', :content => 'Add a Comment'
     end
-    
+
     should "render action when not logged in" do
       do_index_assertions
       OWNER_LINKS[2..-1].each {|l| assert_no_tag(:tag => 'a', :content => l)}
       assert_no_tag :tag => 'a', :content => 'Add a Comment'
     end
   end
-  
+
   context 'on GET to :new' do
     should "render action when logged in as :owner" do
       p = profiles(:user)
@@ -68,7 +68,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_tag :content => '&larr; Back to Dashboard', :attributes => {:href=>profile_path(p)}
       assert_tag :content => '&larr; Back to Blogs', :attributes => {:href=>profile_blogs_path(p)}
     end
-    
+
     should "redirect to home_path when logged in as :user" do
       p = profiles(:user)
       get :new, {:profile_id => p.id}, {:user => users(:user2).id}
@@ -77,7 +77,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_response :redirect
       assert_redirected_to home_path
     end
-    
+
     should "redirect to login_path when not logged in" do
       p = profiles(:user)
       get :new, {:profile_id => p.id}
@@ -86,7 +86,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_redirected_to login_path
     end
   end
-  
+
   context 'on GET to :edit' do
     should "render action when logged in as :owner" do
       p = profiles(:user)
@@ -101,7 +101,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_tag :content => '&larr; Back to Dashboard', :attributes => {:href=>profile_path(p)}
       assert_tag :content => '&larr; Back to Blogs', :attributes => {:href=>profile_blogs_path(p)}
     end
-    
+
     should "redirect to home_path when logged in as :user" do
       p = profiles(:user)
       b = p.blogs.first
@@ -110,7 +110,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_response :redirect
       assert_redirected_to home_path
     end
-    
+
     should "redirect to login_path when not logged in" do
       p = profiles(:user)
       b = p.blogs.first
@@ -119,7 +119,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_redirected_to login_path
     end
   end
-  
+
   context 'on POST to :create' do
     should "redirect to profil_blogs_path with new blog when logged in as :owner" do
       p = profiles(:user)
@@ -130,7 +130,7 @@ class BlogsControllerTest < ActionController::TestCase
         assert_redirected_to profile_blogs_path(p)
       end
     end
-    
+
     should "render :new with error when logged in as :owner" do
       p = profiles(:user)
       assert_no_difference "Blog.count" do
@@ -141,7 +141,7 @@ class BlogsControllerTest < ActionController::TestCase
         assert !assigns(:blog).errors.empty?
       end
     end
-    
+
     should "redirect to home_path when logged in as :user" do
       p = profiles(:user)
       post :create, {:profile_id => p.id, :blog => VALID_BLOG_POST}, {:user => users(:user2).id}
@@ -149,7 +149,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_response :redirect
       assert_redirected_to home_path
     end
-    
+
     should "redirect to login_path when not logged in" do
       p = profiles(:user)
       post :create, {:profile_id => p.id, :blog => VALID_BLOG_POST}
@@ -157,7 +157,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_redirected_to login_path
     end
   end
-  
+
   context 'on PUT to :update' do
     should "redirect to profil_blogs_path with blog when logged in as :owner" do
       p = profiles(:user)
@@ -167,7 +167,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_response :redirect
       assert_redirected_to profile_blogs_path(p)
     end
-    
+
     should "render :edit with error when logged in as :owner" do
       p = profiles(:user)
       b = p.blogs.first
@@ -176,7 +176,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_template 'edit'
       assert !assigns(:blog).errors.empty?
     end
-    
+
     should "redirect to home_path when logged in as :user" do
       p = profiles(:user)
       b = p.blogs.first
@@ -185,7 +185,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_response :redirect
       assert_redirected_to home_path
     end
-    
+
     should "redirect to login_path when not logged in" do
       p = profiles(:user)
       b = p.blogs.first
@@ -194,7 +194,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_redirected_to login_path
     end
   end
-  
+
   context 'on DELETE to :destroy' do
     should "redirect to profil_blogs_path after deleting when logged in as :owner" do
       assert_difference "Blog.count", -1 do
@@ -206,7 +206,7 @@ class BlogsControllerTest < ActionController::TestCase
         assert_redirected_to profile_blogs_path(p)
       end
     end
-    
+
     should "redirect to home_path when logged in as :user" do
       p = profiles(:user)
       b = p.blogs.first
@@ -215,7 +215,7 @@ class BlogsControllerTest < ActionController::TestCase
       assert_response :redirect
       assert_redirected_to home_path
     end
-    
+
     should "redirect to login_path when not logged in" do
       p = profiles(:user)
       b = p.blogs.first
@@ -224,10 +224,10 @@ class BlogsControllerTest < ActionController::TestCase
       assert_redirected_to login_path
     end
   end
-  
-  
+
+
   protected
-  
+
   def do_show_assertions session_user_id = nil
     p = profiles(:user)
     b = profiles(:user).blogs.last
@@ -241,7 +241,7 @@ class BlogsControllerTest < ActionController::TestCase
     assert_tag :tag => 'ul', :attributes => {:id => 'post_history'}, :children => {:count => 1, :only => {:tag => 'li'}}
     assert_tag :attributes => {:class=>'pagination'}
   end
-  
+
   def do_index_assertions session_user_id = nil, opts = {}
     p = profiles(:user)
     get :index, {:profile_id => p.id}.merge(opts), {:user => session_user_id}
@@ -252,7 +252,7 @@ class BlogsControllerTest < ActionController::TestCase
     assert_template 'index'
     assert_response :success
     assert_tag :tag => 'ul', :attributes => {:id => 'post_history'}, :children => {:count => 1, :only => {:tag => 'li'}}
-    
+
     # tests object pagination for multiple pages in the view
     assert_tag :attributes => {:class=>'pagination'}
     if opts[:page]
@@ -260,3 +260,4 @@ class BlogsControllerTest < ActionController::TestCase
     end
   end
 end
+

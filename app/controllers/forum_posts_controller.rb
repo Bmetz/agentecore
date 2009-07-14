@@ -1,8 +1,8 @@
 class ForumPostsController < ApplicationController
 
   before_filter :setup
-  skip_filter :login_required, :only => [:show, :index]  
-  
+  #skip_filter :login_required, :only => [:show, :index]
+
   def index
     redirect_to forum_path(@forum)
   end
@@ -47,13 +47,13 @@ private
     @topic = @forum.topics.find(params[:topic_id])
     @post = params[:id] ? @topic.posts.find(params[:id]) : ForumPost.new
   end
-  
+
   def post_response saved
     respond_to do |format|
       if saved
         format.html do
-          flash[:notice] = t(:forum_post_was_saved) 
-          redirect_to(forum_topic_url(@forum, @topic)+"\##{@post.dom_id}") 
+          flash[:notice] = t(:forum_post_was_saved)
+          redirect_to(forum_topic_url(@forum, @topic)+"\##{@post.dom_id}")
         end
         format.xml  { render :xml => @post }
         format.js do
@@ -62,7 +62,7 @@ private
               page.insert_html :top, "posts_list", :partial => 'forum_posts/post', :object => @post
               page << "jq('.followup_post_body').val('');"
               page.replace_html "topic_details", topic_details(@topic)
-            else  
+            else
               page.replace_html @post.dom_id, :partial => 'forum_posts/post', :object => @post
               page << "jq('#TB_ajaxContent').html(''); tb_remove();"
             end
@@ -87,5 +87,6 @@ private
     super :admin, :all => true
     super :user, :only => [:new, :create]
   end
-  
+
 end
+

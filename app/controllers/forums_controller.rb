@@ -1,5 +1,5 @@
 class ForumsController < ApplicationController
-  skip_filter :login_required, :only => [:show, :index]
+  #skip_filter :login_required, :only => [:show, :index]
   before_filter :setup
 
   def index
@@ -41,7 +41,7 @@ class ForumsController < ApplicationController
       end
     end
   end
-  
+
   def update_positions
     params[:forums_list].each_index do |i|
       forum = Forum.find(params[:forums_list][i])
@@ -50,9 +50,9 @@ class ForumsController < ApplicationController
     end
     render :nothing => true
   end
-  
+
 private
-  
+
   def setup
     if params[:id]
       @forum = Forum.find(params[:id], :include => :topics, :order => "forum_topics.created_at DESC")
@@ -62,26 +62,26 @@ private
       @forum = Forum.new
     end
   end
-  
+
   def get_response options = {}
     options[:xml_object] ||= @forum
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => options[:xml_object] }
     end
   end
-  
+
   def post_response saved
     respond_to do |format|
       if saved
-        format.html do 
+        format.html do
           flash[:notice] = t(:forum_was_saved)
-          redirect_to(forums_path) 
+          redirect_to(forums_path)
         end
-        
+
         format.xml  { render :xml => @forum, :location => @forum }
-        
+
         format.js do
           render :update do |page|
             if @controller.action_name == 'create'
@@ -97,12 +97,12 @@ private
             page.visual_effect :highlight, @forum.dom_id
           end
         end
-        
+
       else
         format.html { render :action => action_name == 'create' ? "new" : "edit" }
-        
+
         format.xml  { render :xml => @forum.errors, :status => :unprocessable_entity }
-        
+
         format.js do
           render :update do |page|
             page.alert @forum.errors.to_s
@@ -111,10 +111,11 @@ private
       end
     end
   end
-  
+
   def allow_to
     super :admin, :all => true
     super :all, :only => [:index, :show]
   end
-  
+
 end
+

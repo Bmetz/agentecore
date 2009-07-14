@@ -1,7 +1,7 @@
 class WikiPagesController < ApplicationController
 #  belongs_to_section :wiki
 
-  skip_filter :login_required, :only => [:show, :index]  
+  #skip_filter :login_required, :only => [:show, :index]
 
   def index
     @wiki_page = WikiPage.home
@@ -52,7 +52,7 @@ class WikiPagesController < ApplicationController
 private
 
   def setup
-    @forum = Forum.find(params[:forum_id]) 
+    @forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.find(params[:topic_id])
     @post = params[:id] ? @topic.posts.find(params[:id]) : ForumPost.new
   end
@@ -65,3 +65,4 @@ private
   end
 
 end
+

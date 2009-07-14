@@ -1,14 +1,14 @@
 class ForumTopicsController < ApplicationController
-  
+
   helper ForumsHelper
-  
-  skip_filter :login_required, :only => [:show, :index]
+
+  #skip_filter :login_required, :only => [:show, :index]
   before_filter :setup
-  
+
   def index
     redirect_to forum_path(@forum)
   end
-  
+
   def show
     @posts = @topic.posts.paginate(:all, :page => params[:page], :order => 'created_at DESC', :per_page => @per_page)
     get_response
@@ -45,24 +45,24 @@ class ForumTopicsController < ApplicationController
       end
     end
   end
-  
+
 private
 
   def setup
     @forum = Forum.find(params[:forum_id])
     @topic = params[:id] ? @forum.topics.find(params[:id]) : @forum.topics.build
   end
-  
+
   def post_response saved
     respond_to do |format|
       if saved
-        format.html do 
+        format.html do
           flash[:notice] = t(:forum_topic_was_saved)
-          redirect_to(action_name == 'create' ? forum_topic_url(@forum, @topic) : (forum_path(@topic.forum))) 
+          redirect_to(action_name == 'create' ? forum_topic_url(@forum, @topic) : (forum_path(@topic.forum)))
         end
-        
+
         format.xml  { render :xml => @topic}
-        
+
         format.js do
           render :update do |page|
             if @controller.action_name == 'create'
@@ -79,22 +79,22 @@ private
             page.visual_effect :highlight, @topic.dom_id
           end
         end
-        
+
       else
         format.html { render :action => (action_name == 'create' ? "new" : "edit") }
-        
+
         format.xml  { render :xml => @topic.errors, :status => :unprocessable_entity }
-        
+
         format.js do
           render :update do |page|
             page.alert @topic.errors.to_s
           end
         end
-        
+
       end
     end
   end
-  
+
   def get_response
     respond_to do |format|
       format.html # show.html.erb
@@ -109,3 +109,4 @@ private
   end
 
 end
+
