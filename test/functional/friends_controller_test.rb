@@ -5,8 +5,8 @@ class FriendsControllerTest < ActionController::TestCase
   should 'render index page not logged in' do
     assert_nothing_raised do
       get :index, :profile_id => profiles(:user).id
-      assert_response :success
-      assert_template 'index'
+      assert_response 302
+      assert_redirected_to 'login'
     end
   end
 
@@ -88,3 +88,4 @@ class FriendsControllerTest < ActionController::TestCase
     assert profiles(:user).followed_by?(profiles(:user2))
   end
 end
+

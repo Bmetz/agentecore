@@ -2,27 +2,33 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 class HomeControllerTest < ActionController::TestCase
 
+  should 'redirect to login as guest' do
+    assert_nothing_raised do
+      get :contact
+      assert_response 302
+      assert_redirected_to 'login'
+    end
+  end
+
   should 'render contact form' do
     assert_nothing_raised do
-      get :contact      
+      get :contact, {}, {:user => profiles(:user).id}
       assert_response :success
       assert_template 'contact'
     end
   end
 
-
   should 'render home page' do
     assert_nothing_raised do
-      get :index
+      get :index, {}, {:user => profiles(:user).id}
       assert_response :success
       assert_template 'index'
     end
   end
 
-
   should 'render terms page' do
     assert_nothing_raised do
-      get :terms
+      get :terms, {}, {:user => profiles(:user).id}
 
       assert_response :success
       assert_template 'terms'
@@ -32,7 +38,7 @@ class HomeControllerTest < ActionController::TestCase
   context 'on POST to :contact' do
     should 'render contact form' do
       assert_nothing_raised do
-        post :contact, {:name => 'Bob Smith', :phone => '123.123.1234', :email => 'bs@example.com', :message => 'wow'}
+        post :contact, {:name => 'Bob Smith', :phone => '123.123.1234', :email => 'bs@example.com', :message => 'wow'}, {:user => profiles(:user).id}
 
         assert_response :redirect
         assert_redirected_to contact_url
@@ -41,3 +47,4 @@ class HomeControllerTest < ActionController::TestCase
     end
   end
 end
+

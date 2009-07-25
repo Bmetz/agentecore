@@ -12,19 +12,11 @@ class ForumsControllerTest < ActionController::TestCase
   ##
   # :index
 
-  should "get the index as guest" do
+  should "redirect to login on index as guest" do
     assert_nothing_raised do
       get :index, {}
-      assert_response 200
-      assert_template 'index'
-
-      assert_no_tag :tag => 'a', :content => "Create a new forum"
-      forums.each do |forum|
-        assert_no_tag :tag => "a", :attributes => {:href => forum_url(forum), :class => "destroy"},
-        :parent => {:tag => "div", :attributes => {:id => dom_id(forum)}}
-        assert_no_tag :tag => "a", :attributes => {:href => edit_forum_url(forum)},
-        :parent => {:tag => "div", :attributes => {:id => dom_id(forum)}}
-      end
+      assert_response 302
+      assert_redirected_to 'login'
     end
   end
 
@@ -63,18 +55,11 @@ class ForumsControllerTest < ActionController::TestCase
   ##
   # :show
 
-  should "get show as guest" do
+  should "redirect to login on show as guest" do
     assert_nothing_raised do
       get :show, {:id => forums(:one)}
-      assert_response 200
-      assert_template 'show'
-
-      assert_no_tag :tag => 'a', :attributes => {:id => "new_topic_link"}
-
-      forums(:one).topics.each do |topic|
-        assert_no_tag :tag => "a", :content => "Destroy"
-        assert_no_tag :tag => "a", :content => "Edit"
-      end
+      assert_response 302
+      assert_redirected_to 'login'
     end
   end
 
@@ -85,7 +70,7 @@ class ForumsControllerTest < ActionController::TestCase
       assert_template 'show'
 
       assert_tag :tag => 'a', :attributes => {:id => "new_topic_link"}
-      assert_no_tag :tag => "a", :attributes => {:href => signup_path}, 
+      assert_no_tag :tag => "a", :attributes => {:href => signup_path},
       :ancestor => {:tag => "div", :attributes => {:class => "forum"}}
       assert_no_tag :tag => "a", :attributes => {:href => login_path},
       :ancestor => {:tag => "div", :attributes => {:class => "forum"}}
@@ -102,7 +87,7 @@ class ForumsControllerTest < ActionController::TestCase
       assert_response 200
       assert_template 'show'
 
-      assert_no_tag :tag => "a", :attributes => {:href => signup_path}, 
+      assert_no_tag :tag => "a", :attributes => {:href => signup_path},
       :ancestor => {:tag => "div", :attributes => {:class => "forum"}}
       assert_no_tag :tag => "a", :attributes => {:href => login_path},
       :ancestor => {:tag => "div", :attributes => {:class => "forum"}}
@@ -173,7 +158,7 @@ class ForumsControllerTest < ActionController::TestCase
       end
     end
   end
-  
+
   should "not create a new forum for :user .js" do
     assert_nothing_raised do
       assert_no_difference "Forum.count" do
@@ -191,7 +176,7 @@ class ForumsControllerTest < ActionController::TestCase
       end
     end
   end
-  
+
   should "not create a new forum for :user .xml" do
     assert_nothing_raised do
       assert_no_difference "Forum.count" do
@@ -262,14 +247,14 @@ class ForumsControllerTest < ActionController::TestCase
       assert_redirected_to :controller => 'forums', :action => 'index' #, :id => forums(:one).to_param
     end
   end
-  
+
   should "not update a forum for :admin" do
     assert_nothing_raised do
       put :update, {:id => forums(:one).id, :forum => unvalid_forum_attributes}, {:user => profiles(:admin).id}
       assert_response 200
     end
   end
-  
+
   should "not update a forum for :user js" do
     assert_nothing_raised do
       put :update, {:format=>'js', :id => forums(:one).id, :forum => valid_forum_attributes}, {:user => profiles(:user).id}
@@ -290,7 +275,7 @@ class ForumsControllerTest < ActionController::TestCase
       assert_response 200
     end
   end
-    
+
   should "not update a forum for :user xml" do
     assert_nothing_raised do
       put :update, {:format=>'xml', :id => forums(:one).id, :forum => valid_forum_attributes}, {:user => profiles(:user).id}
@@ -304,7 +289,7 @@ class ForumsControllerTest < ActionController::TestCase
         assert_response 200
       end
     end
-  
+
 
     should "not update a forum for :admin xml" do
       assert_nothing_raised do
@@ -312,7 +297,7 @@ class ForumsControllerTest < ActionController::TestCase
         assert_response 422
       end
     end
-  
+
   ##
   # :destroy
 
@@ -364,7 +349,7 @@ class ForumsControllerTest < ActionController::TestCase
       end
     end
   end
-  
+
   should "change the positions of the forums" do
     assert_no_difference "Forum.count" do
     assert_difference "Forum[forums(:one).id].position", 1 do
@@ -377,3 +362,4 @@ class ForumsControllerTest < ActionController::TestCase
   end
 
 end
+

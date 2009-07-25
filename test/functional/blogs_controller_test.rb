@@ -27,12 +27,6 @@ class BlogsControllerTest < ActionController::TestCase
       OWNER_LINKS.each {|l| assert_no_tag(:tag => 'a', :content => l)}
       assert_tag :tag => 'a', :content => 'Add a Comment'
     end
-
-    should "render action when not logged in" do
-      do_show_assertions
-      OWNER_LINKS.each {|l| assert_no_tag(:tag => 'a', :content => l)}
-      assert_no_tag :tag => 'a', :content => 'Add a Comment'
-    end
   end
 
   context 'on GET to :index' do
@@ -46,12 +40,6 @@ class BlogsControllerTest < ActionController::TestCase
       do_index_assertions users(:user2).id, {:page => 14}
       OWNER_LINKS[2..-1].each {|l| assert_no_tag(:tag => 'a', :content => l)}
       assert_tag :tag => 'a', :content => 'Add a Comment'
-    end
-
-    should "render action when not logged in" do
-      do_index_assertions
-      OWNER_LINKS[2..-1].each {|l| assert_no_tag(:tag => 'a', :content => l)}
-      assert_no_tag :tag => 'a', :content => 'Add a Comment'
     end
   end
 
