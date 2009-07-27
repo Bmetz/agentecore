@@ -1,7 +1,7 @@
 <%-
 #locals
 profile ||= @profile
-size ||= 10
+size ||= 6
 posts ||= profile.forum_posts.find :all, :limit => size
 
 
@@ -14,10 +14,11 @@ total = profile.forum_posts.count
     <span>(<%= t(:latest_amount) %> <%= posts.size %> <%= t(:of) %> <%=total%>)</span>
 	</h2>
 	<div class="inside_box">
-	<ul>       
+	<ul>
 	<%= forum_posts_li posts %>
 	</ul>
-		<div class="clear"></div>    
+		<div class="clear"></div>
 	</div>
 </div>
 <% end %>
+

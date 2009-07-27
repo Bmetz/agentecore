@@ -1,7 +1,7 @@
-<% 
+<%
 profile ||= @profile
 type ||= 'friends'
-size ||= 20
+size ||= 6
 list = profile.send(type).find(:all, :limit => size, :order => 'RAND()') rescue []
 total = profile.send(type).count
 with_friending ||= false
@@ -14,16 +14,17 @@ title = t(type)
 <%- unless list.empty? -%>
 <div id="<%= type %>" class="activity_box">
   <h2><%= title %> <%= link_to "(#{t(:see_all_label)})", profile_friends_path(@profile) if list.size < total %></h2>
-	
+
 	<div class="inside_box">
-    
+
 <% list.each do |p| %>
 		<div class="left my_network">
 			<%= icon p %> <%= get_friend_link @p, p if with_friending %>
 		</div>
 <% end %>
 
-		<div class="clear"></div>    
+		<div class="clear"></div>
 	</div>
 </div>
 <%- end -%>
+

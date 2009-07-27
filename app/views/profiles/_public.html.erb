@@ -5,16 +5,16 @@ can_send = !@p.blank?
 <%= link_to( t(:edit_this_page), edit_profile_path(@p)) if me %>
 </div>
 <div class="left" id="column_l">
-  
-  <%= render :partial => 'profiles/bio' %>
-  <div class="clear"></div>  
 
-  <%= render :partial => 'profiles/recent_activity' %>	
-  <%= render :partial => 'blogs/list' %>	
-  <%= render :partial => 'comments/list', :locals => {:with_form => true, :with_wall_to_wall => true} %>	
+  <%= render :partial => 'profiles/bio' %>
+  <div class="clear"></div>
+
+  <%= render :partial => 'profiles/recent_activity' %>
+  <%= render :partial => 'blogs/list' %>
+  <%= render :partial => 'comments/list', :locals => {:with_form => true, :with_wall_to_wall => true} %>
   <%= render :partial => 'photos/gallery', :locals => {:mini => true} %>
   <%= render :partial => 'forum_posts/list' %>
-  
+
   <%- if @video -%>
   <div class="activity_box">
     <h2><%=t(:latest_youTube_video)%></h2>
@@ -22,7 +22,7 @@ can_send = !@p.blank?
   </div>
   <%- end -%>
 
-  <% if @flickr %>  
+  <% if @flickr %>
   <div class="activity_box">
     <h2><%=t(:latest_flickr_pictures)%></h2>
     <% @flickr.each do |flickr|%>
@@ -63,5 +63,6 @@ can_send = !@p.blank?
   </ul>
   <%= render :partial => 'friends/list', :locals => {:type => 'friends'} %>
   <%= render :partial => 'friends/list', :locals => {:type => 'followers'} %>
-  <%= render :partial => 'friends/list', :locals => {:type => 'followings'} %> 
+  <%= render :partial => 'friends/list', :locals => {:type => 'followings'} %>
 </div>
+
