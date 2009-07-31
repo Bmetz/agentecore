@@ -1,0 +1,73 @@
+/* CSS OVERRIDES FROM THE DEFAULT TEMPLATE */
+
+.front_right_column{
+    display: block;
+    clear: all;
+    height: 251px;
+}
+
+#front_left_column{
+    display: block;
+    width: 535px;
+    margin: 0px;
+    margin-top:9px;
+}
+
+#front_left_column h2 {
+    margin-top:16px;
+}
+
+.newest_member {
+    float: left;
+    display: inline;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.small_down_image {
+    margin-right: 24px;
+}
+
+/* Wiki */
+
+#wiki_revision_text {
+    width: 100%;
+    clear: both;
+    margin-top: 0px;
+}
+.wiki_content ul {
+    margin: 5px 0 10px 0;
+}
+.wiki_content li {
+    list-style: circle;
+    margin-left: 25px;
+}
+.wiki_content .row.button {
+  margin: 5px 0 0 0;
+}
+.wiki_content .row.button a {
+    float: left;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.wiki_content p {
+    margin: 10px 0 15px 0;
+}
+.wiki_content h1,
+.wiki_content h2,
+.wiki_content h3 {
+    margin-top: 20px;
+}
+.wiki_metadata {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px dotted #777;
+}
+#wiki_page #preview {
+    padding: 10px;
+    border: 1px dotted #888;
+    margin: 10px 0 20px 0;
+}
+.wiki_preview_message	{padding: 3px;  margin-bottom: 10px; clear: both; background: #555;}
+

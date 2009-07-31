@@ -1,5 +1,5 @@
-/* 
-You're looking at CSS written by Allan Branch of LessEverything.com 
+/*
+You're looking at CSS written by Allan Branch of LessEverything.com
 If you have questions email me at Allan(at)LessEverything(dot)com
 To be able to read the rhtml better I use default classes (right, left, clear)
 div class=clear is your friend, horizontal lists aren't
@@ -9,24 +9,24 @@ body  {
 	font: normal 11px "Lucida Grande", Helvetica, Arial, sans-serif;
 	background: url(/images/bg.jpg);
 	margin: 0px auto;
-	padding: 0px; 
-	color: #eee; 
+	padding: 0px;
+	color: #eee;
 	text-align: center;
 	line-height: 160%;
-}	
+}
 div, img, form, ul {
 	margin: 0px;
 	padding: 0px;
-	border: 0px; 
+	border: 0px;
 }
 small			{font-size: 9px;}
-div, span, td, .text_l {text-align: left;}	
-.clear 			{clear: both;}	
+div, span, td, .text_l {text-align: left;}
+.clear 			{clear: both;}
 .text_r 		{text-align: right;}
 .text_c,
 div .text_c 		{text-align: center;}
 a 				{font: normal  "Arial", sans-serif; text-decoration: none; color: #f9f2a1; }
-a:hover 		{text-decoration: underline; }	
+a:hover 		{text-decoration: underline; }
 .left 			{float: left;}
 .right 			{float: right;}
 .hidden			{display: none;}
@@ -130,7 +130,7 @@ h2 a			{text-transform: capitalize; font-weight: normal; font-size: 11px;}
 .pagination select	{padding: 0px; font-size: 10px; margin: 0 5px;}
 .pagination			{padding: 10px 0;}
 
-#messages td, 
+#messages td,
 #messages th	{padding: 3px;}
 #messages th	{background: #971d4a; font-size: 10px;}
 #messages		{width: 100%;}
@@ -307,59 +307,6 @@ table.forum_topics td {
 #new_forum_topic textarea {
 	width: 600px;
 }
-
-
-
-/*
-* Wiki styles
-*/
-
-#wiki_revision_text {
-    width: 100%;
-    clear: both;
-    margin-top: 0px;
-}
-.wiki_content ul {
-    margin: 5px 0 10px 0;
-}
-.wiki_content li {
-    list-style: circle;
-    margin-left: 25px;
-}
-.wiki_content .row.button {
-  margin: 5px 0 0 0;
-}
-.wiki_content .row.button a {
-    float: left;
-    margin-top: 5px;
-    margin-left: 10px;
-}
-.wiki_content p {
-    margin: 10px 0 15px 0;
-}
-.wiki_content h1,
-.wiki_content h2,
-.wiki_content h3 {
-    margin-top: 20px;
-}
-.wiki_metadata {
-    width: 100%;
-    margin-top: 10px;
-    padding-top: 5px;
-    border-top: 1px dotted #777;
-}
-#wiki_page #preview {
-    padding: 10px;
-    border: 1px dotted #888;
-    margin: 10px 0 20px 0;
-}
-.wiki_preview_message	{padding: 3px;  margin-bottom: 10px; clear: both; background: #555;}
-
-
-
-
-
-
 #message				{padding: 4px; z-index: 100000; position: fixed; top: 38%; left: 40%; display: none; background: black; color: white; font-size: 18px;}
 #waiter 				{z-index:100000; position:fixed; background:white; display: none; height:13px; width:208px; border:0px; top: 50%; left: 50%; margin: -6px 0 0 -104px;}
 
@@ -408,7 +355,7 @@ table.forum_topics td {
 }
 #TB_window {
   position: fixed;
-background: black url(/images/top_hearts_black.png) no-repeat; 
+background: black url(/images/top_hearts_black.png) no-repeat;
 border: 10px solid #666;
   z-index: 102;
   color:white;
@@ -511,3 +458,4 @@ margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = d
   margin-top:1px;
   _margin-bottom:1px;
 }
+

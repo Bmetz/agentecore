@@ -9,24 +9,18 @@
   <img src="/images/main_graphic.jpg" class="left" title="main graphic" alt="main graphic" />
   <div class="front_right_column right" style="margin-top: 0px;">
     <%= render :partial => 'profiles/featured', :locals => {:profile => Profile.featured_profile[:profile]} %>
-    <div class="clear"></div>   
   </div>
 
   <div>
-    <div id="front_left_column" class="left"> 
-      <h2><%=t(:latest_comments_label)%></h2>
-      <%= render :partial => 'comments/comment', :collection => recent_comments %>
-      
+    <div id="front_left_column" class="left">
       <h2><%=t(:newest_forum_topics_label)%></h2>
       <%= render :partial => 'forum_topics/new_topic', :collection => recent_forum_posts %>
-    </div>
 
-    <div id="front_middle_column" class="left"> 
       <h2><%=t(:newest_members_label)%></h2>
       <%= render :partial => 'profiles/newest_member', :collection => new_members %>
     </div>
 
-    <div class="front_right_column right">
+    <div class="front_right_column right" class="left">
       <h2><%=t(:newest_pictures_label)%></h2>
       <% newest_pictures.each do |picture|%>
       <div class="image left small_down_image">
@@ -35,9 +29,10 @@
         </div>
       </div>
       <% end %>
-      <div class="clear"></div>  
+      <div class="clear"></div>
     </div>
 
     <div class="clear"></div>
   </div>
 </div>
+
