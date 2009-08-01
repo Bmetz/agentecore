@@ -14,7 +14,8 @@ module HomeHelper
   end
 
   def recent_forum_posts(limit = 5)
-    ForumTopic.find(:all, :limit => limit, :order => 'forum_posts.created_at DESC', :include => [:forum, :posts])
+    #ForumTopic.find(:all, :limit => limit, :order => 'forum_posts.created_at DESC', :include => [:forum, :posts])
+    ForumPost.find(:all, :limit => limit, :order => 'forum_posts.created_at DESC', :include => [:topic])
   end
 
 
