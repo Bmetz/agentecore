@@ -307,7 +307,7 @@ pt-BR:
 
   #app/views/feed_items/_forum_topic.html.erb
   user_forum_icon: "Ícone do usuário do Fórum"
-  user_forum_posted: "postou"
+  user_forum_posted: "atualizou"
   in: "em"
 
   #app/views/feed_items/_friend.html.erb

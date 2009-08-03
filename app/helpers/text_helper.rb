@@ -8,14 +8,18 @@ module TextHelper
 
   # Like the Rails _truncate_ helper but doesn't break HTML tags or entities.
   def truncate_html(text, max_length = 30, ellipsis = "...")
-    return if text.nil?
+    begin
+      return if text.nil?
 
-    doc = Hpricot(text.to_s)
-    ellipsis_length = Hpricot(ellipsis).inner_text.length
-    content_length = doc.inner_text.length
-    actual_length = max_length - ellipsis_length
+      doc = Hpricot(text.to_s)
+      ellipsis_length = Hpricot(ellipsis).inner_text.length
+      content_length = doc.inner_text.length
+      actual_length = max_length - ellipsis_length
 
-    content_length > max_length ? doc.truncate(actual_length).inner_html + ellipsis : text.to_s
+      content_length > max_length ? doc.truncate(actual_length).inner_html + ellipsis : text.to_s
+    rescue Exception => e
+      ""
+    end
   end
 
 end

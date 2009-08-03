@@ -14,8 +14,7 @@ module HomeHelper
   end
 
   def recent_forum_posts(limit = 5)
-    #ForumTopic.find(:all, :limit => limit, :order => 'forum_posts.created_at DESC', :include => [:forum, :posts])
-    ForumPost.find(:all, :limit => limit, :order => 'forum_posts.created_at DESC', :include => [:topic])
+    ForumPost.find_by_sql "select forum_posts.* from forum_posts where forum_posts.id in (SELECT max(forum_posts.id) FROM forum_posts group by forum_posts.topic_id) order by forum_posts.id DESC limit #{limit}"
   end
 
 
