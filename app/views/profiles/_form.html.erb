@@ -3,7 +3,7 @@
 
 <div id="sub_nav">
 <%= link_to t(:view_public_profile_label), profile_path(@p).add_param(:public_view=>true)%>
-<%= link_to(t(:back_to_dashboard), @p) if @p %>  
+<%= link_to(t(:back_to_dashboard), @p) if @p %>
 </div>
 
 <div class="left half">
@@ -16,26 +16,26 @@
       <%= error_messages_on(:profile, :email) %>
       <%= p.back %>
 
-      <%= p.text_field :first_name %>   
+      <%= p.text_field :first_name %>
       <%= p.text_field :last_name %>
       <%= p.text_field :location %>
 	  <%= p.front :timezone %>
 	  	<%= time_zone_select :profile, :time_zone, ActiveSupport::TimeZone.us_zones %>
 	  <%= p.back %>
       <%= p.text_field :website %>
-      <%= p.text_field :flickr %>  
-      <%= p.text_field :youtube_username %>    
-      <%= p.text_field :flickr_username %>    
-      <%= p.text_field :blog %>    
+      <%= p.text_field :flickr %>
+      <%= p.text_field :youtube_username %>
+      <%= p.text_field :flickr_username %>
+      <%= p.text_field :blog %>
       <%= p.text_field :aim_name, :label=>t(:AIM_label) %>
       <%= p.text_field :gtalk_name, :label=>t(:GTalk_label) %>
       <%= p.text_field :ichat_name, :label=>t(:iChat_label) %>
       <%= p.text_area :about_me %>
-      
+
       <div class="row button">
       <%= p.submit t(:option_save), :class => 'button' %>
       </div>
-    
+
       <input type="hidden" name="switch" value="name" />
     <% end %>
   </div>
@@ -55,7 +55,7 @@
   <div id="upload_icon">
     <% less_form_for @p, :html=>{:method=>:put, :multipart=>true, :class=>"box no_top"} do |p| %>
       <h2><%= "#{t(:upload_icon_label)}:" %></h2>
-    
+
       <%= p.front :icon, :label => t(:upload_your_icon_label) %>
       <%= file_column_field( "profile", "icon", :size => 15)%>
       <div class="clear"></div>
@@ -99,28 +99,10 @@
       <div class="row button">
       <%= p.submit t(:option_save), :class => 'button' %>
       </div>
-      
+
       <input type="hidden" name="switch" value="password" />
     <% end %>
   </div>
-
-
-  <div id="delete_account">
-      <h2><%= t(:delete_your_account) %></h2>
-      
-      <%= link_to_remote t(:delete_account_link_label), :url=>profile_path(@p), :method=>:delete, :confirm=>DELETE_CONFIRM  %>
-  </div>
-
   <div class="clear"></div>
 </div>
-
-
-
-
-
-
-
-
-
-
 

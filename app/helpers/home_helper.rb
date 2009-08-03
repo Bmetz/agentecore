@@ -1,6 +1,6 @@
 module HomeHelper
 
-  def newest_pictures limit = 4
+  def newest_pictures limit = 8
     Photo.find(:all, :order => 'created_at desc', :limit => limit)
   end
 
@@ -17,6 +17,13 @@ module HomeHelper
     ForumPost.find_by_sql "select forum_posts.* from forum_posts where forum_posts.id in (SELECT max(forum_posts.id) FROM forum_posts group by forum_posts.topic_id) order by forum_posts.id DESC limit #{limit}"
   end
 
+  def recent_blogs(limit = 5)
+    Blog.find(:all, :limit => limit, :order => 'created_at DESC')
+  end
+
+  def recent_wiki_revisions(limit = 5)
+    WikiRevision.find(:all, :limit => limit, :order => 'created_at DESC', :include => :page)
+  end
 
 end
 

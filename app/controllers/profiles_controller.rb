@@ -80,17 +80,17 @@ class ProfilesController < ApplicationController
 
 
   def destroy
-    respond_to do |wants|
-     @user.destroy
-      cookies[:auth_token] = {:expires => Time.now-1.day, :value => ""}
-      session[:user] = nil
-      wants.js do
-        render :update do |page|
-          page.alert(t(:your_user_account_have_been_deleted))
-          page << 'location.href = "/";'
-        end
-      end
-    end
+    #respond_to do |wants|
+    # @user.destroy
+    #  cookies[:auth_token] = {:expires => Time.now-1.day, :value => ""}
+    #  session[:user] = nil
+    #  wants.js do
+    #    render :update do |page|
+    #      page.alert(t(:your_user_account_have_been_deleted))
+    #      page << 'location.href = "/";'
+    #    end
+    #  end
+    #end
   end
 
 

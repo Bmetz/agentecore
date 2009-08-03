@@ -5,7 +5,7 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  
+
   # Cookie sessions (limit = 4K)
   # WARNING: You MUST generate a new secret (use "rake secret") and add it below!
   config.action_controller.session = {
@@ -15,7 +15,7 @@ Rails::Initializer.run do |config|
   config.action_controller.session_store = :active_record_store
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.
-  # This is necessary if your schema can't be completely dumped by the schema dumper, 
+  # This is necessary if your schema can't be completely dumped by the schema dumper,
   # like if you have constraints or database-specific column types
   # config.active_record.schema_format = :sql
 
@@ -24,7 +24,7 @@ Rails::Initializer.run do |config|
 
   # Make Active Record use UTC-base instead of local time
   config.time_zone = 'UTC'
-  
+
   # Gem dependencies
   config.gem 'will_paginate', :version => '~> 2.2.2'
   config.gem 'colored', :version=> '1.1'
@@ -40,3 +40,4 @@ end
 I18n.default_locale = "pt-BR" if RAILS_ENV != 'test'
 
 Less::JsRoutes.generate!
+

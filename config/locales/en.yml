@@ -11,7 +11,7 @@ en:
     month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
     abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
     order: [ :year, :month, :day ]
-  
+
   time:
     formats:
       default: "%a %b %d %H:%M:%S %Z %Y"
@@ -19,16 +19,16 @@ en:
       short: "%d %b %H:%M"
       long: "%B %d, %Y %H:%M"
       only_second: "%S"
-      
+
       datetime:
         formats:
           default: "%Y-%m-%dT%H:%M:%S%Z"
-          
+
       am: 'am'
       pm: 'pm'
 
   #########################Views##############################
-  
+
   #general texts
   body: "Body"
   to: "To"
@@ -72,7 +72,7 @@ en:
   #app/views/account_mailer/follow.html.erb
   inviter_following: "is now following you on"
   their_profile: "You can go view their profile here"
-  
+
   #app/views/account_mailer/forgot_password.html.erb
   user_name: "Your user name is"
   verify_password: "Actual Password"
@@ -80,7 +80,7 @@ en:
   new_password: "Your new password is"
   confirm_password: "Confirm your password"
   can_login: "You can log in at"
-  
+
   #app/views/account_mailer/signup.html.erb
   thanks: "Thanks"
   thanks_signup: "Thanks for signing up with"
@@ -115,8 +115,8 @@ en:
   activate: "activate"
 
   #app/views/blogs/_blog.html.erb
-  blog_posted_label: "Posted" 
-  blog_comments_label: "Comments" 
+  blog_posted_label: "Posted"
+  blog_comments_label: "Comments"
   blog_add_comment_label: "Add a Comment"
   blog_add_comment_title: "Leaving A Comment On"
   comment_label: "Comment"
@@ -186,7 +186,7 @@ en:
   #app/views/forum_mailer/new_post.html.erb
   new_post_added: "A new post was added to the {{topic}} topic on the {{forum}} forum at"
   posted_by_on: "Posted by {{nome}} on"
-  
+
   #app/views/forum_posts/_list.html.erb
   most_recent_forum_post: "Most Recent Forum Posts"
 
@@ -251,7 +251,9 @@ en:
   latest_comments_label: "Latest Comments"
   newest_members_label: "Newest Members"
   newest_forum_topics_label: "Newest Forum Topics"
+  newest_wikis_label: "Newest Wikis"
   newest_pictures_label: "Newest Pictures"
+  newest_blogs_label: "Newest Blogs"
 
   #app/views/home/latest_comments.rss.builder
   latest_comments_feed_label: "Latest Comments Feed"
@@ -425,7 +427,7 @@ en:
   cannot_deactivate_yourself: "You cannot deactivate yourself"
   marked_as: "User has been marked as"
   active: "active"
-  inactive: "inactive"  
+  inactive: "inactive"
 
   #app/controllers/accounts_controller.rb
   could_not_find_email: "Could not find that email address. Try again."
@@ -436,7 +438,7 @@ en:
   thanks_signing_up: "Thanks for signing up!"
   new_registration: "new {{app}} registration"
   username_label: "username"
-  
+
   #app/controllers/application.rb
   check_permission_development: "It looks like you don't have permission to view that page."
   check_permission_production: "It looks like you don't have permission to view this page."
@@ -513,3 +515,4 @@ en:
   password_supplied_incorrect: "The password you supplied is not the correct password."
   new_password_does_not_match: "The new password does not match the confirmation password."
   new_password_may_not_be_blank: "The new password may not be blank."
+

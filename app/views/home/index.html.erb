@@ -14,7 +14,13 @@
   <div>
     <div id="front_left_column" class="left">
       <h2><%=t(:newest_forum_topics_label)%></h2>
-      <%= render :partial => 'forum_topics/new_topic', :collection => recent_forum_posts %>
+      <%= render :partial => 'forum_topics/newest_topic', :collection => recent_forum_posts %>
+
+      <h2><%=t(:newest_wikis_label)%></h2>
+      <%= render :partial => 'wiki_revisions/wiki_revision', :collection => recent_wiki_revisions %>
+
+      <h2><%=t(:newest_blogs_label)%></h2>
+      <%= render :partial => 'blogs/newest_blog', :collection => recent_blogs %>
 
       <h2><%=t(:newest_members_label)%></h2>
       <%= render :partial => 'profiles/newest_member', :collection => new_members %>

@@ -8,7 +8,7 @@ module TextHelper
 
   # Like the Rails _truncate_ helper but doesn't break HTML tags or entities.
   def truncate_html(text, max_length = 30, ellipsis = "...")
-    begin
+#    begin
       return if text.nil?
 
       doc = Hpricot(text.to_s)
@@ -17,9 +17,9 @@ module TextHelper
       actual_length = max_length - ellipsis_length
 
       content_length > max_length ? doc.truncate(actual_length).inner_html + ellipsis : text.to_s
-    rescue Exception => e
-      ""
-    end
+#    rescue Exception => e
+#      ""
+#    end
   end
 
 end
@@ -27,11 +27,11 @@ end
 module HpricotTruncator
   module NodeWithChildren
     def truncate(max_length)
-      return self if inner_text.chars.length <= max_length
+      return self if inner_text.mb_chars.length <= max_length
       truncated_node = self.dup
       truncated_node.children = []
       each_child do |node|
-        remaining_length = max_length - truncated_node.inner_text.chars.length
+        remaining_length = max_length - truncated_node.inner_text.mb_chars.length
         break if remaining_length == 0
         truncated_node.children << node.truncate(remaining_length)
       end
@@ -58,3 +58,4 @@ Hpricot::Elem.send(:include,      HpricotTruncator::NodeWithChildren)
 Hpricot::Text.send(:include,      HpricotTruncator::TextNode)
 Hpricot::BogusETag.send(:include, HpricotTruncator::IgnoredTag)
 Hpricot::Comment.send(:include,   HpricotTruncator::IgnoredTag)
+

@@ -1,0 +1,16 @@
+<%
+#locals
+
+blog ||= newest_blog
+truncate = truncate.nil? ? true : truncate
+
+%>
+
+<div id="<%= blog.dom_id %>" class="topic_holder">
+  <div class="date_details_white">
+    <%= time_ago_in_words blog.created_at %> <%=t(:ago)%>, <%= link_to h(blog.profile.f), profile_path(blog.profile) %> <%=t(:blogged)%>
+    <%= link_to h(blog.title), profile_blog_path(blog.profile, blog) %>
+  </div>
+  <div class="clear"></div>
+</div>
+

@@ -388,8 +388,10 @@ pt-BR:
   #app/views/home/index.html.erb
   latest_comments_label: "Últimos comentários"
   newest_members_label: "Novos membros"
-  newest_forum_topics_label: "Novos tópicos do fórum"
+  newest_forum_topics_label: "Últimas atualizações no fórum"
+  newest_wikis_label: "Últimas atualizações no wiki"
   newest_pictures_label: "Novas fotos"
+  newest_blogs_label: "Novos Posts no Blog"
 
   #app/views/home/latest_comments.rss.builder
   latest_comments_feed_label: "Resumo com os últimos comentários"
