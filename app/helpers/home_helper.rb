@@ -13,16 +13,19 @@ module HomeHelper
     Profile.find(:all, :limit => limit, :order => 'created_at DESC', :conditions=>"user_id is not null")
   end
 
-  def recent_forum_posts(limit = 5)
-    ForumPost.find_by_sql "select forum_posts.* from forum_posts where forum_posts.id in (SELECT max(forum_posts.id) FROM forum_posts group by forum_posts.topic_id) order by forum_posts.id DESC limit #{limit}"
+  def recent_forum_posts(page = 1, per_page = 5)
+    ForumPost.paginate_by_sql("select forum_posts.* from forum_posts where forum_posts.id in (SELECT max(forum_posts.id) FROM forum_posts group by forum_posts.topic_id) order by forum_posts.id DESC", :page => page, :per_page => per_page)
   end
 
   def recent_blogs(limit = 5)
     Blog.find(:all, :limit => limit, :order => 'created_at DESC')
   end
 
-  def recent_wiki_revisions(limit = 5)
-    WikiRevision.find(:all, :limit => limit, :order => 'created_at DESC', :include => :page)
+  def recent_wiki_revisions(page = 1, per_page = 5)
+    #WikiRevision.find(:all, :limit => limit, :order => 'created_at DESC', :include => :page)
+    WikiRevision.paginate_by_sql("select wiki_revisions.* from wiki_revisions where id in (SELECT max(id) FROM wiki_revisions group by page_id) order by wiki_revisions.id DESC", :page => page, :per_page => per_page)
+
+
   end
 
 end

@@ -46,5 +46,23 @@ class HomeControllerTest < ActionController::TestCase
       end
     end
   end
+
+  context 'on GET to :all_forum_topics' do
+    should 'redirect to login as guest' do
+      assert_nothing_raised do
+        get :all_forum_topics
+        assert_response 302
+        assert_redirected_to 'login'
+      end
+    end
+
+    should 'render all forum topics page' do
+      assert_nothing_raised do
+        get :all_forum_topics, {}, {:user => profiles(:user).id}
+        assert_response :success
+        assert_template 'home/all_forum_topics'
+      end
+    end
+  end
 end
 

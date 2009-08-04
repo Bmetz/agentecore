@@ -19,12 +19,17 @@ class HomeController < ApplicationController
     end
   end
 
+  def all_forum_topics
+    @per_page = 10
+  end
+
   def newest_members
     respond_to do |wants|
       wants.html {render :action=>'index'}
       wants.rss {render :layout=>false}
     end
   end
+
   def latest_comments
     respond_to do |wants|
       wants.html {render :action=>'index'}
