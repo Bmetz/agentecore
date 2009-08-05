@@ -1,0 +1,12 @@
+<%
+  blogs ||= recent_blogs(@page, @per_page)
+%>
+<div>
+  <div id="front_left_column">
+    <h2><%=t(:all_blogs_label)%></h2>
+    <%= render :partial => 'blogs/newest_blog', :collection => blogs %>
+  	<%= will_paginate blogs %>
+  </div>
+  <div class="clear"></div>
+</div>
+

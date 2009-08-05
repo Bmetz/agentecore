@@ -393,6 +393,18 @@ pt-BR:
   newest_pictures_label: "Novas fotos"
   newest_blogs_label: "Novos Posts no Blog"
 
+  #app/views/home/all_forum_topics.html.erb
+  all_forum_topics_label: "Atualizações no fórum"
+
+  #app/views/home/all_wikis.html.erb
+  all_wikis_label: "Atualizações no wiki"
+
+  #app/views/home/all_blogs.html.erb
+  all_blogs_label: "Atualizações no blog"
+
+  #app/views/home/all_members.html.erb
+  all_members_label: "Atualizações de membros"
+
   #app/views/home/latest_comments.rss.builder
   latest_comments_feed_label: "Resumo com os últimos comentários"
   all_the_action_for: "Todas as ações no"

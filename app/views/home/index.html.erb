@@ -13,17 +13,17 @@
 
   <div>
     <div id="front_left_column" class="left">
-      <h2><%=t(:newest_forum_topics_label)%></h2>
+      <h2><%=t(:newest_forum_topics_label)%> <%= link_to "(#{t(:see_all_label)})", all_forum_topics_path() %></h2>
       <%= render :partial => 'forum_topics/newest_topic', :collection => recent_forum_posts %>
 
-      <h2><%=t(:newest_wikis_label)%></h2>
+      <h2><%=t(:newest_wikis_label)%> <%= link_to "(#{t(:see_all_label)})", all_wikis_path() %></h2>
       <%= render :partial => 'wiki_revisions/wiki_revision', :collection => recent_wiki_revisions %>
 
-      <h2><%=t(:newest_blogs_label)%></h2>
+      <h2><%=t(:newest_blogs_label)%> <%= link_to "(#{t(:see_all_label)})", all_blogs_path() %></h2>
       <%= render :partial => 'blogs/newest_blog', :collection => recent_blogs %>
 
-      <h2><%=t(:newest_members_label)%></h2>
-      <%= render :partial => 'profiles/newest_member', :collection => new_members %>
+      <h2><%=t(:newest_members_label)%> <%= link_to "(#{t(:see_all_label)})", all_members_path() %></h2>
+      <%= render :partial => 'profiles/newest_member', :collection => recent_members %>
     </div>
 
     <div class="front_right_column right" class="left">

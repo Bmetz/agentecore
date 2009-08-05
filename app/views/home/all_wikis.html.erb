@@ -1,0 +1,12 @@
+<%
+  wikis ||= recent_wiki_revisions(@page, @per_page)
+%>
+<div>
+  <div id="front_left_column">
+    <h2><%=t(:all_wikis_label)%></h2>
+    <%= render :partial => 'wiki_revisions/wiki_revision', :collection => wikis %>
+  	<%= will_paginate wikis %>
+  </div>
+  <div class="clear"></div>
+</div>
+

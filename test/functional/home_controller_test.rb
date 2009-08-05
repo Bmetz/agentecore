@@ -64,5 +64,60 @@ class HomeControllerTest < ActionController::TestCase
       end
     end
   end
+
+  context 'on GET to :all_wikis' do
+    should 'redirect to login as guest' do
+      assert_nothing_raised do
+        get :all_wikis
+        assert_response 302
+        assert_redirected_to 'login'
+      end
+    end
+
+    should 'render all wikis page' do
+      assert_nothing_raised do
+        get :all_wikis, {}, {:user => profiles(:user).id}
+        assert_response :success
+        assert_template 'home/all_wikis'
+      end
+    end
+  end
+
+  context 'on GET to :all_blogs' do
+    should 'redirect to login as guest' do
+      assert_nothing_raised do
+        get :all_blogs
+        assert_response 302
+        assert_redirected_to 'login'
+      end
+    end
+
+    should 'render all blogs' do
+      assert_nothing_raised do
+        get :all_blogs, {}, {:user => profiles(:user).id}
+        assert_response :success
+        assert_template 'home/all_blogs'
+      end
+    end
+  end
+
+  context 'on GET to :all_members' do
+    should 'redirect to login as guest' do
+      assert_nothing_raised do
+        get :all_members
+        assert_response 302
+        assert_redirected_to 'login'
+      end
+    end
+
+    should 'render all members' do
+      assert_nothing_raised do
+        get :all_members, {}, {:user => profiles(:user).id}
+        assert_response :success
+        assert_template 'home/all_members'
+      end
+    end
+  end
+
 end
 

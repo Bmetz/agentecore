@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   #skip_before_filter :login_required
+  before_filter :perpage_largest, :only => [:all_forum_topics, :all_wikis, :all_blogs, :all_members]
 
   def contact
     return unless request.post?
@@ -17,10 +18,6 @@ class HomeController < ApplicationController
       wants.html {render}
       wants.rss {render :partial =>  'profiles/newest_member', :collection => new_members}
     end
-  end
-
-  def all_forum_topics
-    @per_page = 10
   end
 
   def newest_members
@@ -43,6 +40,10 @@ class HomeController < ApplicationController
 
 
   private
+
+  def perpage_largest
+    @per_page = (params[:per_page] || (RAILS_ENV=='test' ? 1 : 10)).to_i
+  end
 
   def allow_to
     super :all, :all=>true

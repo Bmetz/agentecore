@@ -255,6 +255,18 @@ en:
   newest_pictures_label: "Newest Pictures"
   newest_blogs_label: "Newest Blogs"
 
+  #app/views/home/all_forum_topics.html.erb
+  all_forum_topics_label: "Forum Topics"
+
+  #app/views/home/all_wikis.html.erb
+  all_wikis_label: "Wikis"
+
+  #app/views/home/all_blogs.html.erb
+  all_blogs_label: "Blogs"
+
+  #app/views/home/all_members.html.erb
+  all_members_label: "Members"
+
   #app/views/home/latest_comments.rss.builder
   latest_comments_feed_label: "Latest Comments Feed"
   all_the_action_for: "All the action for"

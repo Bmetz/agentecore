@@ -1,0 +1,12 @@
+<%
+  members ||= recent_members(@page, @per_page)
+%>
+<div>
+  <div id="front_left_column">
+    <h2><%=t(:all_members_label)%></h2>
+    <%= render :partial => 'profiles/newest_member', :collection => members %>
+  </div>
+  <div class="clear"></div>
+ 	<%= will_paginate members %>
+</div>
+
