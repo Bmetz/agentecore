@@ -1,19 +1,17 @@
 <%
 profile ||= @profile
 type ||= 'friends'
-size ||= 6
-list = profile.send(type).find(:all, :limit => size, :order => 'RAND()') rescue []
-total = profile.send(type).count
+list = (profile.send(type).paginate(:all, :order => 'last_activity_at DESC', :page => @page, :per_page => @per_page) rescue []) if list.blank?
 with_friending ||= false
 
-
-
 title = t(type)
+
+path = profile_friends_path(@profile)
 %>
 
 <%- unless list.empty? -%>
 <div id="<%= type %>" class="activity_box">
-  <h2><%= title %> <%= link_to "(#{t(:see_all_label)})", profile_friends_path(@profile) if list.size < total %></h2>
+  <h2><%= title %> <%= link_to "(#{t(:see_all_label)})", path if list.size < list.total_entries and !with_friending %></h2>
 
 	<div class="inside_box">
 

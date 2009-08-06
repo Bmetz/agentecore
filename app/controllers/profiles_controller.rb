@@ -3,7 +3,18 @@ class ProfilesController < ApplicationController
   prepend_before_filter :get_profile, :except => [:new, :create, :index, :search]
   before_filter :setup, :except => [:index, :search]
   before_filter :search_results, :only => [:index, :search]
-  #skip_filter :login_required, :only=>[:show, :index, :feed, :search]
+
+  def followers
+    @lista  = @profile.followers.paginate(:all, :order => 'last_activity_at DESC', :page => @page, :per_page => 10) rescue []
+    @tipo = "followers"
+    render "friends/index"
+  end
+
+  def followings
+    @lista = @profile.followings.paginate(:all, :order => 'last_activity_at DESC', :page => @page, :per_page => 10) rescue []
+    @tipo = "followings"
+    render "friends/index"
+  end
 
   def show
     unless @profile.youtube_username.blank?

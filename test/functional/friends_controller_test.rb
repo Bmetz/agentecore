@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 class FriendsControllerTest < ActionController::TestCase
 
-  should 'render index page not logged in' do
+  should 'redirect to login when guest' do
     assert_nothing_raised do
       get :index, :profile_id => profiles(:user).id
       assert_response 302
@@ -12,15 +12,13 @@ class FriendsControllerTest < ActionController::TestCase
 
 
 
-  should 'render my index page' do
+  should 'render my friends page' do
     assert_nothing_raised do
       get :index, {:profile_id => profiles(:user).id}, {:user => users(:user).id}
       assert_response :success
       assert_template 'index'
     end
   end
-
-
 
   should "make a fan" do
     Friend.destroy_all

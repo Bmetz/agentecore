@@ -1,9 +1,8 @@
-<h1><%=t(:my_network, :nome => h(@profile.f))%></h1>	
+<h1><%=t(:my_network, :nome => h(@profile.f))%></h1>
 <div id="sub_nav">
   <%= link_to(t(:back_to_profile, :nome => h(@profile.f)), @profile) unless me %>
 	<%= link_to(t(:back_to_dashboard), @p) if me %>
 </div>
 
-<%= render :partial => 'friends/list', :locals => {:type => 'friends', :with_friending => true, :size => nil} %>
-<%= render :partial => 'friends/list', :locals => {:type => 'followers', :with_friending => true, :size => nil} %>
-<%= render :partial => 'friends/list', :locals => {:type => 'followings', :with_friending => true, :size => nil} %>
+<%= render :partial => 'friends/list', :locals => {:type => @tipo, :with_friending => true, :list => @lista, :size => nil} %>
+

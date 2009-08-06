@@ -196,13 +196,20 @@ class ProfilesControllerTest < ActionController::TestCase
     end
   end
 
-  #should "delete" do
-  #  assert_difference 'User.count', -1 do
-  #    assert users(:user)
-  #    delete :destroy, {:id=>users(:user).id}, {:user, users(:user).id}
-  #    assert_response 200
-  #    assert_nil User.find_by_id(users(:user).id)
-  #  end
-  #end
+  should 'render my followers page' do
+    assert_nothing_raised do
+      get :followers, {:id => profiles(:user).id}, {:user => users(:user).id}
+      assert_response :success
+      assert_template 'friends/index'
+    end
+  end
+
+  should 'render my followings page' do
+    assert_nothing_raised do
+      get :followings, {:id => profiles(:user).id}, {:user => users(:user).id}
+      assert_response :success
+      assert_template 'friends/index'
+    end
+  end
 end
 

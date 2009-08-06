@@ -27,9 +27,8 @@ class FriendsController < ApplicationController
 
 
   def index
-    render
+    @lista = @profile.friends.paginate(:all, :order => 'last_activity_at DESC', :page => @page, :per_page => 10) rescue []
   end
-
 
   protected
 
