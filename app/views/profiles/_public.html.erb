@@ -40,9 +40,9 @@ can_send = !@p.blank?
 
 
   <%- if can_send -%>
-  <div id="new_direct_message" class="hidden">
-    <%= render :partial => 'messages/form', :locals => {:hide_header => true} %>
-  </div>
+  <!--div id="new_direct_message" class="hidden">
+    <%#= render :partial => 'messages/form', :locals => {:hide_header => true} %>
+  </div-->
   <%- end -%>
 
   <div class="clear"></div>
@@ -53,12 +53,13 @@ can_send = !@p.blank?
     <%- unless me -%>
 	    <li><%= get_friend_link @p, @profile %></li>
 	    <%- if can_send -%>
-      <li><%= inline_tb_link t(:direct_message_label), "new_direct_message", {:title => "#{t(:new_message_to)} #{h @profile.f}"}, {:height => 380} %></li>
-      <li><%= inline_tb_link t(:leave_a_comment), "new_comment", {:title => t(:leave_a_comment_title, :nome => h(@profile.f))}, {:height => 330, :width => 430} if @p %></li>
+        <!--li><%#= inline_tb_link t(:direct_message_label), "new_direct_message", {:title => "#{t(:new_message_to)} #{h @profile.f}"}, {:height => 380} %></li-->
+        <li><%= inline_tb_link t(:leave_a_comment), "new_comment", {:title => t(:leave_a_comment_title, :nome => h(@profile.f))}, {:height => 330, :width => 430} if @p %></li>
 	    <%- end -%>
 	    <%- if can_send && !me && @p.has_wall_with(@profile) -%>
-	    <li><%= link_to t(:our_wall_to_wall), profile_comments_path(@profile) %></li>
+  	    <li><%= link_to t(:our_wall_to_wall), profile_comments_path(@profile) %></li>
 	    <%- end -%>
+ 	    <li><%= link_to t(:the_blog), profile_blogs_path(@profile) %></li>
 	<%- end -%>
   </ul>
   <%= render :partial => 'friends/list', :locals => {:type => 'friends'} %>

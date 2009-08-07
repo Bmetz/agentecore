@@ -8,18 +8,20 @@ comments ||= @comments
 
 parent ||= @parent
 parent = @blog || @profile || nil
+
 -%>
-  
+
 <div class="activity_box" id="comment">
   <h2><%= t(:comments_label) %>
     <%= link_to "(#{t(:our_wall_to_wall)})", profile_comments_path(profile) if @p && with_wall_to_wall && !me && @p.has_wall_with(profile) %>
-    <%= inline_tb_link("(#{t(:leave_a_comment)})", "new_comment", :title => t(:leave_a_comment_title, :nome => profile.f)) if with_form and @p %>
-    </h2>
+    <%= inline_tb_link("(#{t(:leave_a_comment)})", "new_comment", :title => t(:leave_a_comment_title, :nome => profile.f)) if with_form and @p and !me%>
+  </h2>
 	<div id="<%= "#{dom_id(parent)}_comments" %>" class="inside_box">
 		<%= render :partial => 'comments/comment', :collection => comments %>
 	</div>
-	
+
 	<%= will_paginate comments%>
 </div>
 
 <%= render :partial => 'comments/form' if with_form && @p %>
+

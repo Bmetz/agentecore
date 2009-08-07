@@ -1,9 +1,9 @@
 <h1><%=t(:your_dashboard)%></h1>
 <div id="sub_nav">
   <%= link_to t(:view_public_profile_label), profile_path(@p).add_param(:public_view => true) %>
-  <%= link_to t(:message_center_label), messages_path unless @p.received_messages.empty? && !@p.has_network? %>
+  <%#= link_to t(:message_center_label), messages_path unless @p.received_messages.empty? && !@p.has_network? %>
   <%= link_to t(:manage_photos_label), profile_photos_path(@p) %>
-  <%= link_to t(:my_network_label), profile_friends_path(@p) if @p.has_network? %>
+  <%#= link_to t(:my_network_label), profile_friends_path(@p) if @p.has_network? %>
   <%= link_to t(:the_blog), profile_blogs_path(@p) %>
   <%= link_to t(:account_settings), edit_profile_path(@p) %>
 </div>
@@ -30,5 +30,4 @@
 
 
   <div class="clear"></div>
-
 

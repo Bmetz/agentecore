@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 class MessagesControllerTest < ActionController::TestCase
 
+=begin
   should "get the index" do
     assert_nothing_raised do
       get :index, {}, {:user => profiles(:user).id}
@@ -104,5 +105,6 @@ class MessagesControllerTest < ActionController::TestCase
       end
     end
   end
-
+=end
 end
+
