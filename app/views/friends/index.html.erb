@@ -6,3 +6,5 @@
 
 <%= render :partial => 'friends/list', :locals => {:type => @tipo, :with_friending => true, :list => @lista, :size => nil} %>
 
+<%= will_paginate @lista %>
+

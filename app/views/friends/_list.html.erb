@@ -6,12 +6,19 @@ with_friending ||= false
 
 title = t(type)
 
-path = profile_friends_path(@profile)
+if type == 'followers'
+  path = profile_followers_path(@profile)
+elsif type == 'followings'
+  path = profile_followings_path(@profile)
+else
+  path = profile_friends_path(@profile)
+end
+
 %>
 
 <%- unless list.empty? -%>
 <div id="<%= type %>" class="activity_box">
-  <h2><%= title %> <%= link_to "(#{t(:see_all_label)})", path if list.size < list.total_entries and !with_friending %></h2>
+  <h2><%= title %> (<%= list.total_entries %>) <%= link_to "#{t(:see_all_label)}", path if list.size < list.total_entries and !with_friending %></h2>
 
 	<div class="inside_box">
 

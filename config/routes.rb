@@ -8,8 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   :member=>{:delete_icon=>:post}, :collection=>{:search=>:get},
   :has_many=>[:friends, :blogs, :photos, :comments, :feed_items, :messages]
 
-  map.connect 'profiles/:id/followers', :controller => 'profiles', :action => 'followers'
-  map.connect 'profiles/:id/followings', :controller => 'profiles', :action => 'followings'
+  map.profile_followers  'profiles/:id/followers',  :controller => 'profiles', :action => 'followers'
+  map.profile_followings 'profiles/:id/followings', :controller => 'profiles', :action => 'followings'
 
   map.resources :messages, :collection => {:sent => :get}
   map.resources :blogs do |blog|
