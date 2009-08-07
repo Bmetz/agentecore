@@ -1,10 +1,14 @@
 class FeedItemsController < ApplicationController
   skip_filter :store_location
   before_filter :setup
-  
+
+  def index
+    @lista = @profile.feed_items.paginate(:all, :page => @page, :per_page => 10) rescue []
+  end
+
   def destroy
     @profile.feeds.find(:first, :conditions => {:feed_item_id=>params[:id]}).destroy
-    
+
     respond_to do |wants|
       wants.html do
         flash[:notice] = t(:item_removed_from_recent_activities)
@@ -13,14 +17,14 @@ class FeedItemsController < ApplicationController
       wants.js { render(:update){|page| page.visual_effect :puff, "feed_item_#{params[:id]}".to_sym}}
     end
   end
-  
-  
+
+
   protected
-  
+
   def allow_to
     super :user, :only => [:destroy]
   end
-  
+
   def setup
     @profile = Profile[params[:profile_id]]
     if @p != @profile
@@ -34,3 +38,4 @@ class FeedItemsController < ApplicationController
     end
   end
 end
+

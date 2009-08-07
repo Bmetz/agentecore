@@ -1,0 +1,14 @@
+<h1><%= icon @p %> <%= t(:recent_activity_of, :nome => @p.f) %></h1>
+
+<div id="sub_nav">
+  <%= link_to t(:back_to_dashboard), profile_path(@p) if me %>
+  <%= link_to t(:back_to_profile, :nome => h(@p.f)), profile_path(@p) unless me %>
+</div>
+
+
+<div class="half left">
+  <%#= render :partial => 'profiles/recent_activity' %>
+</div>
+
+<div class="clear"></div>
+
