@@ -6,11 +6,12 @@ blog ||= feed_item.item
 
 <div class="feed_item photo_feed" id="<%= feed_item.dom_id %>">
   <div class="left">
-    <img src="/images/blurp_photos.png" class="png icon_small" title="<%= t(:user_photo_icon) %>"  alt="<%= t(:user_photo_icon) %>" /> 
+    <img src="/images/blurp_photos.png" class="png icon_small" title="<%= t(:user_photo_icon) %>"  alt="<%= t(:user_photo_icon) %>" />
     <%= link_to h(blog.profile.f), blog.profile %> <%= t(:blogged) %> <%= time_ago_in_words blog.created_at %> <%= t(:ago) %> <%= link_to sanitize(textilize(blog.title)), profile_blog_path(blog.profile, blog) %>
-	</div> 
-  	<div class="right">
-    	<%= x_feed_link(feed_item) if me %>
-  	</div>
+	</div>
+  	<!--div class="right">
+    	<%#= x_feed_link(feed_item) if me %>
+  	</div-->
 	<div class="clear"></div>
 </div>
+
