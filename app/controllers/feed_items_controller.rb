@@ -2,10 +2,6 @@ class FeedItemsController < ApplicationController
   skip_filter :store_location
   before_filter :setup
 
-  def index
-    @lista = @profile.feed_items.paginate(:all, :page => @page, :per_page => 10) rescue []
-  end
-
   def destroy
     @profile.feeds.find(:first, :conditions => {:feed_item_id=>params[:id]}).destroy
 

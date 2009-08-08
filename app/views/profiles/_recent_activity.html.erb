@@ -6,7 +6,7 @@ feed_items ||= @feed_items
 
 <%- unless feed_items.empty? -%>
 <div class="activity_box">
-  <h2><%=t(:recent_activity_label)%> <%= link_to "(#{t(:see_all_label)})", profile_feed_items_path(@profile) %></h2>
+  <h2><%=t(:recent_activity_label)%></h2>
 	<div class="inside_box">
 		<% feed_items.each do |feed_item| %>
 		<% next unless feed_item.item %>

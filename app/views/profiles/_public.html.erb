@@ -22,7 +22,7 @@ can_send = !@p.blank?
   </div>
   <%- end -%>
 
-  <% if @flickr %>
+  <% unless @flickr.blank? %>
   <div class="activity_box">
     <h2><%=t(:latest_flickr_pictures)%></h2>
     <% @flickr.each do |flickr|%>
