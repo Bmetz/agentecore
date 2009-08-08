@@ -1,10 +1,13 @@
-<%= image_tag("footer.png", :class=>'png clear') %>
+<%#= image_tag("footer.png", :class=>'png clear') %>
 
 <div class="text_c" style="padding-top: 20px;">
-  <%=t(:lovdbyLess_is_a)%> <a href="http://lovdbyless.com/"><%=t(:lovdbyless_definition)%></a> <%=t(:by)%> <a href="http://www.LessEverything.com" target="blank">Less Everything</a><br>
-
-  <a href="http://lovdbyless.com/download.html"><%=t(:download_free)%></a> | <a href="http://try.lovdbyless.com"><%=t(:demo_lovd)%></a> | <a href="http://lovdbyless.com/notes.html"><%=t(:technical_notes)%></a> | <a href="http://lovdbyless.com/contact"><%=t(:contact_us)%></a> | <a href="http://b.lesseverything.com/lovd-by-less" target="_blank"><%=t(:blog_label)%></a>
-
+   <%= link_to(t(:home), home_path) %>
+   | <%= link_to(t(:forums), forums_path) %>
+   | <%= link_to(t(:wiki), wiki_pages_path) %>
+   <%= @p ? "| " + link_to(t(:dashboard), @p) : "" %>
+   <%= (@p && @p.user.is_admin) ? "| " + link_to(t(:admin), admin_users_path) : "" %>
+   | <%= link_to(t(:contact_us), contact_path) %> <br />
+   Powered by <a href="http://lovdbyless.com/">LovdByLess</a>
 </div>
 
 <div id="message" class="fixed"></div>

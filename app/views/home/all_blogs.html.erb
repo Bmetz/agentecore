@@ -2,7 +2,7 @@
   blogs ||= recent_blogs(@page, @per_page)
 %>
 <div>
-  <div id="front_left_column">
+  <div class="activity_box">
     <h2><%=t(:all_blogs_label)%></h2>
     <%= render :partial => 'blogs/newest_blog', :collection => blogs %>
   	<%= will_paginate blogs %>

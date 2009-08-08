@@ -2,7 +2,7 @@
   forum_posts ||= recent_forum_posts(@page, @per_page)
 %>
 <div>
-  <div id="front_left_column">
+  <div class="activity_box">
     <h2><%=t(:all_forum_topics_label)%></h2>
     <%= render :partial => 'forum_topics/newest_topic', :collection => forum_posts %>
   	<%= will_paginate forum_posts %>
