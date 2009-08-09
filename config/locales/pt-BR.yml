@@ -1,4 +1,6 @@
 pt-BR:
+  previous: "Anterior"
+  next: "Próxima"
   # formatos de data e hora
   date:
     formats:

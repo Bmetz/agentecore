@@ -80,4 +80,12 @@ module ApplicationHelper
   def if_admin
     yield if is_admin? @u
   end
+
+  include WillPaginate::ViewHelpers  
+
+  def will_paginate_with_i18n(collection, options = {}) 
+    will_paginate_without_i18n(collection, options.merge(:prev_label => I18n.t(:previous, :default=>'Previous'), :next_label => I18n.t(:next, :default=>'Next'))) 
+  end
+
+  alias_method_chain :will_paginate, :i18n
 end

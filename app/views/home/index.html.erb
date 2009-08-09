@@ -12,7 +12,7 @@
   </div>
 
   <div>
-    <div id="front_left_column" class="left">
+    <div id="front_left_column" class="left activity_box">
       <h2><%=t(:newest_forum_topics_label)%> <%= link_to "(#{t(:see_all_label)})", all_forum_topics_path() %></h2>
       <%= render :partial => 'forum_topics/newest_topic', :collection => recent_forum_posts %>
 
