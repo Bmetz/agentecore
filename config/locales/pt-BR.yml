@@ -538,7 +538,7 @@ pt-BR:
   video_not_found: "vídeo não encontrado"
 
   #app/helpers/blogs_helper.rb
-  written: "escrito"
+  written: "escrito por"
 
   #app/helpers/feed_items_helper.rb
   wrote_a_comment_on: "escreveu um comentário para"
@@ -546,7 +546,7 @@ pt-BR:
   commented_on: "comentou em"
 
   #app/helpers/forum_topics_helper.rb
-  ago_by: "atrás por"
+  ago_by: "por"
   no_posts: "Nenhuma postagem"
   post_label: "postagem"
   posts_label: "postagens"
@@ -554,7 +554,7 @@ pt-BR:
   #app/helpers/forums_helper.rb
   topic_helper_label: "tópico"
   topics_helper_label: "tópicos"
-  ago_br_by: "atrás<br/> por"
+  ago_br_by: "<br/> por"
 
   #app/helpers/friends_helper.rb
   signup_to_follow: "Inscreva-se para seguir"

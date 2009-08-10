@@ -1,16 +1,16 @@
 module BlogsHelper
-  
+
   def blogs_li blogs
     html = ''
     blogs.each do |b|
-      html += "<li>#{link_to b.title, profile_blog_path(@profile, b)} #{t(:written)} #{time_ago_in_words b.created_at} #{t(:ago)}</li>"
+      html += "<li>#{link_to b.title, profile_blog_path(@profile, b)} #{t(:in)} #{b.created_at}</li>"
     end
     html
   end
-  
-  
+
+
   def blog_body_content blog
-    
+
     youtube_videos = blog.body.scan(/\[youtube:+.+\]/)
     b = blog.body.dup.gsub(/\[youtube:+.+\]/, '')
     out = sanitize textilize(b)
@@ -25,3 +25,4 @@ EOB
     out
   end
 end
+

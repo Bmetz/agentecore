@@ -6,9 +6,9 @@ label ||= t(:inbox_messages_label)
 sent = params[:action]=='sent'
 -%>
 
-<h1><%=t(:message_center_label)%></h1>	
+<h1><%=t(:message_center_label)%></h1>
 <div id="sub_nav">
-	<%= link_to t(:back_to_dashboard), @p %>  
+	<%= link_to t(:back_to_dashboard), @p %>
 	<%= link_to t(:inbox_label), messages_path if sent %>
 	<%= link_to t(:sent_label), sent_messages_path, :class=>"selected"  unless sent || @p.sent_messages.empty? %>
 	<%= inline_tb_link t(:new_message_label), "new_direct_message", {:title => t(:new_message_label)}, {:height => 380} %>
@@ -17,7 +17,7 @@ sent = params[:action]=='sent'
 <div class="activity_box" id="comment">
 	<h2><%= sanitize label %></h2>
 </div>
- 
+
 <%- if list.empty? -%>
 <p><%=t(:no_message_label)%></p>
 <%- else -%>
@@ -31,7 +31,7 @@ sent = params[:action]=='sent'
 		mail_user = (@p == m.sender ? m.receiver : m.sender)%>
 	<tr>
 		<td<%= ' class="unread"' if m.unread? %>><%= link_to mail_user.f,  mail_user %></td>
-		<td<%= ' class="unread"' if m.unread? %>><%= time_ago_in_words m.created_at %></td>
+		<td<%= ' class="unread"' if m.unread? %>><%= m.created_at %></td>
 		<td<%= ' class="unread"' if m.unread? %>><%= link_to h( m.subject), message_path(m) %></td>
 	</tr>
 	<% end %>
@@ -46,3 +46,4 @@ sent = params[:action]=='sent'
 <div id="new_direct_message" class="hidden">
 	<%= render :partial => 'messages/form', :locals => {:hide_header => true} %>
 </div>
+

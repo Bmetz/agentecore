@@ -7,7 +7,7 @@ to_list ||= @to_list
 
 
 <div id="sub_nav">
-	<%= link_to t(:back_to_dashboard), @p %> 
+	<%= link_to t(:back_to_dashboard), @p %>
   <%= inline_tb_link t(:option_reply), "new_reply", {:title => "#{t(:option_reply)} #{t(:to)} #{message.sender.f}"}, {:height => 380} if message && message.sender != @p %>
 	<%= link_to t(:inbox_label), messages_path %>
 	<%= link_to t(:sent_label), sent_messages_path unless @p.sent_messages.empty? %>
@@ -15,7 +15,7 @@ to_list ||= @to_list
 </div>
 <h2 style="font-size: 11px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
   <%=t(:from)%>: <%= link_to message.sender.f, message.sender %><br />
-  <%=t(:when)%>: <%= time_ago_in_words message.created_at %><br />
+  <%=t(:when)%>: <%= message.created_at %><br />
   <strong><%=t(:subject)%>: <%= h message.subject %></strong>
 </h2>
 <div class="clear" style="padding-bottom: 10px; border-bottom: 1px solid #ccc;">
@@ -29,3 +29,4 @@ to_list ||= @to_list
 <div id="new_reply" class="hidden">
 	<%= render :partial => "messages/form", :locals => {:hide_header => true} %>
 </div>
+
