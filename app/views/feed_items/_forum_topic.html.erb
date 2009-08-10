@@ -7,7 +7,7 @@ topic ||= feed_item.item
 <div class="feed_item photo_feed" id="<%= feed_item.dom_id %>">
   <div class="left">
     <img src="/images/blurp_forum.png" class="png icon_small" title="<%= t(:user_forum_icon) %>"  alt="<%= t(:user_forum_icon) %>" />
-    <%= link_to h(topic.owner.f), topic.owner %> <%= t(:user_forum_posted) %> <%= link_to sanitize(textilize(topic.title)), forum_topic_path(topic.forum, topic) %> <%= t(:in) %> <%= link_to sanitize(textilize(topic.forum.name)), forum_path(topic.forum) %> <%= time_ago_in_words topic.created_at %> <%= t(:ago) %>
+    <%= topic.created_at %>, <%= link_to h(topic.owner.f), topic.owner %> <%= t(:user_forum_posted) %> <%= link_to sanitize(textilize(topic.title)), forum_topic_path(topic.forum, topic) %> <%= t(:in) %> <%= link_to sanitize(textilize(topic.forum.name)), forum_path(topic.forum) %>
 	</div>
   	<!--div class="right">
     	<%#= x_feed_link(feed_item) if me %>

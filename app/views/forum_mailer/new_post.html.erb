@@ -1,5 +1,5 @@
 <%= t(:new_post_added, :topic => h(@post.topic.title), :forum => h(@post.topic.forum.name)) %> <%= link_to SITE_NAME, "http://#{SITE}" %>
 
 <%= sanitize textilize(@post.body) %>
- 
+
 <%= t(:posted_by_on, :nome => @post.owner.f) %> <%= link_to h(@post.topic.title), forum_topic_url(@post.topic.forum, @post.topic, :host=>SITE) %>

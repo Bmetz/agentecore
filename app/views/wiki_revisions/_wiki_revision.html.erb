@@ -1,7 +1,7 @@
 
 <div id="<%# comment.dom_id %>" class="revision_holder">
   <div class="date_details_white">
-    <%= time_ago_in_words wiki_revision.created_at %> atrás, <%= link_to h(wiki_revision.profile.f), wiki_revision.profile %> editou a página <%= link_to wiki_revision.page.title, wiki_page_path(wiki_revision.page) %>.
+    <%= wiki_revision.created_at %>, <%= link_to h(wiki_revision.profile.f), wiki_revision.profile %> editou a página <%= link_to wiki_revision.page.title, wiki_page_path(wiki_revision.page) %>.
   </div>
   <div class="clear"></div>
 </div>

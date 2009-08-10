@@ -8,7 +8,7 @@ truncate = truncate.nil? ? true : truncate
 
 <div id="<%= topic.dom_id %>" class="topic_holder">
   <div class="date_details_white">
-    <%= time_ago_in_words topic.created_at %> <%=t(:ago)%>, <%= link_to h(topic.owner.f), profile_path(topic.owner) %> <%=t(:user_forum_posted)%>
+    <%= topic.created_at %>, <%= link_to h(topic.owner.f), profile_path(topic.owner) %> <%=t(:user_forum_posted)%>
     <%= link_to h(topic.topic.title), forum_topic_path(topic.topic.forum, topic.topic) %> <%=t(:in)%> <%= link_to h(topic.topic.forum.name), forum_path(topic.topic.forum) %>
   </div>
   <div class="clear"></div>

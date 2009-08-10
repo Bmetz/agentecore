@@ -4,7 +4,7 @@
   <div class="info">
   <%= icon post.owner %><br/>
   <%= t(:forum_posted_label) %> <%=link_to h(post.owner.f), profile_path(post.owner) %><br/>
-  <%= time_ago_in_words post.created_at %> <%= t(:ago) %><br/>
+  <%= post.created_at %><br/>
   <%- if_admin do %>
     <%= inline_tb_link(t(:option_edit), "#{post.dom_id}_edit", {:title => t(:editing_post_in_title, :titulo => post.topic.title),
                                                            :id => "#{post.dom_id}_edit_link"}, {:height => 290}) %> : 
