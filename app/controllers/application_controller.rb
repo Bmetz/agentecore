@@ -23,7 +23,8 @@ class ApplicationController < ActionController::Base
 
   def set_profile
     @p = @u.profile if @u && @u.profile
-    Time.zone = @p.time_zone if @p && @p.time_zone
+    #Time.zone = @p.time_zone if @p && @p.time_zone
+    Time.zone = "Brasilia"
     @p.update_attribute :last_activity_at, Time.now if @p
   end
 
