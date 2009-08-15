@@ -38,7 +38,7 @@ function togger(j, callback, speed){
 //slideshow
 var album = { 
   startup: function() { 
-    new PeriodicalExecuter(album.cycle, 2) // change image every 5 seconds 
+    new PeriodicalExecuter(album.cycle, 5) // change image every 5 seconds 
   }, 
   cycle: function() { 
     todos = $$('.slide')
@@ -52,7 +52,8 @@ var album = {
       proximo = todos[todos.indexOf(corrente) + 1]
     }
 
-    Effect.Appear(proximo)
+    Element.hide(corrente)
+    Effect.Appear(proximo, {duration: 0.3})
     corrente.removeClassName('corrente')
     proximo.addClassName('corrente')
   } 
