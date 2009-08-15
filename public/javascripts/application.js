@@ -4,6 +4,11 @@ var SLIDE_SPEED = 500
 function jeval(str){return eval('(' +  str + ');'); }
 
 
+//hack: alias for function jQuery. 
+//TODO Resolve incompatibility between jquery and prototype.
+function jq(f) { return jQuery(f) }
+//hack
+
   
 //tog
 function tog(clicker, toggler, callback, speed){
@@ -30,7 +35,30 @@ function togger(j, callback, speed){
 
 
 
+//slideshow
+var album = { 
+  startup: function() { 
+    new PeriodicalExecuter(album.cycle, 2) // change image every 5 seconds 
+  }, 
+  cycle: function() { 
+    todos = $$('.slide')
+    corrente = $$('.corrente').first()
+    primos = corrente.siblings() 
 
+      
+    if (corrente == todos.last()) { 
+      proximo = todos.first()
+    } else {
+      proximo = todos[todos.indexOf(corrente) + 1]
+    }
+
+    Effect.Appear(proximo)
+    corrente.removeClassName('corrente')
+    proximo.addClassName('corrente')
+  } 
+} 
+window.onload = album.startup
+//slideshow
 
 
 //message
