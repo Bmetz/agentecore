@@ -459,3 +459,8 @@ margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = d
   _margin-bottom:1px;
 }
 
+/* slideshow */
+   .slideshow .slide { display: none; }
+   .slideshow .corrente { display: block; }
+/* slideshow */
+

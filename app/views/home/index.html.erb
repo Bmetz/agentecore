@@ -3,10 +3,18 @@
 <% content_for :head do%>
 <%= auto_discovery_link_tag(:rss, "http://#{SITE}/latest_comments.rss", :title=>t(:latest_comments_label)) %>
 <%= auto_discovery_link_tag(:rss, "http://#{SITE}/newest_members.rss", :title=>t(:newest_members_label)) %>
+</script>
 <% end%>
 
 <div>
-  <img src="/images/main_graphic2.jpg" class="left" title="main graphic" alt="main graphic" />
+  <div class="slideshow">
+    <img src="/images/banners/banner1.jpg" class="left slide corrente" title="main graphic" alt="main graphic" />
+    <img src="/images/banners/banner2.jpg" class="left slide" title="main graphic" alt="main graphic" />
+    <img src="/images/banners/banner3.jpg" class="left slide" title="main graphic" alt="main graphic" />
+    <img src="/images/banners/banner4.jpg" class="left slide" title="main graphic" alt="main graphic" />
+    <img src="/images/banners/banner5.jpg" class="left slide" title="main graphic" alt="main graphic" />
+  </div>
+
   <div class="front_right_column right" style="margin-top: 0px;">
     <%= render :partial => 'profiles/featured', :locals => {:profile => Profile.featured_profile[:profile]} %>
   </div>
