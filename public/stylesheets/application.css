@@ -37,7 +37,7 @@ li				{list-style: none;}
 
 #content		{color: #d2d2d2; background: #0a1c34 url(/images/site_bg.png) repeat-x; padding: 0 0 0 0; min-height: 600px; height:auto !important; height:600px;}
 #just_for_hearts{background:  url(/images/top_hearts_black.png) no-repeat;}
-#main			{padding: 0 25px 25px 25px; }
+#main			{padding: 0 20px 20px 20px; }
 #content_top	{padding: 10px;  margin: 0 15px 5px 15px;}
 
 #search input	{border: none; padding: 2px; font-size: 15px; width: 250px;}
@@ -46,12 +46,12 @@ li				{list-style: none;}
 #welcome img	{width: 17px; margin: 0 5px -5px 0; border: 1px solid #666;}
 #demo_links	a	{float: right; padding: 5px; background: #222; color: #f9f2a1; margin: 0 3px 0 3px;}
 #demo_links	a:hover	{background: #999; color: #333;}
-#top a			{font-size: 20px;  font-weight: bold; color: #e185a7; margin: 0 8px;}
+#top a			{font-size: 20px;  font-weight: bold; color: #ffcc00; margin: 0 8px;}
 #top img		{margin: 0 0 0 10px;}
 #top .right		{margin: 20px 0 0 0; width: 600px;}
 #top			{padding: 30px 0 20px 0;}
 
-#front_left_column		{width: 285px; margin: 25px 35px 15px 0;}
+#front_left_column		{width: 285px; margin: 25px 20px 15px 0;}
 #front_middle_column	{width: 195px; margin: 25px 25px 15px 0; }
 .front_right_column		{width: 268px; margin: 25px 0 0 0;}
 .front_right_column img	{margin: 0 15px 0px 0; font-size: 12px;}
