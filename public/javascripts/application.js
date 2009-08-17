@@ -38,7 +38,7 @@ function togger(j, callback, speed){
 //slideshow
 var album = { 
   startup: function() { 
-    new PeriodicalExecuter(album.cycle, 5) // change image every 5 seconds 
+    new PeriodicalExecuter(album.cycle, 7) // change image every 5 seconds 
   }, 
   cycle: function() { 
     todos = $$('.slide')
