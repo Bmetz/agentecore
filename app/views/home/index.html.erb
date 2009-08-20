@@ -1,52 +1,46 @@
-
-
-<% content_for :head do%>
-<%= auto_discovery_link_tag(:rss, "http://#{SITE}/latest_comments.rss", :title=>t(:latest_comments_label)) %>
-<%= auto_discovery_link_tag(:rss, "http://#{SITE}/newest_members.rss", :title=>t(:newest_members_label)) %>
+<% content_for :head do %>
+  <%= auto_discovery_link_tag(:rss, "http://#{SITE}/latest_comments.rss", :title=>t(:latest_comments_label)) %>
+  <%= auto_discovery_link_tag(:rss, "http://#{SITE}/newest_members.rss", :title=>t(:newest_members_label)) %>
 </script>
-<% end%>
+<% end %>
 
-<div>
-  <div class="slideshow">
-    <img src="/images/banners/banner1.jpg" class="left slide corrente" title="main graphic" alt="main graphic" />
-    <img src="/images/banners/banner2.jpg" class="left slide" title="main graphic" alt="main graphic" />
-    <img src="/images/banners/banner3.jpg" class="left slide" title="main graphic" alt="main graphic" />
-    <img src="/images/banners/banner4.jpg" class="left slide" title="main graphic" alt="main graphic" />
-    <img src="/images/banners/banner5.jpg" class="left slide" title="main graphic" alt="main graphic" />
-  </div>
-
-  <div class="front_right_column right" style="margin-top: 0px;">
-    <%= render :partial => 'profiles/featured', :locals => {:profile => Profile.featured_profile[:profile]} %>
-  </div>
-
-  <div>
-    <div id="front_left_column" class="left activity_box">
-      <h2><%=t(:newest_forum_topics_label)%> <%= link_to "(#{t(:see_all_label)})", all_forum_topics_path() %></h2>
-      <%= render :partial => 'forum_topics/newest_topic', :collection => recent_forum_posts %>
-
-      <h2><%=t(:newest_wikis_label)%> <%= link_to "(#{t(:see_all_label)})", all_wikis_path() %></h2>
-      <%= render :partial => 'wiki_revisions/wiki_revision', :collection => recent_wiki_revisions %>
-
-      <h2><%=t(:newest_blogs_label)%> <%= link_to "(#{t(:see_all_label)})", all_blogs_path() %></h2>
-      <%= render :partial => 'blogs/newest_blog', :collection => recent_blogs %>
-
-      <h2><%=t(:newest_members_label)%> <%= link_to "(#{t(:see_all_label)})", all_members_path() %></h2>
-      <%= render :partial => 'profiles/newest_member', :collection => recent_members %>
-    </div>
-
-    <div class="front_right_column right" class="left">
-      <h2><%=t(:newest_pictures_label)%></h2>
-      <% newest_pictures.each do |picture|%>
-      <div class="image left small_down_image">
-        <div>
-          <%= link_to image(picture, :small), profile_photos_path(picture.profile) %>
-        </div>
-      </div>
-      <% end %>
-      <div class="clear"></div>
-    </div>
-
-    <div class="clear"></div>
-  </div>
+<div class="slideshow">
+  <img src="/images/banners/banner1.jpg" class="left slide corrente" title="Participe!" alt="Participe!" />
+  <img src="/images/banners/banner2.jpg" class="left slide" title="Wiki" alt="Wiki" />
+  <img src="/images/banners/banner3.jpg" class="left slide" title="Fórum" alt="Fórum" />
+  <img src="/images/banners/banner4.jpg" class="left slide" title="Rede Social" alt="Rede Social" />
+  <a href="credinews01.pdf" target="_blank"><img src="/images/banners/banner5.jpg" class="left slide" title="Credinews" alt="Credinews" /></a>
 </div>
+
+<div class="front_right_column right">
+  <%= render :partial => 'profiles/featured', :locals => {:profile => Profile.featured_profile[:profile]} %>
+</div>
+
+<div id="front_left_column" class="left activity_box">
+  <h2><%=t(:newest_forum_topics_label)%> <%= link_to "(#{t(:see_all_label)})", all_forum_topics_path() %></h2>
+  <%= render :partial => 'forum_topics/newest_topic', :collection => recent_forum_posts %>
+
+  <h2><%=t(:newest_wikis_label)%> <%= link_to "(#{t(:see_all_label)})", all_wikis_path() %></h2>
+  <%= render :partial => 'wiki_revisions/wiki_revision', :collection => recent_wiki_revisions %>
+
+  <h2><%=t(:newest_blogs_label)%> <%= link_to "(#{t(:see_all_label)})", all_blogs_path() %></h2>
+  <%= render :partial => 'blogs/newest_blog', :collection => recent_blogs %>
+
+  <h2><%=t(:newest_members_label)%> <%= link_to "(#{t(:see_all_label)})", all_members_path() %></h2>
+  <%= render :partial => 'profiles/newest_member', :collection => recent_members %>
+</div>
+
+<div class="front_right_column right" class="left">
+  <h2><%=t(:newest_pictures_label)%></h2>
+  <% newest_pictures.each do |picture|%>
+  <div class="image left small_down_image">
+    <div>
+      <%= link_to image(picture, :small), profile_photos_path(picture.profile) %>
+    </div>
+  </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
+<div class="clear"></div>
 

@@ -124,12 +124,15 @@ class ProfilesController < ApplicationController
   end
 
   def search_results
+    @page
+    @per_page
+    puts ""
     if params[:search]
       p = params[:search].dup
     else
       p = []
     end
-    @results = Profile.search(p.delete(:q) || '')
+    @results = Profile.search(p.delete(:q) || '', :page => @page, :per_page => 21)
   end
 end
 

@@ -1,3 +1,4 @@
+<h1><%= link_to t(:signup_now), signup_path %></h1>
 
 <div class="activity_box">
   <h2><%=t(:search_results) %></h2>
@@ -7,9 +8,10 @@
     <div><%= icon p, :small %></div>
     <div><%= link_to h(p.f), p %></div>
     <div><%= mail_to h(p.email), p.email %></div>
-    <div><%= link_to_remote "#{ p.is_active ? t(:deactivate) : t(:activate) }", {:url => formatted_admin_user_path(p, 'js'), :method => :put}, {:id => p.dom_id('link')} %></div>						
+    <div><%= link_to_remote "#{ p.is_active ? t(:deactivate) : t(:activate) }", {:url => admin_user_path(p, 'js'), :method => :put}, {:id => p.dom_id('link')} %></div>
   </div>
   <% end %>
   <div class="clear"></div>
   <%= will_paginate @results %>
 </div>
+

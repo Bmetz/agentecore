@@ -1,20 +1,17 @@
 /* CSS OVERRIDES FROM THE DEFAULT TEMPLATE */
 
 .front_right_column{
-    display: block;
-    clear: all;
     height: 251px;
 }
 
 #front_left_column{
-    display: block;
     width: 535px;
     margin: 0px;
-    margin-top:9px;
+    margin-top:0px;
 }
 
 #front_left_column h2 {
-    margin-top:16px;
+    margin-top:0px;
 }
 
 .newest_member {

@@ -9,6 +9,9 @@ tmp
 config/database.yml
 config/*.sphinx.conf
 public/system
+public/*.pdf
 public/javascripts/less_routes.js
+public/javascripts/all.js
+public/stylesheets/all.css
 test/public/system
 vendor/rails

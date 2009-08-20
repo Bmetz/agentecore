@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
 
   def check_featured
-    return if Profile.featured_profile[:date] == Date.today
+    #return if Profile.featured_profile[:date] == Date.today
     Profile.featured_profile[:date] = Date.today
     Profile.featured_profile[:profile] = Profile.featured
   end

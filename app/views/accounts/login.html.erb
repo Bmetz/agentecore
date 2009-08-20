@@ -4,6 +4,7 @@
 
     <%= f.text_field :login, :class => "focus_first" %>
     <%= f.password_field :password %>
+  	<%= link_to t(:tos_label), "regras_de_uso.pdf", :target => "_blank" %>
 
     <div class="button">
      <%= f.submit t(:login_now), :class=>'button' %>

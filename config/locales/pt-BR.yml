@@ -245,8 +245,8 @@ pt-BR:
   tos_label: "Termos de uso"
   tos_accept: "Aceitar"
   signup_now: "Novo Usuário"
-  signup_welcome_begin: "Bem vindo ao"
-  signup_welcome_end: "nós estamos atualmente em fase 'beta'"
+  signup_welcome_begin: "Cadastro de novo usuário no"
+  signup_welcome_end: ""
   already_have_account: "Ah sim, Eu já tenho uma conta, hummm."
 
   #app/views/admin/users/index.html.erb
@@ -587,7 +587,7 @@ pt-BR:
   hello_login: "Olá {{nome}}"
   error_login: "Owww, autenticação não funcionou. Você está com 'caps lock' ligado? Tente novamente."
   you_logged_out: "Você acaba de ser desconectado."
-  thanks_signing_up: "Obrigado por inscrever-se!"
+  thanks_signing_up: "Usuário cadastrado com sucesso!"
   new_registration: "Novo registro no {{app}}"
   username_label: "usuário"
 
