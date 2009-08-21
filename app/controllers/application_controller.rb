@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
 
   before_filter :set_locale, :allow_to, :check_user, :set_profile, :login_from_cookie, :login_required, :check_permissions, :pagination_defaults
-  after_filter :store_location
+  after_filter :store_location, OutputCompressionFilter
   layout 'application'
 
 
