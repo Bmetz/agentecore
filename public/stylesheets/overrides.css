@@ -2,10 +2,11 @@
 
 .front_right_column{
     height: 251px;
+    margin-left: 20px;
 }
 
 #front_left_column{
-    width: 535px;
+    width: 500px;
     margin: 0px;
     margin-top:0px;
 }
@@ -67,4 +68,37 @@
     margin: 10px 0 20px 0;
 }
 .wiki_preview_message	{padding: 3px;  margin-bottom: 10px; clear: both; background: #555;}
+
+.destaque {
+    display: table;
+    width: 100%;
+}
+
+/* slideshow */
+.slideshow {
+    float: left;
+    width: 534px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.slideshow .slide { display: none; }
+.slideshow .corrente { display: block; }
+/* slideshow */
+
+.membro_em_destaque {
+    float: left;
+    display: block;
+    width: 265px;
+    margin-left: 25px;
+    height: 257px;
+}
+
+div .text_r {padding-top: 8px;}
+
+div h2 {padding-top: 10px;}
+
+.membro_em_destaque h2 {padding-top: 0px;}
+
+#content_top	{margin-bottom: 20px;}
 

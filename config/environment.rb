@@ -9,7 +9,7 @@ Rails::Initializer.run do |config|
   # Cookie sessions (limit = 4K)
   # WARNING: You MUST generate a new secret (use "rake secret") and add it below!
   config.action_controller.session = {
-    :session_key => '_your_app_name',
+    :session_key => 'novoagente',
     :secret      => '0677a17f4e94869409e7aecb29a00fd9' # <- New secret key goes here
   }
   config.action_controller.session_store = :active_record_store

@@ -4,17 +4,19 @@
 </script>
 <% end %>
 
-<div class="slideshow">
-  <img src="/images/banners/banner1.jpg" class="left slide corrente" title="Participe!" alt="Participe!" />
-  <img src="/images/banners/banner2.jpg" class="left slide" title="Wiki" alt="Wiki" />
-  <img src="/images/banners/banner3.jpg" class="left slide" title="Fórum" alt="Fórum" />
-  <img src="/images/banners/banner4.jpg" class="left slide" title="Rede Social" alt="Rede Social" />
-  <a href="credinews01.pdf" target="_blank"><img src="/images/banners/banner5.jpg" class="left slide" title="Credinews" alt="Credinews" /></a>
-</div>
+  <div class="destaque">
+    <div class="slideshow">
+      <img src="/images/banners/banner1.jpg" class="left slide corrente" title="Participe!" alt="Participe!" />
+      <img src="/images/banners/banner2.jpg" class="left slide" title="Wiki" alt="Wiki" />
+      <img src="/images/banners/banner3.jpg" class="left slide" title="Fórum" alt="Fórum" />
+      <img src="/images/banners/banner4.jpg" class="left slide" title="Rede Social" alt="Rede Social" />
+      <a href="credinews01.pdf" target="_blank"><img src="/images/banners/banner5.jpg" class="left slide" title="Credinews" alt="Credinews" /></a>
+    </div>
 
-<div class="front_right_column right">
-  <%= render :partial => 'profiles/featured', :locals => {:profile => Profile.featured_profile[:profile]} %>
-</div>
+    <div class="membro_em_destaque">
+      <%= render :partial => 'profiles/featured', :locals => {:profile => Profile.featured_profile[:profile]} %>
+    </div>
+  </div>
 
 <div id="front_left_column" class="left activity_box">
   <h2><%=t(:newest_forum_topics_label)%> <%= link_to "(#{t(:see_all_label)})", all_forum_topics_path() %></h2>

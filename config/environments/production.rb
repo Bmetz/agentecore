@@ -12,8 +12,14 @@ config.action_controller.consider_all_requests_local = false
 config.action_controller.perform_caching             = true
 
 # needed for Avatar::Source::RailsAssetSource
-config.action_controller.asset_host                  = "http://172.20.1.194:3000"
+config.action_controller.asset_host                  = "http://novoagente.credishop.com.br"
 
 # Disable delivery errors, bad email addresses will be ignored
 config.action_mailer.raise_delivery_errors = false
+
+config.action_mailer.smtp_settings = {
+  :address => "172.20.4.10" ,
+  :port => 25,
+  :domain => "credishop.com.br"
+}
 
