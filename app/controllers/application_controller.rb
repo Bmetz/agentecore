@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging "password"
 
 
-  before_filter :allow_to, :check_user, :set_profile, :login_from_cookie, :login_required, :check_permissions, :pagination_defaults
+  before_filter :set_locale, :allow_to, :check_user, :set_profile, :login_from_cookie, :login_required, :check_permissions, :pagination_defaults
   after_filter :store_location
   layout 'application'
 
@@ -26,6 +26,10 @@ class ApplicationController < ActionController::Base
     #Time.zone = @p.time_zone if @p && @p.time_zone
     Time.zone = "Brasilia"
     @p.update_attribute :last_activity_at, Time.now if @p
+  end
+
+  def set_locale
+    I18n.locale = "pt-BR"
   end
 
 

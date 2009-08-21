@@ -37,7 +37,7 @@ Rails::Initializer.run do |config|
   config.gem 'RedCloth', :lib => 'redcloth'
 end
 
-I18n.default_locale = "pt-BR" if RAILS_ENV != 'test'
+#I18n.default_locale = "pt-BR" if RAILS_ENV != 'test'
 
 Less::JsRoutes.generate!
 
