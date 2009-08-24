@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <title>Credishop S/A :: @gente</title>
+
+  <link href="./stylesheets/reset.css" rel="stylesheet" type="text/css"/>
+  <link href="./stylesheets/ie.css" rel="stylesheet" type="text/css"/>
+  <link href="./stylesheets/application.css" rel="stylesheet" type="text/css"/>
+  <link href="./stylesheets/overrides.css" rel="stylesheet" type="text/css"/>
+
+  <!--[if lt IE 7.]>
+    <script defer type="text/javascript" src="/javascripts/pngfix.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div style="height: 50px;"></div>
+    <img src="./images/agente_manutencao.jpg" class="png" />
+
+  </body>
+  </html>
+

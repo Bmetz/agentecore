@@ -64,8 +64,8 @@ class AccountsController < ApplicationController
     u.email = params[:user][:email]
     u.less_value_for_text_input = params[:user][:less_value_for_text_input]
 
-    #@u = u
-    #if u.save
+    @u = u
+    if u.save
       #self.user = u
 
 
@@ -75,12 +75,12 @@ class AccountsController < ApplicationController
       #AuthMailer.deliver_registration(:subject=>t(:new_registration, :app => SITE_NAME), :body => "#{t(:username_label)} = '#{@u.login}', email = '#{@u.profile.email}'", :recipients=>REGISTRATION_RECIPIENTS)
       #redirect_to profile_url(@u.profile) and return
       redirect_to admin_users_path() and return
-    #else
-    #  @user = @u
-    #  params[:user][:password] = params[:user][:password_confirmation] = ''
-    #  flash.now[:error] = @u.errors
-    #  self.user = u# if RAILS_ENV == 'test'
-    #end
+    else
+      @user = @u
+      params[:user][:password] = params[:user][:password_confirmation] = ''
+      flash.now[:error] = @u.errors
+      self.user = u# if RAILS_ENV == 'test'
+    end
   end
 
 
