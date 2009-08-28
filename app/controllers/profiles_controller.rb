@@ -17,16 +17,17 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    unless @profile.youtube_username.blank?
-      begin
-        client = YouTubeG::Client.new
-        @video = client.videos_by(:user => @profile.youtube_username).videos.first
-      rescue Exception, OpenURI::HTTPError
-      end
-    end
+    #nless @profile.youtube_username.blank?
+    # begin
+    #   client = YouTubeG::Client.new
+    #   @video = client.videos_by(:user => @profile.youtube_username).videos.first
+    # rescue Exception, OpenURI::HTTPError
+    # end
+    #nd
 
     begin
-      @flickr = @profile.flickr_username.blank? ? [] : flickr_images(flickr.people.findByUsername(@profile.flickr_username))
+      #@flickr = @profile.flickr_username.blank? ? [] : flickr_images(flickr.people.findByUsername(@profile.flickr_username))
+      @flickr = []
     rescue Exception, OpenURI::HTTPError
       @flickr = []
     end
