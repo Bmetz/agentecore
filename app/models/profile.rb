@@ -93,7 +93,7 @@ class Profile < ActiveRecord::Base
 
   cattr_accessor :featured_profile
   @@featured_profile = {:date=>Date.today - 4, :profile=>nil}
-  Profile::NOWHERE = I18n.t(:nowhere)
+  Profile::NOWHERE = I18n.t(:nowhere, :default => '')
 
   def to_param
     "#{self.id}-#{f.to_safe_uri}"

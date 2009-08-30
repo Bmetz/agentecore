@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = "pt-BR"
+    I18n.locale = "pt-BR" if RAILS_ENV != 'test'
   end
 
 
