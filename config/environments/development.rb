@@ -12,10 +12,7 @@ config.whiny_nils = true
 config.action_controller.consider_all_requests_local = true
 config.action_controller.perform_caching             = false
 config.action_view.debug_rjs                         = true
-config.action_controller.asset_host                  = "http://172.20.1.194:3000"
-
-# needed for Avatar::Source::RailsAssetSource
-config.action_controller.asset_host                  = "http://172.20.1.194:3000"
+config.action_controller.asset_host                  = "http://localhost:3000"
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = true

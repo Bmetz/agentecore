@@ -5,13 +5,13 @@ class ProfilesController < ApplicationController
   before_filter :search_results, :only => [:index, :search]
 
   def followers
-    @lista  = @profile.followers.paginate(:all, :order => 'last_activity_at DESC', :page => @page, :per_page => 10) rescue []
+    @lista  = @profile.followers.paginate(:all, :order => 'last_activity_at DESC', :page => @page, :per_page => 30) rescue []
     @tipo = "followers"
     render "friends/index"
   end
 
   def followings
-    @lista = @profile.followings.paginate(:all, :order => 'last_activity_at DESC', :page => @page, :per_page => 10) rescue []
+    @lista = @profile.followings.paginate(:all, :order => 'last_activity_at DESC', :page => @page, :per_page => 30) rescue []
     @tipo = "followings"
     render "friends/index"
   end
