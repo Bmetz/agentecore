@@ -10,8 +10,7 @@
 
 <%= render :partial => 'profiles/getting_started' %>
 
-
-<div class="half left">
+<div class="left" id="column_l">
   <%= render :partial => 'profiles/recent_activity' %>
 </div>
 
@@ -20,7 +19,7 @@
 
 
 
-<div class="half right">
+<div class="right" id="column_r">
 
 <%= render :partial => 'friends/list', :locals => {:type => 'friends'} %>
 <%= render :partial => 'friends/list', :locals => {:type => 'followers'} %>
