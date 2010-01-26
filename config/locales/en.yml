@@ -433,6 +433,9 @@ en:
   friendship_follower: "follower"
   friendship_fan: "fan"
 
+  #app/models/blog.rb
+  can_send_news: "User can't send news!"
+
   ##################################CONTROLLERS################################################
 
   #app/controllers/admin/users_controller.rb

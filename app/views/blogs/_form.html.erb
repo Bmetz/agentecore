@@ -10,10 +10,12 @@ blog ||= @blog
   <% less_form_for [@profile, blog] do |f| %>
     <%= f.text_field :title %>
     <%= f.text_area :body %>
-    
+    <%= f.check_box(:news) if @profile.user.can_send_news? %>
+
     <%= t(:youtube_label) %>
 	  <div class="row button">
     	<%= f.submit t(:option_save), :class=>'button' %>
   	</div>
   <% end %>
 </div>
+

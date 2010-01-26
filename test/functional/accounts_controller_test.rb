@@ -143,6 +143,16 @@ class AccountsControllerTest < ActionController::TestCase
     assert !@controller.send(:logged_in?)
   end
 
+  context 'on GET to signup' do
+    should "render options is_admin and can_send_news" do
+      get :signup, {}, {:user => users(:admin).id}
+      assert_response :success
+      assert_tag :tag => "input", :attributes => {:id => "user_is_admin", :type => "checkbox"}
+      assert_tag :tag => "input", :attributes => {:id => "user_can_send_news", :type => "checkbox"}
+    end
+  end
+
+
   protected
     def create_user(options = {}, signup_code = '1234')
       post :login, :user=>{:login => users(:admin).login, :password => 'test'}

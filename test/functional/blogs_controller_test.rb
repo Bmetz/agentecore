@@ -53,6 +53,21 @@ class BlogsControllerTest < ActionController::TestCase
       assert_equal Hash.new, flash
       assert_template 'new'
       assert_response :success
+      assert_no_tag :tag => "input", :attributes => {:type => "checkbox"}
+      assert_tag :content => '&larr; Back to Dashboard', :attributes => {:href=>profile_path(p)}
+      assert_tag :content => '&larr; Back to Blogs', :attributes => {:href=>profile_blogs_path(p)}
+    end
+
+    should "render action when logged in as :owner and show news option" do
+      p = profiles(:user2)
+      get :new, {:profile_id => p.id}, {:user => p.user.id}
+      assert_not_nil assigns(:blogs)
+      assert assigns(:blog).new_record?
+      assert_equal p, assigns(:profile)
+      assert_equal Hash.new, flash
+      assert_template 'new'
+      assert_response :success
+      assert_tag :tag => "input", :attributes => {:type => "checkbox"}
       assert_tag :content => '&larr; Back to Dashboard', :attributes => {:href=>profile_path(p)}
       assert_tag :content => '&larr; Back to Blogs', :attributes => {:href=>profile_blogs_path(p)}
     end
@@ -86,6 +101,22 @@ class BlogsControllerTest < ActionController::TestCase
       assert_equal Hash.new, flash
       assert_template 'edit'
       assert_response :success
+      assert_no_tag :tag => "input", :attributes => {:type => "checkbox"}
+      assert_tag :content => '&larr; Back to Dashboard', :attributes => {:href=>profile_path(p)}
+      assert_tag :content => '&larr; Back to Blogs', :attributes => {:href=>profile_blogs_path(p)}
+    end
+
+    should "render action when logged in as :owner and show news option" do
+      p = profiles(:user2)
+      b = p.blogs.first
+      get :edit, {:profile_id => p.id, :id => b.id}, {:user => p.user.id}
+      assert_not_nil assigns(:blogs)
+      assert_equal b, assigns(:blog)
+      assert_equal p, assigns(:profile)
+      assert_equal Hash.new, flash
+      assert_template 'edit'
+      assert_response :success
+      assert_tag :tag => "input", :attributes => {:type => "checkbox"}
       assert_tag :content => '&larr; Back to Dashboard', :attributes => {:href=>profile_path(p)}
       assert_tag :content => '&larr; Back to Blogs', :attributes => {:href=>profile_blogs_path(p)}
     end

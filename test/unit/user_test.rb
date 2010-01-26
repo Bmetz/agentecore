@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 class UserTest < ActiveSupport::TestCase
 
-  VALID_USER = {:password=>'123456', :password_confirmation=>'123456', :login=>'valid_user', :email=>'valid_user@example.com', :terms_of_service => '1'}
+  VALID_USER = {:password=>'123456', :password_confirmation=>'123456', :login=>'valid_user', :email=>'valid_user@example.com', :terms_of_service => '1', :is_admin => false, :can_send_news => true}
 
 
 
@@ -84,6 +84,8 @@ class UserTest < ActiveSupport::TestCase
         assert !u.new_record?, u.errors.full_messages.to_sentence
         assert u.profile
         assert u.profile.is_active
+        assert u.can_send_news?
+        assert !u.is_admin?
       end
     end
   end
@@ -142,3 +144,4 @@ class UserTest < ActiveSupport::TestCase
   #     _test_associations
   #   end
 end
+

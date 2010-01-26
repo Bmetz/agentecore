@@ -109,6 +109,7 @@ pt-BR:
       blog:
         title: "Título"
         body: "Conteúdo"
+        news: "Notícia?"
       comment:
         comment: "Comentário"
       forum_post:
@@ -140,6 +141,8 @@ pt-BR:
         login: "Usuario"
         password: "Senha"
         password_confirmation: "Confirme a senha"
+        is_admin: "Administrador?"
+        can_send_news: "Envia Notícias?"
     errors:
       template:
         header:
@@ -572,6 +575,9 @@ pt-BR:
   friendship_friend: "amigo"
   friendship_follower: "seguidor"
   friendship_fan: "fã"
+
+  #app/models/blog.rb
+  can_send_news: "Usuário sem permissão para enviar notícias!"
 
   ##################################CONTROLLERS################################################
 
