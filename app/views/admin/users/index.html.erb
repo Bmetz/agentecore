@@ -4,12 +4,37 @@
   <h2><%=t(:search_results) %></h2>
 
   <% @results.each do |p| %>
-  <div class="<%= cycle('odd','even') %> search_row left">
-    <div><%= icon p, :small %></div>
-    <div><%= link_to h(p.f), p %></div>
-    <div><%= mail_to h(p.email), p.email %></div>
-    <div><%= link_to_remote "alterar", {:url => admin_user_path(p, 'js'), :method => :put}, {:id => p.dom_id('link')} %> - <%= link_to_remote "#{ p.is_active ? t(:deactivate) : t(:activate) }", {:url => admin_user_path(p, 'js'), :method => :put}, {:id => p.dom_id('link')} %></div>
-  </div>
+
+    <div class="<%= cycle('odd','even') %> search_row left">
+      <div><%= icon p, :small %></div>
+      <div><%= link_to h(p.f), p %></div>
+      <div><%= mail_to h(p.email), p.email %></div>
+      <div><%= link_to_remote "#{ p.is_active ? t(:deactivate) : t(:activate) }", {:url => admin_user_path(p, 'js'), :method => :put}, {:id => p.dom_id('link')} %></div>
+      <div><%= inline_tb_link t(:option_edit), "new_password_#{p.id}", {:title => t(:passwd_edit_label, :nome => h(p.f))}, {:height => 150, :width => 430} if p %></div>
+    </div>
+
+    <div id="new_password_<%= p.id %>" class="hidden">
+	    <% less_remote_form_for(p, :html => { :method=>:put, :id => "#{dom_id(p)}_new_password_form"} ) do |f| %>
+	      <div id="thickbox_form">
+
+          <%= f.front :new_password, :for => :new_password %>
+            <input type="password" name="new_password" id="new_password" />
+            <%= error_messages_on(:user, :new_password) %>
+          <%= f.back %>
+
+          <%= f.front :confirm_password, :for => :confirm_password %>
+            <input type="password" name="confirm_password" id="confirm_password" />
+          <%= f.back %>
+
+          <div class="row button">
+          <%= f.submit t(:option_save), :class => 'button' %>
+          </div>
+
+          <input type="hidden" name="switch" value="new_password" />
+        </div>
+	    <% end %>
+    </div>
+
   <% end %>
   <div class="clear"></div>
   <%= will_paginate @results %>

@@ -53,7 +53,6 @@ cant_message:
     is_admin: false
     can_send_messages: false
 
-
 admin:
     login: admin
     crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test

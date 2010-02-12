@@ -76,6 +76,25 @@ class ProfilesController < ApplicationController
         flash.now[:error] = @user.errors
         render :action=> :edit
       end
+    when 'new_password'
+      respond_to do |wants|
+        #if @comment.save
+        #  wants.js do
+        #    render :update do |page|
+        #      page.insert_html :top, "#{dom_id(@parent)}_comments", :partial => 'comments/comment', :object => @comment
+        #      page.visual_effect :highlight, "comment_#{@comment.id}".to_sym
+        #      page << 'tb_remove();'
+        #      page << "jq('#comment_comment').val('');"
+        #    end
+        #  end
+        #else
+          wants.js do
+            render :update do |page|
+              page << "message('Erro qualquer... naum interessa, soh quero ver na tela.');"
+            end
+          end
+        #end
+      end
     else
       RAILS_ENV == 'test' ? render( :text=>'') : raise( 'Unsupported swtich in action')
     end

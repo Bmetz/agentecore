@@ -36,6 +36,7 @@ class Admin::UsersController < ApplicationController
     else
       p = []
     end
+
     @results = Profile.search(p.delete(:q) || '', :page => @page, :per_page => 21)
   end
 end

@@ -256,6 +256,7 @@ pt-BR:
   search_results: "Resultados da pesquisa"
   deactivate: "desativar"
   activate: "ativar"
+  passwd_edit_label: "Alterar senha de {{nome}}"
 
   #app/views/blogs/_blog.html.erb
   blog_posted_label: "Postado"

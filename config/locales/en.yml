@@ -113,6 +113,7 @@ en:
   search_results: "Search Results"
   deactivate: "deactivate"
   activate: "activate"
+  passwd_edit_label: "Editing password of {{nome}}"
 
   #app/views/blogs/_blog.html.erb
   blog_posted_label: "Posted"
