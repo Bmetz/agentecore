@@ -78,22 +78,21 @@ class ProfilesController < ApplicationController
       end
     when 'new_password'
       respond_to do |wants|
-        #if @comment.save
-        #  wants.js do
-        #    render :update do |page|
-        #      page.insert_html :top, "#{dom_id(@parent)}_comments", :partial => 'comments/comment', :object => @comment
-        #      page.visual_effect :highlight, "comment_#{@comment.id}".to_sym
-        #      page << 'tb_remove();'
-        #      page << "jq('#comment_comment').val('');"
-        #    end
-        #  end
-        #else
+        begin
+          @user.reset_password(params[:new_password], params[:confirm_password])
           wants.js do
             render :update do |page|
-              page << "message('Erro qualquer... naum interessa, soh quero ver na tela.');"
+              page << "message('#{t(:password_has_been_changed)}');"
+              page << 'tb_remove();'
             end
           end
-        #end
+        rescue Exception => e
+          wants.js do
+            render :update do |page|
+              page << "message('#{e}');"
+            end
+          end
+        end
       end
     else
       RAILS_ENV == 'test' ? render( :text=>'') : raise( 'Unsupported swtich in action')

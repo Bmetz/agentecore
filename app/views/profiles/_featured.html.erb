@@ -6,5 +6,5 @@ profile ||= nil
   <h2><%=t(:featured_member_label)%></h2>
   <%= icon profile, :small, :class => 'left' %>
   <div><%= link_to h(profile.f), profile %></div>
-  <%= truncate_html sanitize(textilize(profile.about_me)), 360, link_to('more', profile_path(profile)) %>
+  <%= truncate_html sanitize(textilize(h(profile.about_me))), 360, link_to('more', profile_path(profile)) %>
 <% end %>

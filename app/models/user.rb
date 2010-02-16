@@ -134,6 +134,19 @@ class User < ActiveRecord::Base
     save
   end
 
+  def reset_password(new_password, confirm_password)
+    raise I18n.t(:new_password_does_not_match)   unless new_password == confirm_password
+    raise I18n.t(:new_password_may_not_be_blank) if new_password.blank?
+
+    sp = User.encrypt(self.password, self.salt)
+    self.password = new_password
+    self.password_confirmation = confirm_password
+
+    self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--")
+    self.crypted_password = encrypt(new_password)
+    save!
+  end
+
 protected
 
   # before filter

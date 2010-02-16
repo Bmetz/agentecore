@@ -1,0 +1,18 @@
+<% 
+#locals
+comment ||= @comment
+comment_from ||= null
+
+%>
+
+<div id="resposta_<%= comment_from.profile.id %>" class="hidden">    
+	<% less_remote_form_for(:comment, :url => profile_comments_path(comment_from.profile), :html => { :id => "#{dom_id(comment_from.profile)}_comment_form"} ) do |f| %>
+	<div id="thickbox_form">
+    <%= f.text_area :comment, :label => t(:comment_label)  %>
+    <%= t(:youtube_label) %>
+    <input type="hidden" name="switch" value="resposta" />
+		<div class="row button"><%= f.submit t(:option_answer), :class=>"button" %></div>
+		<div class="clear"></div>
+    </div>
+	<% end %>
+</div>

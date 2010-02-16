@@ -10,7 +10,7 @@
       <div><%= link_to h(p.f), p %></div>
       <div><%= mail_to h(p.email), p.email %></div>
       <div><%= link_to_remote "#{ p.is_active ? t(:deactivate) : t(:activate) }", {:url => admin_user_path(p, 'js'), :method => :put}, {:id => p.dom_id('link')} %></div>
-      <div><%= inline_tb_link t(:option_edit), "new_password_#{p.id}", {:title => t(:passwd_edit_label, :nome => h(p.f))}, {:height => 150, :width => 430} if p %></div>
+      <div><%= inline_tb_link t(:option_edit_passwd), "new_password_#{p.id}", {:title => t(:passwd_edit_label, :nome => h(p.f))}, {:height => 150, :width => 430} if p %></div>
     </div>
 
     <div id="new_password_<%= p.id %>" class="hidden">

@@ -69,7 +69,7 @@ function message(message, duration){
     if (duration == undefined){
         duration = 3000;
     }
-    if (jq.browser.msie) { jq("#message").css({position: 'absolute'}); }
+    //if (jq.browser.msie) { jq("#message").css({position: 'absolute'}); }
     jq("#message").text(message).fadeIn(1000);
     setTimeout('jq("#message").fadeOut(2000)',duration);
     return false;

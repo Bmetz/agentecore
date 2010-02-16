@@ -45,6 +45,7 @@ en:
   option_create: "Create"
   option_reply: "Reply"
   option_save: "Save"
+  option_answer: "Answer"
   youtube_label: "To include a youtube video use: [youtube: address_of_video]"
   back: "Back"
   back_to: "&larr; Back to {{nome}}"
@@ -113,6 +114,7 @@ en:
   search_results: "Search Results"
   deactivate: "deactivate"
   activate: "activate"
+  option_edit_passwd: "Edit password"
   passwd_edit_label: "Editing password of {{nome}}"
 
   #app/views/blogs/_blog.html.erb
@@ -147,6 +149,9 @@ en:
   #app/views/comments/_comment.html.erb
   ago: "ago"
   wrote: "wrote"
+  leave_a_answer: "Leave a Answer"
+  leave_a_answer_title: "Leaving a Answer On {{nome}}'s Wall"
+  answer_sent: "Answer Sent"
 
   #app/views/comments/_list.html.erb
   comments_label: "Comments"

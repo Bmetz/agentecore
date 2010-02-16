@@ -16,12 +16,18 @@ c = comment.comment.dup.gsub(/\[youtube:+.+\]/, '')
   <div class="comment_message jstruncate">
       <%= sanitize(textilize(c)) %>
   </div>
+  <div>
+    <%= inline_tb_link("(#{t(:leave_a_answer)})", "resposta_#{comment.profile.id}", :title => t(:leave_a_answer_title, :nome => comment.profile.f)) if me %>
+  </div>
+  <%= render(:partial => 'comments/form_resposta', :locals => {:comment_from => comment}) if me %>  
   <% unless youtube_videos.empty? %>
     <strong><%= pluralize youtube_videos.size, 'video' %>:</strong><br/>
     <% youtube_videos.each do |o| %>
     <%= tb_video_link(o.gsub!(/\[youtube\:|\]/, '')) %>
   <% end
   end %>
+
+
   <div class="clear"></div>
 </div>
 

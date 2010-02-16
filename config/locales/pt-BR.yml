@@ -188,6 +188,7 @@ pt-BR:
   option_create: "Criar"
   option_reply: "Responder"
   option_save: "Salvar"
+  option_answer: "Responder"
   youtube_label: "Para incluir um vídeo do youtube use: [youtube: endereço_do_video]"
   back: "Voltar"
   back_to: "&larr; Voltar para {{nome}}"
@@ -254,8 +255,9 @@ pt-BR:
 
   #app/views/admin/users/index.html.erb
   search_results: "Resultados da pesquisa"
-  deactivate: "desativar"
-  activate: "ativar"
+  deactivate: "Desativar"
+  activate: "Ativar"
+  option_edit_passwd: "Alterar senha"
   passwd_edit_label: "Alterar senha de {{nome}}"
 
   #app/views/blogs/_blog.html.erb
@@ -290,6 +292,9 @@ pt-BR:
   #app/views/comments/_comment.html.erb
   ago: "atrás"
   wrote: "escreveu"
+  leave_a_answer: "Responder"
+  leave_a_answer_title: "Deixando uma resposta para {{nome}}"
+  answer_sent: "Resposta enviada"
 
   #app/views/comments/_list.html.erb
   comments_label: "Comentários"

@@ -14,15 +14,26 @@ class CommentsController < ApplicationController
   
   def create
     @comment = @parent.comments.new(params[:comment].merge(:profile_id => @p.id))
-    
+
     respond_to do |wants|
       if @comment.save
-        wants.js do
-          render :update do |page|
-            page.insert_html :top, "#{dom_id(@parent)}_comments", :partial => 'comments/comment', :object => @comment
-            page.visual_effect :highlight, "comment_#{@comment.id}".to_sym
-            page << 'tb_remove();'
-            page << "jq('#comment_comment').val('');"
+        case params[:switch]
+        when 'resposta'
+          wants.js do
+            render :update do |page|
+              page << "message('#{t(:answer_sent)}');"
+              page << 'tb_remove();'
+              page << "jq('#comment_comment').val('');"
+            end
+          end
+        else
+          wants.js do
+            render :update do |page|
+              page.insert_html :top, "#{dom_id(@parent)}_comments", :partial => 'comments/comment', :object => @comment
+              page.visual_effect :highlight, "comment_#{@comment.id}".to_sym
+              page << 'tb_remove();'
+              page << "jq('#comment_comment').val('');"
+            end
           end
         end
       else
@@ -32,6 +43,11 @@ class CommentsController < ApplicationController
           end
         end
       end
+
+
+
+
+
     end
   end
   
