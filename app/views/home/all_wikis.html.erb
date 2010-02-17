@@ -2,6 +2,9 @@
   wikis ||= recent_wiki_revisions(@page, @per_page)
 %>
 <div>
+  <div id="sub_nav">
+    <%= link_to t(:back_to, :nome => t(:home)), home_path() %>
+  </div>
   <div class="activity_box">
     <h2><%=t(:all_wikis_label)%></h2>
     <%= render :partial => 'wiki_revisions/wiki_revision', :collection => wikis %>

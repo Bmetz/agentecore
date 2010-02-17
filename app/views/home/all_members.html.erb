@@ -2,6 +2,9 @@
   members ||= recent_members(@page, @per_page)
 %>
 <div>
+  <div id="sub_nav">
+    <%= link_to t(:back_to, :nome => t(:home)), home_path() %>
+  </div>
   <div class="activity_box">
     <h2><%=t(:all_members_label)%></h2>
     <%= render :partial => 'profiles/newest_member', :collection => members %>

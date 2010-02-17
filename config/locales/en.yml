@@ -260,6 +260,7 @@ en:
   newest_wikis_label: "Newest Wikis"
   newest_pictures_label: "Newest Pictures"
   newest_blogs_label: "Newest Blogs"
+  latest_news_label: "Latest news"
 
   #app/views/home/all_forum_topics.html.erb
   all_forum_topics_label: "Forum Topics"
@@ -272,6 +273,9 @@ en:
 
   #app/views/home/all_members.html.erb
   all_members_label: "Members"
+
+  #app/views/home/all_news.html.erb
+  all_news_label: "News"
 
   #app/views/home/latest_comments.rss.builder
   latest_comments_feed_label: "Latest Comments Feed"

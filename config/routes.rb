@@ -39,6 +39,8 @@ ActionController::Routing::Routes.draw do |map|
     home.all_wikis '/all_wikis', :action => 'all_wikis'
     home.all_blogs '/all_blogs', :action => 'all_blogs'
     home.all_members '/all_members', :action => 'all_members'
+    home.all_news '/all_news', :action => 'all_news'
+    home.notice '/notice/:id', :action => 'notice'
   end
 
   map.resources :wiki_pages do |wiki|

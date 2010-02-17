@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   #skip_before_filter :login_required
-  before_filter :perpage_largest, :only => [:all_forum_topics, :all_wikis, :all_blogs, :all_members]
+  before_filter :perpage_largest, :only => [:all_forum_topics, :all_wikis, :all_blogs, :all_members, :all_news]
 
   def contact
     return unless request.post?
@@ -32,6 +32,11 @@ class HomeController < ApplicationController
       wants.html {render :action=>'index'}
       wants.rss {render :layout=>false}
     end
+  end
+
+  def notice
+    @blog = Blog.find params[:id]
+    @profile = @blog.profile
   end
 
   def terms

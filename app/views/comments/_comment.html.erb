@@ -17,9 +17,9 @@ c = comment.comment.dup.gsub(/\[youtube:+.+\]/, '')
       <%= sanitize(textilize(c)) %>
   </div>
   <div>
-    <%= inline_tb_link("(#{t(:leave_a_answer)})", "resposta_#{comment.profile.id}", :title => t(:leave_a_answer_title, :nome => comment.profile.f)) if me %>
+    <%= inline_tb_link("(#{t(:leave_a_answer)})", "resposta_#{comment.profile.id}", :title => t(:leave_a_answer_title, :nome => comment.profile.f)) if me and comment.commentable_type=='Profile' %>
   </div>
-  <%= render(:partial => 'comments/form_resposta', :locals => {:comment_from => comment}) if me %>  
+  <%= render(:partial => 'comments/form_resposta', :locals => {:comment_from => comment}) if me and comment.commentable_type=='Profile' %>  
   <% unless youtube_videos.empty? %>
     <strong><%= pluralize youtube_videos.size, 'video' %>:</strong><br/>
     <% youtube_videos.each do |o| %>

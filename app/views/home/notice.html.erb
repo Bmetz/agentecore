@@ -1,0 +1,15 @@
+<div class="left" id="column_l">
+
+  <div id="sub_nav">
+    <%= link_to t(:back_to, :nome => t(:home)), home_path() %>
+  </div>
+
+  <%= render :partial => 'blogs/notice', :object => @blog %>
+</div>
+
+<div class="right" id="column_r">
+  <div class="activity_box">
+    <h2><%=t(:latest_news_label)%> <%= link_to "(#{t(:see_all_label)})", all_news_path() %></h2>
+    <%= render :partial => 'blogs/latest_new', :collection => recent_news(1,10) %>
+  </div>
+</div>

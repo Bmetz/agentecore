@@ -1,0 +1,14 @@
+<%
+#locals
+
+notice ||= newest_notice
+truncate = truncate.nil? ? true : truncate
+
+%>
+
+<div id="<%= notice.dom_id %>" class="topic_holder">
+  <div class="date_details_white">
+    <%= notice.created_at %>, <%= link_to h(notice.title), notice_path(notice) %>  </div>
+  <div class="clear"></div>
+</div>
+

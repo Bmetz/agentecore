@@ -18,7 +18,11 @@ module HomeHelper
   end
 
   def recent_blogs(page = 1, per_page = 5)
-    Blog.paginate(:all, :order => 'created_at DESC', :page => page, :per_page => per_page)
+    Blog.paginate(:all, :order => 'created_at DESC', :conditions => "news=0", :page => page, :per_page => per_page)
+  end
+
+  def recent_news(page = 1, per_page = 5)
+    Blog.paginate(:all, :order => 'created_at DESC', :conditions => "news=1", :page => page, :per_page => per_page)
   end
 
   def recent_wiki_revisions(page = 1, per_page = 5)

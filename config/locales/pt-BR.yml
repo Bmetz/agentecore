@@ -403,6 +403,7 @@ pt-BR:
   newest_wikis_label: "Novas atualizações no wiki"
   newest_pictures_label: "Novas fotos"
   newest_blogs_label: "Novos Posts no Blog"
+  latest_news_label: "Últimas notícias"
 
   #app/views/home/all_forum_topics.html.erb
   all_forum_topics_label: "Atualizações no fórum"
@@ -415,6 +416,9 @@ pt-BR:
 
   #app/views/home/all_members.html.erb
   all_members_label: "Atualizações de membros"
+
+  #app/views/home/all_news.html.erb
+  all_news_label: "Atualizações nas notícias"
 
   #app/views/home/latest_comments.rss.builder
   latest_comments_feed_label: "Resumo com os últimos comentários"

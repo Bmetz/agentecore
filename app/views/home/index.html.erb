@@ -15,7 +15,9 @@
     </div>
 
     <div class="membro_em_destaque">
-      <%= render :partial => 'profiles/featured', :locals => {:profile => Profile.featured_profile[:profile]} %>
+      <!--h2><%#=t(:latest_news_label)%> <%= link_to "(#{t(:see_all_label)})", all_news_path() %></h2-->
+      <%#= render :partial => 'blogs/latest_new', :collection => recent_news(1,3) %>
+      <%= render :partial => "profiles/featured", :locals => {:profile => Profile.featured_profile[:profile]} %>
     </div>
   </div>
 
