@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
     @photo = @p.photos.build params[:photo]
 
     respond_to do |wants|
-      if @p.photos.size >= 15
+      if @p.photo_limit_exceeded
         wants.html do
           flash[:notice] = "Número máximo de 15 fotos excedido."
           redirect_to profile_photos_path(@p)

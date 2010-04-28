@@ -187,7 +187,13 @@ class Profile < ActiveRecord::Base
     user.can_send_messages
   end
 
+  def can_send_news?
+    return user.can_send_news
+  end
 
+  def photo_limit_exceeded
+    return self.photos.size >= 15 && !can_send_news?
+  end
 
 
 
