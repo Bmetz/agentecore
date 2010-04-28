@@ -21,15 +21,22 @@ class PhotosController < ApplicationController
     @photo = @p.photos.build params[:photo]
 
     respond_to do |wants|
-      if @photo.save
+      if @p.photos.size >= 15
         wants.html do
-          flash[:notice] = t(:photo_successfully_uploaded)
+          flash[:notice] = "Número máximo de 15 fotos excedido."
           redirect_to profile_photos_path(@p)
         end
       else
-        wants.html do
-          flash.now[:error] = t(:photo_could_not_be_uploaded)
-          render :action => :index
+        if @photo.save
+          wants.html do
+            flash[:notice] = t(:photo_successfully_uploaded)
+            redirect_to profile_photos_path(@p)
+          end
+        else
+          wants.html do
+            flash.now[:error] = t(:photo_could_not_be_uploaded)
+            render :action => :index
+          end
         end
       end
     end
